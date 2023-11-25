@@ -1,0 +1,40 @@
+@import "src/theme/_variables.scss";
+
+.qa {
+  h2 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 24px;
+    font-family: $font-en-primary;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: $product-details-title;
+    cursor: pointer;
+
+    small {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      i {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .qa-answer {
+    padding: 24px;
+    padding-top: 0px;
+    width: 90%;
+
+    p {
+      font-size: 14px;
+      font-family: $font-en-primary;
+      font-weight: 400;
+      color: #888888;
+      line-height: 20px;
+    }
+  }
+}

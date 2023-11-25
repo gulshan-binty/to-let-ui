@@ -1,0 +1,120 @@
+@import "src/theme/_variables.scss";
+
+/* --- main start --- */
+.main {
+  width: 100%;
+  background-color: #e7edee;
+  padding: 24px 0px;
+}
+
+/* --- main-data-container start --- */
+.main-data-container {
+  max-width: 1240px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px 24px 26px 24px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+/* --- my-personal-title --- */
+.my-personal-title {
+  margin-bottom: 16px;
+  padding: 10px 0px;
+
+  h2 {
+    font-family: $font-en-primary;
+    font-size: 22px;
+    font-weight: 400;
+    color: $text-home-first-sec-color;
+  }
+
+  p {
+    margin-top: 20px !important;
+    font-family: $font-en-primary;
+    font-size: 14px;
+    font-weight: 400;
+    color: #707676;
+  }
+}
+
+/* --- personal-info-steps --- */
+.personal-info-steps {
+  margin-bottom: 28px;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+
+    li {
+      text-align: center;
+      border-bottom: solid 1px #afb7ad;
+      width: 100%;
+      padding-bottom: 7px;
+      position: relative;
+
+      .steps-title {
+        .number {
+          font-family: $font-en-primary;
+          font-size: 15px;
+          font-weight: 400;
+          color: #707676;
+        }
+      }
+
+      &.list-active {
+        border-bottom: solid 3px #0074ba;
+        position: relative;
+
+        .steps-title {
+          .number {
+            font-weight: 500;
+            color: $text-home-first-sec-color;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          left: 50.5%;
+          bottom: 0;
+          transform: translateX(-50%);
+          clip-path: polygon(51% 46%, 0% 100%, 100% 100%);
+          background-color: #0074ba;
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+      &.list-active-done {
+        border-bottom: solid 3px #0074ba;
+        position: relative;
+
+        .steps-title {
+          .number {
+            font-weight: 400;
+            color: #707676;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.personal-infos {
+  width: 100%;
+}

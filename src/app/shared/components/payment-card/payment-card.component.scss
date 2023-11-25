@@ -1,0 +1,124 @@
+@import "src/theme/variables";
+.payment-card {
+  display: grid;
+  grid-template-columns: 44px calc(100% - 54px);
+  grid-gap: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px -5px #ddd;
+  border-radius: 10px;
+  align-items: center;
+}
+
+@media (max-width: 556pc) {
+  .payment-card {
+    display: grid;
+    grid-template-columns: 36px calc(100% - 44px);
+    grid-gap: 8px;
+  }
+}
+
+.payment-card-left {
+  .card-chart {
+    background-color: #d9d7d7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 100%;
+
+    svg {
+      width: 24px;
+    }
+  }
+}
+
+@media (max-width: 556pc) {
+  .payment-card-left {
+    .card-chart {
+      height: 36px;
+
+      svg {
+        width: 18px;
+      }
+    }
+  }
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    font-family: $font-en-primary;
+    font-size: 14px;
+    font-weight: 500;
+    color: $heading-color;
+  }
+
+  p {
+    font-family: $font-en-primary;
+    font-size: 13px;
+    font-weight: 400;
+    color: $text-color;
+  }
+}
+
+.order-id {
+  h1 {
+    font-family: $font-en-primary;
+    font-size: 16px;
+    font-weight: 400;
+    color: $text-color;
+    padding: 4px 0px;
+  }
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    font-family: $font-en-primary;
+    font-size: 14px;
+    font-weight: 400;
+    color: #d1d1d1;
+  }
+
+  p {
+    font-family: $font-en-primary;
+    font-size: 14px;
+    font-weight: 500;
+    color: #f44336;
+  }
+}
+
+@media (max-width: 556px) {
+  .payment {
+    h3 {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .order-id {
+    h1 {
+      font-size: 14px;
+    }
+  }
+
+  .transaction {
+    h2 {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}

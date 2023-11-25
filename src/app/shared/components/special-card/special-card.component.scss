@@ -1,0 +1,121 @@
+@import "src/theme/variables";
+
+.special-card {
+  display: flex;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+
+  &::before {
+    top: 25px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+
+  &::after {
+    top: 25px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+
+  a {
+    min-width: 30px;
+    max-width: 30px;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    transition: box-shadow 0.3s ease-out;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: rgb(55, 55, 55);
+
+    i {
+      color: $color-white;
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 556px) {
+  .special-card {
+    &::before {
+      top: 25px;
+    }
+
+    &::after {
+      top: 25px;
+    }
+
+    a {
+      margin-right: 10px;
+      min-width: 24px;
+      max-width: 24px;
+      height: 24px;
+      padding-top: 2px;
+
+      i {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.offers-img {
+  width: 54px;
+  margin-left: 25px;
+  margin-right: 40px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 556px) {
+  .offers-img {
+    margin-left: 4px;
+    margin-right: 10px;
+  }
+}
+
+.offers-data {
+  h3 {
+    font-family: $font-en-primary;
+    font-size: 16px;
+    font-weight: 500;
+    color: $text-color;
+  }
+
+  p {
+    font-family: $font-en-primary;
+    font-size: 15px;
+    font-weight: 500;
+    color: $text-color;
+  }
+}
+
+@media (max-width: 556px) {
+  .offers-data {
+    h3 {
+      font-size: 11px;
+    }
+
+    p {
+      font-size: 11px;
+    }
+  }
+}

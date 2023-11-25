@@ -1,0 +1,317 @@
+<!--<div class="container">-->
+<!--  <div class="main-content">-->
+<!--    <div class="main-content-left">-->
+<!--      <div class="biodatadetails">-->
+<!--        <img-->
+<!--          *ngIf="product.bioDataType == 'Male Biodata'"-->
+<!--          src="/assets/images/png/male-profile-icon.png"-->
+<!--        />-->
+<!--        <img-->
+<!--          *ngIf="product.bioDataType == 'Female Biodata'"-->
+<!--          src="/assets/images/png/female-profile-icon.png"-->
+<!--        />-->
+<!--        <div>-->
+<!--          <h3>BioData No: {{ product?._id.slice(18, 24) }}</h3>-->
+<!--        </div>-->
+<!--        <div class="details">-->
+<!--          <p>Biodata Type</p>-->
+<!--          <p class="border">"{{ product?.bioDataType }}" Biodata</p>-->
+<!--        </div>-->
+<!--        <div class="details">-->
+<!--          <p>Marital Status</p>-->
+<!--          <p class="border">{{ product?.maritalStatus }} Biodata</p>-->
+<!--        </div>-->
+
+<!--        <div class="details">-->
+<!--          <p>Birth Year</p>-->
+<!--          <p class="border">{{ product?.birthDay | date : "mediumDate" }}</p>-->
+<!--        </div>-->
+
+<!--        <div class="details">-->
+<!--          <p>Height</p>-->
+<!--          <p class="border">{{ product?.height }}</p>-->
+<!--        </div>-->
+
+<!--        <div class="details">-->
+<!--          <p>Complexion</p>-->
+<!--          <p class="border">{{ product?.complexion }}</p>-->
+<!--        </div>-->
+
+<!--        <div class="details">-->
+<!--          <p>Weight</p>-->
+<!--          <p class="border">{{ product?.weight }}</p>-->
+<!--        </div>-->
+
+<!--        <div class="details">-->
+<!--          <p>Blood Group</p>-->
+<!--          <p class="border">{{ product?.bloodGroup }}</p>-->
+<!--        </div>-->
+
+<!--        <div class="details">-->
+<!--          <p>Nationality</p>-->
+<!--          <p class="border">{{ product?.nationality }}</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--      <div class="details-info">-->
+<!--        <div class="details-info-contents">-->
+<!--          <div class="details-info-header">-->
+<!--            <p>Address</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Permanent Address</p>-->
+<!--            <p class="border">{{ product?.permanentAddress }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Present Address</p>-->
+<!--            <p class="border">{{ product?.presentAddress }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Where did you grow up?</p>-->
+<!--            <p class="border">{{ product?.whereDidYouGrowUp }}</p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="details-info-contents">-->
+<!--          <div class="details-info-header">-->
+<!--            <p>Educational Qualifications</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Your Education Method</p>-->
+<!--            <p class="border">{{ product?.yourEducationMethod }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>SSC/Dakhil/Equivalent Passing Year</p>-->
+<!--            <p class="border">{{ 'product?.passingYear' }}</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Group</p>-->
+<!--            <p class="border">{{ 'product?.group' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Result</p>-->
+<!--            <p class="border">{{ 'product?.result '}}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>HSC/Alim/Equivalent Passing Year</p>-->
+<!--            <p class="border">{{ product?.passingYearHSC }}</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Group</p>-->
+<!--            <p class="border">{{ product?.groupHSC }}</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Result</p>-->
+<!--            <p class="border">{{ product?.resultHSC }}</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Graduation study subject</p>-->
+<!--            <p class="border">{{ product?.graduationStudySubject }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Name of educational institution</p>-->
+<!--            <p class="border">{{ product?.nameOfEducationalInstitutions }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Passing Year</p>-->
+<!--            <p class="border">{{ product?.passingYearBSc }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Postgaduation study subject</p>-->
+<!--            <p class="border">{{ product?.graduationStudySubjectPost }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Name of educational institution</p>-->
+<!--            <p class="border">-->
+<!--              {{ product?.nameOfEducationalInstitutionsPost }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Passing Year</p>-->
+<!--            <p class="border">{{ product?.passingYearPost }}</p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="details-info-contents">-->
+<!--          <div class="details-info-header">-->
+<!--            <p>Familly Information</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Is Your Father Alive?</p>-->
+<!--            <p class="border">{{ product?.isYourFatherAlive }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Description Of Fathers Profession</p>-->
+<!--            <p class="border">{{ product?.descriptionOfFathersProfession }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Is Your Mother Alive?</p>-->
+<!--            <p class="border">{{ product?.isYourMotherAlive }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Description Of Mother's Profession</p>-->
+<!--            <p class="border">{{ product?.descriptionOfMothersProfession }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>How Many Brother's Do You Have?</p>-->
+<!--            <p class="border">{{ product?.howManyBrothersDoYouHave }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Brothers Information</p>-->
+<!--            <p class="border">{{ product?.brothersInformation }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>How Many Sister's Do You Have?</p>-->
+<!--            <p class="border">{{ 'product?.howManySistersDoYouHave' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Sister's Information</p>-->
+<!--            <p class="border">{{ product?.sistersInformation }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Professions Of Uncles</p>-->
+<!--            <p class="border">{{ product?.professionsOfUncles }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Family Financial Status</p>-->
+<!--            <p class="border">{{ product?.familyFinancialStatus }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Description Of Financial Condition</p>-->
+<!--            <p class="border">{{ 'product?.descriptionOfFinancialCondition' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>How Is Your Family's Religious Condition?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.howIsYourFamilysReligiousCondition' }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="details-info-contents">-->
+<!--          <div class="details-info-header">-->
+<!--            <p>Personal Information</p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>What Kind Of Clothes Do You Usually Wear Outside The House?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.whatKindOfClothesDoYouUsuallyWearOutsideTheHouse' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Do You Have Beard According To Sunnah Since When?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.doYouHaveBeardAccordingToSunnahSinceWhen' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Do You Wear Clothes Above The Ankles?</p>-->
+<!--            <p class="border">{{ 'product?.doYouWearClothesAboveTheAnkles' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Do You Pray Five Times A Day Since When?</p>-->
+<!--            <p class="border">{{ 'product?.doYouPrayFiveTimesADaySinceWhen' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Do You Comply With Mahram Non Mahram?</p>-->
+<!--            <p class="border">{{ 'product?.doYouComplyWithMahramNonMahram' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Are You Able To Recite The Quran Correctly?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.areYouAbleToReciteTheQuranCorrectly' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Which Fiqh Do You Follow?</p>-->
+<!--            <p class="border">{{' product?.whichFiqhDoYouFollow' }}</p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Do You Watch Or Listen To Dramas Movies Serials Songs?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.doYouWatchOrListenToDramasMoviesSerialsSongs' }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Do You Have Any Mental Or Physical Diseases?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.doYouHaveAnyMentalOrPhysicalDiseases' }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="address-details">-->
+<!--            <p>Are You Involved In Any Special Work Of Deen?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.areYouInvolvedInAnySpecialWorkOfDeen' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>What Are Your Ideas Or Beliefs About The Shrine Mazar?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.whatAreYourIdeasOrBeliefsAboutTheShrineMazar' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Write The Names Of At Listen Islamic Books You Have Read?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.writeTheNamesOfAtLeast3IslamicBooksYouHaveRead' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>Write The Names Of At Least3 Islamic Scholars Of Your Choice?</p>-->
+<!--            <p class="border">-->
+<!--              {{ 'product?.writeTheNamesOfAtLeast3IslamicScholarsOfYourChoice' }}-->
+<!--            </p>-->
+<!--          </div>-->
+
+<!--          <div class="address-details">-->
+<!--            <p>-->
+<!--              Write About Your Hobbies Likes And Dislikes Tastes Dreams And So-->
+<!--              On?-->
+<!--            </p>-->
+<!--            <p class="border">-->
+<!--              {{-->
+<!--                'product?.writeAboutYourHobbiesLikesAndDislikesTastesDreamsAndSoOn'-->
+<!--              }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div routerLink="/" class="contact-button">-->
+<!--          <button>Contacts</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -1,0 +1,43 @@
+<!--  -->
+<div class="new-card-section">
+  <div class="main-container">
+    <div class="title-card">
+      <h2>Explore More</h2>
+    </div>
+    <div class="new-section-cards">
+      <swiper
+        [slidesPerView]="3"
+        [spaceBetween]="13"
+        [autoplay]="true"
+        [loop]="true"
+        [grabCursor]="true"
+        [navigation]="true"
+        [breakpoints]="{
+          '320': {
+            slidesPerView: 1
+          },
+          '476': {
+            slidesPerView: 1.5
+          },
+          '620': {
+            slidesPerView: 2
+          },
+          '774': {
+            slidesPerView: 2.5
+          },
+          '912': {
+            slidesPerView: 3
+          },
+          '1222': {
+            slidesPerView: 4
+          }
+        }"
+        class="mySwiper"
+      >
+        <ng-template swiperSlide *ngFor="let data of [0, 0, 0, 0, 0]">
+          <app-explore-more-card-two></app-explore-more-card-two>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>

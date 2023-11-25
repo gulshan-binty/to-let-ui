@@ -1,0 +1,50 @@
+<div class="card" [routerLink]="['./order-list', deliveryData._id]">
+  <div class="card-top">
+    <h3>
+      {{ deliveryData?.shippingAddress }}
+    </h3>
+    <div class="top-img">
+      <img *ngIf="deliveryData?.orderedItems[0]?.orderType === 'express'" src="./assets/images/webp/express_black.webp"
+        alt="" />
+      <img *ngIf="deliveryData?.orderedItems[0]?.orderType  === 'regular'" src="./assets/images/webp/regular.webp"
+        alt="" />
+      <img src="/assets/images/jpg/address.webp" alt="" />
+    </div>
+  </div>
+  <div class="card-body">
+    <ul>
+      <li>
+        <p>Order ID</p>
+        <h2>{{ deliveryData.orderId }}</h2>
+      </li>
+      <li>
+        <p>Date</p>
+        <p>{{ deliveryData.checkoutDate | date : "medium" }}</p>
+      </li>
+      <li>
+        <p>Status</p>
+        <h4 *ngIf="deliveryData.orderStatus === 1"
+          [style.backgroundColor]="deliveryData.orderStatus === 1 ? '#ff7542':''">
+          {{ "Pending" | titlecase }}
+        </h4>
+        <h4 *ngIf="deliveryData.orderStatus === 2"
+          [style.backgroundColor]="deliveryData.orderStatus === 2 ? '#0036a2':''">
+          {{ "Confirm" | titlecase }}
+        </h4>
+        <h4 *ngIf="deliveryData.orderStatus === 5">
+          {{ "DELIVERED" | titlecase }}
+        </h4>
+        <h4 *ngIf="deliveryData.orderStatus === 6" [style.backgroundColor]="deliveryData.orderStatus === 6 ? 'red':''">
+          {{ "CANCELLED" | titlecase }}
+        </h4>
+      </li>
+      <li>
+        <h2>Amount Payable</h2>
+        <h2>
+          ৳{{ deliveryData?.grandTotal.toFixed(2)  }}
+          <span>({{ deliveryData?.paymentStatus }})</span>
+        </h2>
+      </li>
+    </ul>
+  </div>
+</div>

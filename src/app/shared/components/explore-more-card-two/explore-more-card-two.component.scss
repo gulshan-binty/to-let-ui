@@ -1,0 +1,46 @@
+@import "src/theme/_variables.scss";
+
+.explore-more {
+  a {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 32px calc(100% - 78px) 14px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    column-gap: 16px;
+    align-items: center;
+    border-radius: 6px;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  i {
+    font-size: 24px;
+    color: $product-details-title;
+  }
+}
+
+.middle {
+  p {
+    font-family: $font-en-primary;
+    font-size: 14px;
+    color: $product-details-title;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  i {
+    font-size: 18px;
+    color: $product-details-title;
+  }
+}

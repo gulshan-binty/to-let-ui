@@ -1,0 +1,222 @@
+@import "src/theme/_variables.scss";
+
+.main {
+  width: 100%;
+  background-color: #e7edee;
+  padding: 24px 0px;
+}
+
+.main-data-container {
+  max-width: 1240px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.matrimonial-image {
+  width: 27px;
+}
+
+@media (max-width: 800px) {
+  .main-data-container {
+    width: 95%;
+  }
+}
+
+/* ---- top-data ---- */
+.top-data {
+  text-align: center;
+
+  h4 {
+    font-family: $font-en-primary;
+    font-size: 19px;
+    font-weight: 400;
+    color: $color-true-black;
+    margin-bottom: 12px !important;
+    padding-top: 13px;
+    letter-spacing: 0.5px;
+
+    span {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+}
+
+/* --- sec2-post-ad --- */
+.sec2-post-ad {
+  margin-top: 30px;
+}
+
+.sec2-post-ad-main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 18px;
+}
+
+.sec2-post-ad-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 90%;
+  margin: auto;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.sec2-post-ad-card {
+  border-radius: 8px 0px 0px 8px;
+
+  display: flex;
+  align-items: center;
+  padding: 22px 26px 26px;
+  gap: 32px;
+}
+
+.left-img {
+  height: 95px;
+  min-width: 95px;
+  max-width: 95px;
+}
+
+.right-data {
+  h1 {
+    font-family: $font-en-primary;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-home-first-sec-color;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    font-family: $font-en-primary;
+    font-size: 13px;
+    line-height: 19px;
+    color: $text-home-first-sec-color-3;
+    margin-top: 7px !important;
+    margin-bottom: 12px !important;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    padding: 8px 12px;
+    background-color: #4b98ff;
+    border: 0px;
+    gap: 7px;
+
+    span {
+      font-family: $font-en-primary;
+      font-size: 13px;
+      color: #f4f8ff;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+
+      i {
+        padding-top: 3px;
+        font-size: 14px;
+        color: #f4f8ff;
+      }
+    }
+  }
+}
+
+.sec2-post-ad-card.sec2-post-ad-card2 {
+  border-radius: 0px 8px 8px 0px;
+  border-left: 1px solid #d4ded9;
+
+  .right-data {
+    button {
+      background-color: #0074ba;
+      span {
+        color: #fff;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1046px) {
+  .sec2-post-ad-cards {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .sec2-post-ad {
+    margin-top: 40px;
+  }
+
+  .sec2-post-ad-cards {
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+    box-shadow: none;
+  }
+
+  .sec2-post-ad-card {
+    flex-direction: column;
+    gap: 10px;
+
+    .right-data {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .sec2-post-ad-card,
+  .sec2-post-ad-card.sec2-post-ad-card2 {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .sec2-post-ad-card.sec2-post-ad-card2 {
+    border-left: 0px;
+  }
+}
+
+/* ---- help-link ---- */
+.help-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 18px;
+
+  a {
+    font-family: $font-en-primary;
+    font-size: 15px;
+    color: #0074ba;
+    font-weight: 400;
+    border-right: 1px solid #0074ba;
+    padding-right: 12px;
+    white-space: nowrap;
+
+    &:hover {
+      color: #00547e;
+    }
+
+    &:last-child {
+      padding-right: 0px;
+      padding-left: 12px;
+      border-right: 0px;
+    }
+  }
+}

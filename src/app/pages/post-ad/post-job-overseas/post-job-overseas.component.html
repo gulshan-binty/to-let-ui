@@ -1,0 +1,392 @@
+<div class="add-new-product">
+  <div class="container">
+    <div class="main-new-data-top">
+      <h1>Job Post</h1>
+    </div>
+
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="dataForm" #formElement="ngForm">
+      <div class="drop-image-area">
+        <div class="drop-zone-main">
+          <app-drop-zone (newItemEvent)=" onSelect($event)"
+                         (onDeleteOldImage)="onDeleteOldImage($event)"
+                         [fileNotPicked]="fileNotPicked"
+                         [images]="oldImages"></app-drop-zone>
+        </div>
+      </div>
+
+      <!-- END! drop-image-area -->
+      <div class="page-slug">
+        <div class="checkbox">
+          <mat-checkbox
+            [(ngModel)]="autoSlug"
+            (change)="autoGenerateSlug()"
+            [ngModelOptions]="{ standalone: true }"
+            color="primary"
+          >Auto Slug</mat-checkbox
+          >
+        </div>
+      </div>
+
+      <div class="main-form-area">
+        <div class="form-three-grid">
+          <div class="input-box">
+            <p>
+              <label for="Your_Name">Job Name</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="First_Name"
+                placeholder="Job Name"
+                formControlName="name"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="slug">Slug</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="slug"
+                placeholder="Slug"
+                formControlName="slug"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+
+
+
+
+          <div class="input-box">
+            <p>
+              <label for="jobType">Job Type</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="jobType"
+                formControlName="jobType"
+                placeholder="Enter Job Type (Full-Time/Part-Time)"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('jobType').touched && dataForm.get('jobType').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+
+          <div class="input-box">
+            <p>
+              <label for="role">Job Role</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="role"
+                formControlName="jobRole"
+                placeholder="Enter Job Role"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('jobRole').touched && dataForm.get('jobRole').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="salaryTo">Salary Range Start</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="salaryTo"
+
+                digitOnly
+                formControlName="salaryTo"
+                placeholder="Salary Range Start"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('salaryTo').touched && dataForm.get('salaryTo').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+   <div class="input-box">
+            <p>
+              <label for="salaryFrom">Salary Range End</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="salaryFrom"
+                digitOnly
+                formControlName="salaryFrom"
+                placeholder="Salary Range End"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('salaryFrom').touched && dataForm.get('salaryFrom').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="educational">Educational Requirements</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="educational"
+                formControlName="requiredEducation"
+                placeholder="Enter Educational Requirements"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('requiredEducation').touched && dataForm.get('requiredEducation').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="experience">Experience</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="experience"
+                digitOnly
+                formControlName="experience"
+                placeholder="Enter Experience Requirements (1y - 10y)"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('experience').touched && dataForm.get('experience').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="companyName">Company Name</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="companyName"
+                formControlName="companyName"
+                placeholder="Company Name"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('companyName').touched && dataForm.get('companyName').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+
+
+          <div class="input-box">
+            <p>
+              <label for="jobPostBy">Job Post By</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="jobPostBy"
+                formControlName="jobPostBy"
+                placeholder="Job Post By(HR/Manager)"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('jobPostBy').touched && dataForm.get('jobPostBy').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+
+                    <div class="input-box">
+                      <p>
+                        <label for="deadline">Estimate Deadline Time</label>
+                      </p>
+
+                      <div class="input-doc">
+                        <input
+                          type="date"
+                          id="deadline"
+                          formControlName="deadline"
+                          placeholder="Estimate Deadline Time"
+                        />
+                      </div>
+
+                      <p
+                        class="required"
+                        *ngIf="
+                          dataForm.get('deadline').touched &&
+                          dataForm.get('deadline').invalid
+                        "
+                      >
+                        <i>This felid is required</i>
+                      </p>
+                    </div>
+                    <!-- END! input-box -->
+
+
+
+
+          <div class="input-box">
+            <p>
+              <label for="vacancy">Job Vacancy</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="vacancy"
+                digitOnly
+                formControlName="vacancy"
+                placeholder="Enter Job Vacancy"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('vacancy').touched && dataForm.get('vacancy').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="address">Address</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="address"
+                formControlName="address"
+                placeholder="Enter address"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('address').touched && dataForm.get('address').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+        </div>
+        <!-- END! form-four-grid -->
+
+
+        <div class="from-one-grid">
+          <div class="quill-editor-main">
+            <div class="quill-editor-top">
+              <p>
+                <label for="Description">Description</label>
+              </p>
+            </div>
+
+            <div class="quill-editor-bottom">
+              <quill-editor formControlName="description"></quill-editor>
+            </div>
+          </div>
+          <!-- END! quill-editor-main -->
+        </div>
+        <!-- END! from-one-grid -->
+
+
+        <div class="submit-btn">
+          <button class="back-btn" [routerLink]="['/account/orders']" type="button">
+            Back
+          </button>
+          <button class="sub-btn" type="submit">
+            <div class="loader" *ngIf="isLoading"></div>
+
+            <span *ngIf="!isLoading">{{id ? 'Update Job' : 'Add Job'}}</span>
+          </button>
+        </div>
+        <!-- END! submit-btn -->
+      </div>
+    </form>
+  </div>
+</div>

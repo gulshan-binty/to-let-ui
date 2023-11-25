@@ -1,0 +1,56 @@
+@import "src/theme/_variables.scss";
+@import "src/theme/_swipper-three.scss";
+
+.new-card-section2 {
+  padding-top: 50px;
+
+  .main-container {
+    max-width: 1240px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .title-card {
+    h2 {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      line-height: 16px;
+      //   margin-top: 32px !important;
+      padding-bottom: 34px !important;
+      text-align: center;
+      font-size: 28px;
+      line-height: 28px;
+      font-family: $font-en-primary;
+      color: $product-details-title;
+      font-weight: 500;
+
+      &::before {
+        background: linear-gradient(90deg, #cacaca, transparent);
+        content: "";
+        flex: 1;
+        height: 1px;
+        margin-left: 0px;
+      }
+
+      &::after {
+        background: linear-gradient(90deg, transparent, #cacaca);
+        content: "";
+        flex: 1;
+        height: 1px;
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.new-section-cards2 {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .main-container {
+    max-width: 95%;
+    margin: auto;
+  }
+}

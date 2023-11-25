@@ -1,0 +1,239 @@
+@import "src/theme/_variables.scss";
+
+/* --- my-membership-title --- */
+.my-membership-title {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e7edee;
+  padding: 7px 0px;
+
+  h2 {
+    font-family: $font-en-primary;
+    font-size: 20px;
+    font-weight: 400;
+    color: $text-home-first-sec-color;
+  }
+}
+
+/* --- setting-details --- */
+.setting-details {
+  h3 {
+    font-family: $font-en-primary;
+    font-size: 18px;
+    font-weight: 400;
+    color: $text-home-first-sec-color;
+    margin: 24px 0px 20px !important;
+  }
+}
+
+.change-password-main {
+  padding-bottom: 40px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e7edee;
+}
+
+.change-password {
+  margin-top: 40px;
+}
+
+.mail-data {
+  margin-bottom: 20px;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    font-family: $font-en-primary;
+    font-size: 15px;
+    color: #707676;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* -- form-input -- */
+.form-input {
+  label {
+    font-family: $font-en-primary;
+    font-size: 15px;
+    color: #707676;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    display: inline-block !important;
+  }
+
+  input {
+    color: #2f3432;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    box-shadow: inset 0 3px 1px rgba(231, 237, 238, 0.5);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    max-width: 276px;
+    width: 100%;
+    height: 32px;
+    margin-top: 12px !important;
+    outline: 0px;
+    font-family: $font-en-primary;
+    font-weight: 400;
+    color: $text-home-first-sec-color;
+    padding: 10px;
+
+    &:focus {
+      border-color: #d4ded9;
+      box-shadow: inset 0 3px 1px rgba(231, 237, 238, 0.5), 0 0 6px #009877;
+    }
+  }
+}
+
+@media (max-width: 556px) {
+  .form-input {
+    input {
+      max-width: 100%;
+      height: 42px;
+    }
+  }
+}
+
+/* --- form-select-group --- */
+.form-select-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin: 20px 0px;
+}
+
+.form-input.form-input2 {
+  margin-top: 20px;
+}
+
+@media (max-width: 680px) {
+  .form-select-group {
+    flex-direction: column;
+  }
+}
+
+/* -- form-select -- */
+.form-select {
+  max-width: 276px;
+  width: 100%;
+  label {
+    font-family: $font-en-primary;
+    font-size: 15px;
+    color: #707676;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    display: inline-block !important;
+  }
+
+  select {
+    color: #2f3432;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    box-shadow: inset 0 3px 1px rgba(231, 237, 238, 0.5);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    width: 100%;
+    height: 32px;
+    margin-top: 12px !important;
+    outline: 0px;
+    font-family: $font-en-primary;
+    font-weight: 400;
+    color: $text-home-first-sec-color;
+    padding: 0px 10px;
+
+    option {
+      padding: 0px 10px !important;
+    }
+
+    &:focus {
+      border-color: #d4ded9;
+      box-shadow: inset 0 3px 1px rgba(231, 237, 238, 0.5), 0 0 6px #009877;
+    }
+  }
+}
+
+@media (max-width: 556px) {
+  .form-select {
+    max-width: 100%;
+
+    select {
+      height: 42px;
+    }
+  }
+}
+
+/* --- learn-more --- */
+.submit-btn {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  button {
+    color: #424e4e;
+    background: #f3f6f5;
+    box-shadow: 0 2px 0 #e7edee;
+    text-shadow: 0 1px 0 #fff;
+    border: 1px solid #d4ded9;
+    font-family: $font-en-primary;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 24px;
+    line-height: 42px;
+    border: 0px;
+    border-radius: 4px;
+
+    &:hover {
+      background: linear-gradient(#fafcfb, #dfe6e4);
+      box-shadow: none;
+    }
+  }
+}
+
+@media (max-width: 556px) {
+  .submit-btn {
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+/* --- btn-grp --- */
+.btn-grp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  padding-bottom: 16px;
+
+  .submit-btn:last-child {
+    button {
+      color: #fff;
+      background: #d95e46;
+      box-shadow: 0 2px 0 #d4ded9;
+      text-shadow: 0 1px 0 #691f1a;
+
+      &:hover {
+        background: linear-gradient(#e67d69, #c2371c);
+      }
+    }
+  }
+}
+
+@media (max-width: 556px) {
+  .btn-grp {
+    flex-direction: column;
+    gap: 6px;
+
+    .submit-btn {
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

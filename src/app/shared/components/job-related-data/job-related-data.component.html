@@ -1,0 +1,32 @@
+<div class="new-card-section2">
+  <div class="container">
+    <div class="main-container">
+      <div class="title-card">
+        <h2>Please Take a Look</h2>
+      </div>
+      <div class="new-section-cards2">
+        <swiper
+          [slidesPerView]="3"
+          [spaceBetween]="20"
+          [autoplay]="true"
+          [loop]="true"
+          [grabCursor]="true"
+          [navigation]="true"
+          [breakpoints]="{
+            '320': {
+              slidesPerView: 1
+            },
+            '933': {
+              slidesPerView: 2
+            }
+          }"
+          class="mySwiper3"
+        >
+          <ng-template swiperSlide *ngFor="let d of [0, 0, 0, 0, 0]">
+            <app-job-card></app-job-card>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </div>
+</div>

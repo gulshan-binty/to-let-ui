@@ -1,0 +1,43 @@
+<div class="request-medicine-main">
+  <div class="request-medicine-child">
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="dataFrom">
+      <div class="input-area">
+        <input
+          type="text"
+          placeholder="Medicine Name *"
+          formControlName="medName"
+        />
+      </div>
+
+      <div class="input-area">
+        <input
+          type="text"
+          placeholder="Strength *"
+          formControlName="medStrength"
+        />
+      </div>
+
+      <div class="input-area">
+        <input
+          type="text"
+          placeholder="Medicine Form *"
+          formControlName="medMedicineForm"
+        />
+      </div>
+
+
+      <div class="input-area">
+        <input
+          type="text"
+          placeholder="Company *"
+          formControlName="medCompany"
+        />
+      </div>
+
+      <div class="submit-btn">
+        <button type="submit">Submit Request</button>
+      </div>
+    </form>
+  </div>
+</div>
+

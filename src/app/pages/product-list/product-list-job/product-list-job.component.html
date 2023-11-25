@@ -1,0 +1,178 @@
+<div class="product-main">
+  <div class="container">
+    <div class="product-list-main">
+      <!-- left-side value -->
+      <div class="product-list-left" [class.active]="filterArea">
+        <div class="product-left-main">
+          <div class="left-sec-main">
+            <div class="cross-btn" (click)="onHideFilterArea()">
+              <i class="fas fa-times"></i>
+            </div>
+
+            <!-- one -->
+            <div class="drop-down1">
+              <div
+                class="left-title left-title2 left-title3 left-title4"
+                (click)="onShowFeatureMenu(1)"
+              >
+                <p class="">Location</p>
+
+                <i
+                  class="{{
+                    featureMenu2 === 1
+                      ? 'fas fa-chevron-up'
+                      : 'fas fa-chevron-down'
+                  }}"
+                ></i>
+              </div>
+              <div
+                class="left-sec-all left-sec-all2 left-sec-all3"
+                *ngIf="featureMenu2 === 1"
+              >
+                <div class="left-items left-items2 left-items3 left-sec-pad">
+                  <ul>
+                    <li *ngFor="let data of allSelect">
+                      <div class="left-item">
+                        <div class="check checkAll">
+                          <mat-checkbox class="example-margin">{{
+                            data.name
+                          }}</mat-checkbox>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- two -->
+            <div class="drop-down1">
+              <div
+                class="left-title left-title2 left-title3 left-title4"
+                (click)="onShowFeatureMenu(2)"
+              >
+                <p class="">Job Title</p>
+
+                <i
+                  class="{{
+                    featureMenu2 === 2
+                      ? 'fas fa-chevron-up'
+                      : 'fas fa-chevron-down'
+                  }}"
+                ></i>
+              </div>
+              <div
+                class="left-sec-all left-sec-all2 left-sec-all3"
+                *ngIf="featureMenu2 === 2"
+              >
+                <div class="left-items left-items2 left-items3 left-sec-pad">
+                  <ul>
+                    <li *ngFor="let data of allSelect.slice(0, 4)">
+                      <div class="left-item">
+                        <div class="check checkAll">
+                          <mat-checkbox class="example-margin">{{
+                            data.name
+                          }}</mat-checkbox>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="final-text">
+              <p>You've reached the end</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pro list-main -->
+      <div class="product-list-data-right">
+        <!-- pagination -->
+<!--        <div class="top-pagination">-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--              <a routerLink="/home">Home</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/home">Product List</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+
+        <div class="top-select">
+          <ul>
+            <li>
+              <a
+                routerLink="/product-list/matrimonial-list"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <img src="./assets/images/png/just-married.png" alt="" />
+                <span>Matrimonial</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/product-list/products" routerLinkActive="active">
+                <img src="./assets/images/png/products.png" alt="" />
+                <span>Product</span>
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/product-list/job-list" routerLinkActive="active">
+                <img src="./assets/images/png/job-seeker.png" alt="" />
+                <span>Job</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                routerLink="/product-list/to-let-list"
+                routerLinkActive="active"
+              >
+                <img src="./assets/images/png/to-let.png" alt="" />
+                <span>To-Let</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="total-product-list total-product-list-second">
+            <div class="filter-icon">
+              <i class="fas fa-filter" (click)="onHideFilterArea()"></i>
+            </div>
+          </div>
+        </div>
+        <!-- END! top-select -->
+
+        <div class="all-product-item-cards">
+          <ng-container *ngIf="!isLoading">
+            <ng-container *ngFor="let data of products">
+              <app-job-card [data]="data"></app-job-card>
+            </ng-container>
+          </ng-container>
+        </div>
+        <!-- END! all-product-item-cards -->
+
+        <div class="load-more">
+          <a (click)="onLoadMore()" class="button" [class.loading]="isLoadMore"><i  class="fa-solid fa-spinner"></i>
+            {{totalProducts > products.length ? 'Load More' : 'No More  Post'}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-job-related-data></app-job-related-data>
+
+<app-frequintly-asked-question></app-frequintly-asked-question>
+
+<div
+  class="overlay"
+  (click)="onHideFilterArea()"
+  [class.active]="filterArea"
+></div>

@@ -1,0 +1,31 @@
+<div class="payment-card">
+  <div class="payment-card-left">
+    <div class="card-chart">
+      <svg
+        class="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <div class="payment-card-right">
+    <div class="payment">
+      <h3>Payment</h3>
+      <p>{{ paymentData?.updatedAt | date }}</p>
+    </div>
+
+    <div class="order-id">
+      <h1>Order ID #{{ paymentData?.orderId }}</h1>
+    </div>
+
+    <div class="transaction">
+      <h2>Txn Id:</h2>
+      <p>৳-{{ paymentData?.grandTotal }}</p>
+    </div>
+  </div>
+</div>

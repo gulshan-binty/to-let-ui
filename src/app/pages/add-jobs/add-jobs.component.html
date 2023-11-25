@@ -1,0 +1,199 @@
+<div class="main">
+  <div class="container">
+    <div class="main-data-container">
+      <!-- my-account-title -->
+      <div class="my-post-job">
+        <div class="title-post-job">
+          <h2>Add Your details</h2>
+        </div>
+
+        <div class="section1-form">
+          <div class="form">
+            <form >
+              <div class="form-input-area">
+                <!---form-input-->
+                <div class="form-input">
+                  <mat-form-field  appearance="outline" class="field m-100 first-name-from">
+                    <mat-label>Job Post Name</mat-label>
+                    <input matInput placeholder="Job Post Name" type="text" value="" formControlName="fname" required>
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <mat-form-field  appearance="outline" class="field m-100">
+                  <mat-label>Job Role</mat-label>
+                  <input matInput placeholder="Job Role" type="text" value="" formControlName="lname" required>
+                  <mat-error>This Field is Required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline" class="field m-100">
+                  <mat-label>Job Vacancy</mat-label>
+                  <input matInput placeholder="Job Vacancy" type="text" value="" formControlName="lname" required>
+                  <mat-error>This Field is Required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline" class="field m-100">
+                  <mat-label>Educational Requirement</mat-label>
+                  <input matInput placeholder="Educational Requirement" type="text" value="" formControlName="lname" required>
+                  <mat-error>This Field is Required</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field  appearance="outline" class="field m-100">
+                  <mat-label>Experience Requirements</mat-label>
+                  <input matInput placeholder="Experience Requirements" type="text" value="" formControlName="lname" required>
+                  <mat-error>This Field is Required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline" class="field m-100">
+                  <mat-label>Salary per Month</mat-label>
+                  <input matInput placeholder="Salary per Month" type="text" value="" formControlName="lname" required>
+                  <mat-error>This Field is Required</mat-error>
+                </mat-form-field>
+
+                <div class="form-input">
+                  <mat-form-field appearance="outline" class="first-name-from field m-100 ">
+                    <mat-label>Application deadline</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="birth">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+
+<!--                <div class="form-input-select">-->
+<!--                  <label >Description </label>-->
+<!--                  <div class="input-main">-->
+<!--                    <quill-editor formControlName="description"></quill-editor>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+                <mat-form-field appearance="outline" class="field m-100 first-name-from">
+                  <mat-label>Job Description</mat-label>
+                  <textarea
+                    formControlName="seoDescription"
+                    matInput
+                    placeholder="Enter seo description"
+                    [rows]="6"
+                  ></textarea>
+                </mat-form-field>
+
+
+                <div class="form-input name-from">
+                  <mat-form-field  appearance="outline" class="field m-100 first-name-from">
+                    <mat-label>Current Address</mat-label>
+                    <input matInput placeholder="Enter your  House/Flat" type="text" value="" formControlName="house" required>
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field  appearance="outline" class="field m-100">
+                    <mat-label>Street Address</mat-label>
+                    <input matInput placeholder="Enter your  Street Address" type="text" value="" formControlName="street" >
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+                </div>
+
+
+                <div class="form-input name-from">
+                  <mat-form-field  appearance="outline" class="field m-100 first-name-from">
+                    <mat-label>Category</mat-label>
+                    <input matInput placeholder="Enter your  City/Vill" type="text" value="" formControlName="city" required>
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field  appearance="outline" class="field m-100 first-name-from">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput placeholder="Enter your  Postal Code" type="text" value="" formControlName="postal" >
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field  appearance="outline" class="field m-100">
+                    <mat-label>job Type</mat-label>
+                    <input matInput placeholder="Enter your  Country" type="text" value="" formControlName="country" >
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+                </div>
+
+
+
+
+<!--                <div class="form-input">-->
+<!--                  <mat-form-field appearance="outline" class="field m-100">-->
+<!--                    <mat-label>Social Networking Profile Link</mat-label>-->
+<!--                    <input matInput placeholder="Enter your Social Link" type="email" value="" formControlName="social">-->
+<!--                    <mat-error>This Field is Required</mat-error>-->
+<!--                  </mat-form-field>-->
+<!--                </div>-->
+
+                <!---form-input-->
+                <div class="form-input">
+                  <mat-form-field appearance="outline" class="field m-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Enter your  email" type="email" value="" formControlName="email" required>
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+                </div>
+                <!---form-input-->
+                <div class="form-input">
+                  <mat-form-field appearance="outline" class="field m-100">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Enter your number" type="number" digitOnly value="" formControlName="phoneNo" required>
+                    <mat-error>This Field is Required</mat-error>
+                  </mat-form-field>
+                </div>
+
+<!--                <div class="form-input">-->
+<!--                  <mat-form-field appearance="outline" class="field m-100">-->
+<!--                    <mat-label>Applied Possition</mat-label>-->
+<!--                    <mat-select formControlName="jobTitle" disabled>-->
+<!--                      &lt;!&ndash;                              *ngFor="let data of discountTypes" [value]="data.value"&ndash;&gt;-->
+<!--                      <mat-option >-->
+<!--                        hfghfgh-->
+<!--                      </mat-option>-->
+<!--                    </mat-select>-->
+<!--                    <mat-error>This field is required.</mat-error>-->
+<!--                  </mat-form-field>-->
+<!--                </div>-->
+
+<!--                <div class="form-input">-->
+<!--                  <mat-form-field appearance="outline" class="field m-100">-->
+<!--                    <mat-label>How did you hear about us</mat-label>-->
+<!--                    <mat-select formControlName="hear">-->
+<!--                      <mat-option value="Facebook">Facebook</mat-option>-->
+<!--                      <mat-option value="LinkedIn">LinkedIn</mat-option>-->
+<!--                      <mat-option value="WhatsApp">WhatsApp</mat-option>-->
+<!--                      <mat-option value="Instagram">Instagram</mat-option>-->
+<!--                      <mat-option value="Website">Website</mat-option>-->
+<!--                    </mat-select>-->
+<!--                    <mat-error>This field is required.</mat-error>-->
+<!--                  </mat-form-field>-->
+<!--                </div>-->
+
+<!--                <div class="form-input">-->
+<!--                  <mat-form-field appearance="outline" class="field m-100" >-->
+<!--                    <mat-label>Cover Letter</mat-label>-->
+<!--                    <textarea matInput cols="10" rows="7" placeholder="Your message" formControlName="message" ></textarea>-->
+<!--                    <mat-error>This Field is Required</mat-error>-->
+<!--                  </mat-form-field>-->
+<!--                </div>-->
+
+              </div>
+              <!--submit-btn-->
+              <div class="submit-btn">
+                <button mat-button type="submit">Submit</button>
+              </div>
+            </form>
+            <div class="section1-description">
+              <p>If you wish to contact the head office then please refer to the address below: <br>
+                <b>411/412, Business Tower (Level 5), Khatunganj Road, Chattogram.</b>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- post-job-forms -->
+
+      </div>
+    </div>
+  </div>
+</div>

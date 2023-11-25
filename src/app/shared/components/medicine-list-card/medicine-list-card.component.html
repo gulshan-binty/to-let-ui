@@ -1,0 +1,33 @@
+<div class="medicines-list" [routerLink]="['/products/details', medData?.slug]">
+  <div class="medicines-list-left">
+    <div class="medicines-left-img">
+      <img [src]="medData?.image" alt="" />
+    </div>
+  </div>
+
+  <div class="medicines-list-right">
+    <div class="medicines-name">
+      <a>
+        {{ medData?.name }} {{ medData?.milligram ? medData?.milligram : "" }}
+      </a>
+    </div>
+
+    <div class="medicines-type">
+      <p style="text-transform: capitalize">{{ medData?.category?.name }}</p>
+      <h3>৳ {{ medData?.unitPrice }}</h3>
+    </div>
+
+    <div class="total-tablet">
+      <p>{{ medData?.quantity }} Tablets</p>
+      <h3>
+        <del> ৳ {{ medData?.regularPrice }} </del>
+      </h3>
+    </div>
+
+    <div class="medicines-brand">
+      <p>
+        {{ medData?.brand?.name }}
+      </p>
+    </div>
+  </div>
+</div>

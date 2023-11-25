@@ -1,0 +1,63 @@
+<div class="country-main" (click)="onHideShowPopup()" *ngIf="hideShowPopup">
+  <div class="country-child">
+    <div class="coun-main" (click)="$event.stopPropagation()">
+      <!-- country-in -->
+      <div class="country-in">
+        <!-- cross-btn -->
+        <div class="cross-btn" (click)="onHideShowPopup()">
+          <i class="fas fa-times"></i>
+        </div>
+
+        <div class="browse-items">
+          <div class="browse-item">
+            <a (click)="onHidePopup('matrimonial')">
+              <div class="browse-item-left">
+                <img src="assets/images/png/just-married.png" alt=""/>
+              </div>
+              <div class="browse-item-right">
+                <h1>Matrimonial</h1>
+                <p>{{postCount?.matrimonial ? (postCount?.matrimonial | number: '': 'bn') : 0}} ads</p>
+              </div>
+            </a>
+          </div>
+          <div class="browse-item">
+            <a (click)="onHidePopup('products')">
+              <div class="browse-item-left">
+                <img src="assets/images/png/products.png" alt=""/>
+              </div>
+              <div class="browse-item-right">
+                <h1>Products</h1>
+                <p>{{postCount?.products ? (postCount?.products | number: '': 'bn') : 0}} ads</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="browse-item">
+            <a (click)="onHidePopup('job_post')">
+              <div class="browse-item-left">
+                <img src="assets/images/png/job-seeker.png" alt=""/>
+              </div>
+              <div class="browse-item-right">
+                <h1>Job Post</h1>
+                <p>{{postCount?.job ? (postCount?.job | number: '': 'bn') : 0}} ads</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="browse-item">
+            <a (click)="onHidePopup('to_let')">
+              <div class="browse-item-left">
+                <img src="assets/images/png/renting.png" alt=""/>
+              </div>
+              <div class="browse-item-right">
+                <h1>To-Let</h1>
+                <p>{{postCount?.toLet ? (postCount?.toLet | number: '': 'bn') : 0}} ads</p>
+              </div>
+            </a>
+          </div>
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

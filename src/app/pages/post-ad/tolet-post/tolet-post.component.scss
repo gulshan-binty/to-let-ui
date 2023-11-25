@@ -1,0 +1,58 @@
+@import "src/theme/variables";
+@import "src/theme/exports/form-felid-style-second";
+
+/* --- add-new-product --- */
+.add-new-product {
+  width: 100%;
+  margin: 20px 0;
+
+  form {
+    width: 100%;
+  }
+}
+
+/* --- drop-image-area --- */
+.drop-image-area {
+  box-shadow: 0px 11.028756141662598px 73.5250473022461px 0px #0000000d;
+  border-radius: 5px;
+}
+
+/* --- drop-image-area --- */
+.drop-image-area {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.drop-zone-main {
+  max-width: 530px;
+  margin: auto;
+}
+
+/* --- main-form-area --- */
+.main-form-area {
+  width: 100%;
+  padding: 20px 20px 5px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: $color-white;
+  box-shadow: 0px 11.028756141662598px 73.5250473022461px 0px #0000000d;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  .back-btn {
+    background: #7f7f7f;
+  }
+  .sub-btn {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+

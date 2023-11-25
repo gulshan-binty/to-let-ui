@@ -1,0 +1,398 @@
+<div class="add-new-product">
+  <div class="container">
+    <div class="main-new-data-top">
+      <h1>Tolet Post</h1>
+    </div>
+
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="dataForm" #formElement="ngForm">
+      <div class="drop-image-area">
+        <div class="drop-zone-main">
+          <app-drop-zone (newItemEvent)=" onSelect($event)"
+                         (onDeleteOldImage)="onDeleteOldImage($event)"
+                         [fileNotPicked]="fileNotPicked"
+                         [images]="oldImages"></app-drop-zone>
+        </div>
+      </div>
+      <!-- END! drop-image-area -->
+
+
+      <div class="page-slug">
+        <div class="checkbox">
+          <mat-checkbox
+            [(ngModel)]="autoSlug"
+            (change)="autoGenerateSlug()"
+            [ngModelOptions]="{ standalone: true }"
+            color="primary"
+          >Auto Slug
+          </mat-checkbox
+          >
+        </div>
+      </div>
+
+      <div class="main-form-area">
+        <div class="form-three-grid">
+          <div class="input-box">
+            <p>
+              <label for="Your_Name">To-let Title</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="First_Name"
+                placeholder="To-let Title"
+                formControlName="name"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="slug">Slug</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="slug"
+                placeholder="Slug"
+                formControlName="slug"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+
+
+          <div class="input-box">
+            <p>
+              <label for="bedroom">Bedroom</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="bedroom"
+                formControlName="bedroom"
+                placeholder="Enter Bedroom"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('bedroom').touched && dataForm.get('bedroom').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+
+          <div class="input-box">
+            <p>
+              <label for="bathroom">Bathroom</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="bathroom"
+                formControlName="bathroom"
+                placeholder="Enter Bathroom"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('bathroom').touched && dataForm.get('bathroom').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="balcony">Balcony</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="balcony"
+
+                formControlName="balcony"
+                placeholder="Enter Balcony"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('balcony').touched && dataForm.get('balcony').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="floorNo">Floor No</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="floorNo"
+                digitOnly
+                formControlName="floorNo"
+                placeholder="Enter Floor No"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('floorNo').touched && dataForm.get('floorNo').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="availableFrom">Available From</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="availableFrom"
+                formControlName="availableFrom"
+                placeholder="Enter Available From"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('availableFrom').touched && dataForm.get('availableFrom').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="flatCategory">Flat Category</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="flatCategory"
+                formControlName="flatCategory"
+                placeholder="Enter Flat Category"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('flatCategory').touched && dataForm.get('flatCategory').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="flatType">Property Type</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="flatType"
+                formControlName="flatType"
+                placeholder="Enter Property Type (Flat)"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('flatType').touched && dataForm.get('flatType').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="rentPrice">Flat Rent </label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="rentPrice"
+                formControlName="rentPrice"
+                placeholder="Enter Flat Rent "
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('rentPrice').touched && dataForm.get('rentPrice').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="division">Division</label>
+            </p>
+
+            <div class="input-doc">
+              <select id="division" formControlName="division" (change)="onChangeRegion($event)">
+                <option selected hidden value="">Select...</option>
+                <option *ngFor="let item of divisions" [value]="item?._id">{{item.name}}</option>
+              </select>
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('division').touched && dataForm.get('division').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="area">Area</label>
+            </p>
+
+            <div class="input-doc">
+              <select id="area" formControlName="area" (change)="onChangeArea($event)">
+                <option selected hidden value="">Select...</option>
+                <option *ngFor="let item of area" [value]="item?._id">{{item.name}}</option>
+              </select>
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('area').touched && dataForm.get('area').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+          <div class="input-box">
+            <p>
+              <label for="zone">Zone</label>
+            </p>
+
+            <div class="input-doc">
+              <select id="zone" formControlName="zone">
+                <option selected hidden value="">Select...</option>
+                <option *ngFor="let item of zone" [value]="item?._id">{{item.name}}</option>
+              </select>
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('zone').touched && dataForm.get('zone').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+          <div class="input-box">
+            <p>
+              <label for="address">Address</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="address"
+                formControlName="address"
+                placeholder="Enter address"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="dataForm.get('address').touched && dataForm.get('address').invalid"
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <!-- END! input-box -->
+
+
+        </div>
+        <!-- END! form-four-grid -->
+
+
+        <div class="from-one-grid">
+          <div class="quill-editor-main">
+            <div class="quill-editor-top">
+              <p>
+                <label for="Description">Description</label>
+              </p>
+            </div>
+
+            <div class="quill-editor-bottom">
+              <quill-editor formControlName="description"></quill-editor>
+            </div>
+          </div>
+          <!-- END! quill-editor-main -->
+        </div>
+        <!-- END! from-one-grid -->
+
+
+        <div class="submit-btn">
+          <button class="back-btn" [routerLink]="['/account/orders']" type="button">
+            Back
+          </button>
+          <button class="sub-btn" type="submit">
+            <div class="loader" *ngIf="isLoading"></div>
+
+            <span *ngIf="!isLoading">{{id ? 'Update To-let' : 'Add To-let'}}</span>
+          </button>
+        </div>
+        <!-- END! submit-btn -->
+      </div>
+    </form>
+  </div>
+</div>

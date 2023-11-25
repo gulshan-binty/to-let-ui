@@ -1,0 +1,107 @@
+<div class="main">
+  <div class="container">
+    <div class="main-data-container">
+      <!-- top-toggle-menu -->
+      <div class="top-toggle-menu">
+        <i class="fa-solid fa-bars" (click)="onShowHide()"></i>
+      </div>
+
+      <!-- main-data-child -->
+      <div class="main-data-child">
+        <!-- dashboard-left -->
+        <div class="dashboard-left" [class.active]="showHideToggle">
+          <!-- top-toggle-cross-menu -->
+          <div class="top-toggle-cross-menu">
+            <i class="fa-solid fa-xmark" (click)="onShowHide()"></i>
+          </div>
+
+          <!-- account -->
+          <div class="account-job">
+            <div class="top-text top-text2">
+              <h3>Account</h3>
+            </div>
+
+            <!-- account-nav -->
+            <div class="account-nav">
+              <ul>
+                <li>
+                  <a
+                    routerLink="my-account"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
+                    <span>My Account</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="membership" routerLinkActive="active">
+                    <span>My membership</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="favorite-ads" routerLinkActive="active">
+                    <span>Favorites</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="settings" routerLinkActive="active">
+                    <span> Settings</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="../phone-number" routerLinkActive="active">
+                    <span>Phone Numbers</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <br />
+
+          <!-- Jobs -->
+          <div class="account-job">
+            <div class="top-text">
+              <h3>Jobs</h3>
+            </div>
+            <div class="account-nav">
+              <ul>
+                <li>
+                  <a routerLink="../resume" routerLinkActive="active">
+                    <span>My Profile</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li>
+                <!-- 
+                <li>
+                  <a>
+                    <span>Profile Database</span>
+                    <i class="fa-chevron-right fas"></i>
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- dashboard-right -->
+        <div class="dashboard-right">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+      <!-- overlay-type -->
+      <div
+        class="overlay-type"
+        [class.active]="showHideToggle"
+        (click)="onShowHide()"
+      ></div>
+    </div>
+  </div>
+</div>

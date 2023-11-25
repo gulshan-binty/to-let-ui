@@ -1,0 +1,112 @@
+<div class="main">
+  <div class="container">
+    <!-- main-data-container -->
+    <div class="main-data-container">
+      <!-- top-data -->
+      <div class="top-data">
+        <h4>Welcome <span>Abdullah Al Nomaan!</span> Let's post an ad.</h4>
+      </div>
+
+      <div class="sec2-post-ad">
+        <div class="sec2-post-ad-main">
+          <div class="sec2-post-ad-cards">
+            <!-- card 1 -->
+            <div class="sec2-post-ad-card">
+              <div class="left-img">
+                <img src="./assets/images/png/nika.png" alt="" />
+              </div>
+              <div class="right-data">
+                <h1>Nika</h1>
+                <p>
+                  Do you have something to sell?
+                  <br />
+                  Post your first ad and start making money!
+                </p>
+                <button type="button" routerLink="/add-biodata/general-info">
+                  <span><i class="fas fa-plus-circle"></i></span>
+                  <span>Post your ad for free</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="sec2-post-ad-card sec2-post-ad-card2">
+              <div class="left-img">
+                <img src="./assets/images/png/products.png" alt="" />
+              </div>
+              <div class="right-data">
+                <h1>Products</h1>
+                <p>
+                  Do you have something to sell?
+                  <br />
+                  Post your first ad and start making money!
+                </p>
+                <button type="button" routerLink="/post-ad/product-add">
+                  <span><i class="fas fa-plus-circle"></i></span>
+                  <span>Post your ad for free</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec2-post-ad-cards">
+            <!-- card 1 -->
+            <div class="sec2-post-ad-card">
+              <div class="left-img">
+                <img src="./assets/images/png/job-seeker.png" alt="" />
+              </div>
+
+              <div class="right-data">
+                <h1>Job Post</h1>
+
+                <p>
+                  Do you have something to sell?
+                  <br />
+                  Post your first ad and start making money!
+                </p>
+
+                <button type="button" routerLink="/post-ad/post-job">
+                  <span>
+                    <i class="fas fa-plus-circle"></i>
+                  </span>
+
+                  <span>Post your ad for free</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="sec2-post-ad-card sec2-post-ad-card2">
+              <div class="left-img">
+                <img src="./assets/images/png/renting.png" alt="" />
+              </div>
+              <div class="right-data">
+                <h1>To-Let</h1>
+                <p>
+                  Do you have something to sell?
+                  <br />
+                  Post your first ad and start making money!
+                </p>
+                <button type="button" routerLink="/post-ad/tolet-add">
+                  <span><i class="fas fa-plus-circle"></i></span>
+                  <span>Post your ad for free</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="help-link">
+        <a routerLink="/privacy-policy">Know your posting allowance</a>
+        <a routerLink="/faq">See our posting rules</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- category-popup -->
+<app-category-popup #category_popup></app-category-popup>
+
+<!-- app-job-posts -->
+<app-job-posts #job_posts></app-job-posts>

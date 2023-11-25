@@ -1,0 +1,168 @@
+<div class="main">
+  <div class="container">
+    <div class="main-data-container">
+      <!-- info-title -->
+      <div class="info-title">
+        <h2>Additional Information</h2>
+      </div>
+
+      <!-- form -->
+      <form>
+        <!-- form-group -->
+        <div class="form-group">
+          <!-- form-select -->
+          <div class="form-select">
+            <label for="educational-specialization"
+              >Educational specialization</label
+            >
+            <br />
+            <select name="" id="educational-specialization">
+              <option selected hidden>Educational specialization</option>
+              <option value="male">Art & Humanities</option>
+              <option value="female">Business & Management</option>
+              <option value="other">Accounting</option>
+            </select>
+          </div>
+
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="institute-university">Institute / University</label>
+            <br />
+            <input
+              type="number"
+              id="institute-university"
+              placeholder="Institute / University"
+            />
+          </div>
+        </div>
+
+        <!-- from-single -->
+        <div class="from-single">
+          <!-- form-input -->
+          <div class="form-input">
+            <div class="text-range">
+              <label for="experience">About yourself (optional)</label>
+              <label>0/5000</label>
+            </div>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="About yourself (optional)"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- form-group -->
+        <div class="form-group">
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="current-employer"
+              >Name of the current employer (optional)</label
+            >
+            <br />
+            <input
+              type="text"
+              id="current-employer"
+              placeholder="Name of the current employer (optional)"
+            />
+          </div>
+
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="current-salary"
+              >Current salary (per month) (Tk) (optional)</label
+            >
+            <br />
+            <input
+              type="number"
+              id="current-salary"
+              placeholder="Current salary (per month) (Tk) (optional)"
+            />
+          </div>
+        </div>
+
+        <!-- form-select-group -->
+        <div class="form-group">
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="started-in">Started in</label>
+            <br />
+            <input type="date" id="started-in" placeholder="Started in" />
+          </div>
+
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="notice-period">Notice period (in days)</label>
+            <br />
+            <input
+              type="number"
+              id="notice-period"
+              placeholder="Notice period (in days)"
+            />
+          </div>
+        </div>
+
+        <!-- from-single -->
+        <div class="from-single">
+          <!-- form-input -->
+          <div class="form-input">
+            <div class="text-range">
+              <label for="current-job">About the current job (optional)</label>
+              <label>0/5000</label>
+            </div>
+            <textarea
+              name=""
+              id="current-job"
+              cols="30"
+              rows="10"
+              placeholder="About the current job (optional)"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- form-select-group -->
+        <div class="form-group">
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="linkedIn-profile">LinkedIn profile (optional)</label>
+            <br />
+            <input
+              type="date"
+              id="linkedIn-profile"
+              placeholder="LinkedIn profile (optional)"
+            />
+          </div>
+
+          <!-- form-input -->
+          <div class="form-input">
+            <label for="email">Email (optional)</label>
+            <br />
+            <input type="number" id="email" placeholder="Email (optional)" />
+          </div>
+        </div>
+
+        <div class="from-single-two">
+          <!-- profile-image upload -->
+          <div class="profile-cv-upload">
+            <label for="">CV</label>
+            <br />
+            <button type="button" (click)="file.click()">
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Attach CV</span>
+            </button>
+
+            <input type="file" #file style="display: none" />
+            <p>Supported file formats: DOC, DOCX, PDF, TIFF, JPG, PNG</p>
+          </div>
+        </div>
+
+        <!-- submit-btn -->
+        <div class="submit-btn">
+          <button type="button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

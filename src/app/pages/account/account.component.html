@@ -1,0 +1,19 @@
+<div class="account-dashboard">
+  <div class="account-sidebar" [class.active]="!accountShow">
+    <app-account-sidebar></app-account-sidebar>
+  
+  </div><!-- END ACCOUNT SIDEBAR -->
+
+  <div class="account-information" [class.active]="accountShow">
+    <div class="back-side-bar" *ngIf="backOrder">
+      <ul>
+        <li>
+          <button type="button" (click)="onShoeSideBar()">
+            <i class="fa-solid fa-arrow-left-long"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <router-outlet></router-outlet>
+  </div><!--END ACCOUNT INFORMATION-->
+</div>

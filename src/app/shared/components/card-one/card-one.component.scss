@@ -1,0 +1,108 @@
+@import "src/theme/_variables.scss";
+
+.card-main {
+  a {
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.2s linear;
+    border: 1px solid #0000003c;
+
+    .sub-div-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1f74ff;
+      flex-direction: column;
+      padding: 16px 0;
+
+      .img-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1f74ff;
+
+        img {
+          width: 40%;
+          border-radius: 50%;
+        }
+      }
+
+      .text-div {
+        margin-top: 8%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+          color: white !important;
+          font-size: 22px;
+        }
+      }
+    }
+
+    .sub-div-down {
+      .bio-data-details {
+        padding-top: 12px;
+        border-radius: 10px;
+        max-width: 400px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+          padding: 26px 0;
+          color: #a58c8c;
+        }
+
+        .details {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: center;
+          border-top: 1px solid #626296;
+          width: 90%;
+          p {
+            text-align: center;
+            padding: 10px;
+            color: #000000;
+          }
+          .border {
+            border-left: 1px solid #626296;
+          }
+        }
+        .b1 {
+          border-bottom: 1px solid #626296;
+        }
+      }
+
+      .full-bio-btn-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 0;
+
+        .full-bio-btn {
+          color: #ffffff;
+          background-color: #1f74ff;
+          transform: scale(1.02);
+          border: none;
+          padding: 10px 30px;
+          border-radius: 18px;
+
+          &:hover {
+            border: none;
+            background-color: #119744;
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      border: 1px solid #0000001f;
+      box-shadow: 0px 0px 15px 0px #0000003c;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+/*** font-family ****/
+$font-en-primary: "Rubik", sans-serif;
+$font-en-inter: "Inter", sans-serif;
+$font-en-k2d: "K2D", sans-serif;
+$font-en-secondery: "Rubik", sans-serif;
+$font-en-jost-bold: "Jost-Bold", sans-serif;
+$font-en-jost-medium: "Jost-Medium", sans-serif;
+$font-en-jost-regular: "Jost-Regular", sans-serif;
+$font-en-jost-semibold: "Jost-SemiBold", sans-serif;
+$font-en-mons: "Montserrat", sans-serif;
+$font-en-roboto-light: "Roboto-Light", sans-serif;
+$font-en-roboto-regular: "Roboto-Regular", sans-serif;
+$font-en-roboto-medium: "Roboto-Medium", sans-serif;
+$font-en-roboto-bold: "Roboto-Bold", sans-serif;
+
+/**** containerr ***/
+$container-max-width: 1600px;
+// MAT TOOLBAR, SIDENAV & LIST
+$toolbar-height: 85px;
+$toolbar-height-sm: 65px;
+$mat-sidenav-width: 295px;
+$list-hover-color: #c8d5e4;
+$list-text-color: #4a4a4a;
+$list-text-size: 15.5px;
+
+// BREAKPOINTS
+$max-tablet-width: 899px;
+
+// COLOR
+$color-primary:#1f74ff;
+$esquire-color: #1f74ff;
+$title-text-color: #212833;
+$desc-text-color: #040404;
+$card-bg-color: #ffffff;
+$color-true-black: #000000;
+$deep-ash-color: #191919;
+$light-ash-color: #6f6f6f;
+$very-light-ash-color: #979797;
+$designation-en-color: #939393;
+$light-black-color: #232323;
+$semi-white-color: #dadada;
+$light-title-color: #414141;
+
+$color-light-gray: #656c7b;
+
+$heading-color: #14181a;
+$sub-heading-color: #565765;
+$color-danger: #ff3838;
+$color-border: #0564f8;
+$color-white: #ffffff;
+$color-black: #14181a;
+$text-color: #14181a;
+$color-secondary: #32cd32;
+$color-yellow: #ffab10;
+$icon-default-color: #ffffff;
+$table-bg-color: #fbae01;
+$table-text-color: #6a4a02;
+$table-sm-color: #fe7b03;
+$box-shadow-primary: 0px 8px 16px 0px rgba(0, 0, 0, 0.10196078431372549);
+
+$primary-color: #119744;
+$primary-color-2: #ffc800;
+$text-hed-color: rgb(103, 53, 0);
+$text-home-first-sec-color: #2f3432;
+$text-home-first-sec-color-2: #707676;
+$text-home-first-sec-color-3: #424e4e;
+$footer-text-color: #0074ba;
+$footer-text-hover-color: #0074ba;
+$mobile-menu-color: #afb7ad;
+$product-details-title: #2e054e;
+$product-details-text: #888888;
+
+$border-color: #ddd;
+
+// FONT SIZE
+$font-title-size: 38px;
+$font-title--md-size: 18px;
+$font-dis-size: 16px;
+
+
+//
+///* --- FONT-FAMILY --- */
+//
+//$font-en-primary1: "Poppins", sans-serif;
+//$font-en-primary2: "Roboto", sans-serif;
+//$font-en-primary3: "Open Sans", sans-serif;
+//$font-en-secondary: "Barlow", sans-serif;
+//$font-en-secondary-one: "Baloo Da 2", sans-serif;
+//
+///* --- CONTAINER --- */
+//$container-max-width: 1440px;
+//
+///* --- MAT-TOOLBAR, SIDEBAR & LIST --- */
+//$toolbar-height: 85px;
+//$toolbar-height-sm: 65px;
+//$mat-sidebar-width: 295px;
+//$list-hover-color: #c8d5e4;
+//$list-text-color: #4a4a4a;
+//$list-text-size: 15.5px;
+//
+///* --- BREAKPOINTS --- */
+//$max-tablet-width: 899px;
+//
+///* --- COLOR --- */
+//$color-light-gray: #777777;
+//$heading-color: #39404a;
+//$sub-heading-color: #565765;
+//$color-danger: #ff3838;
+//$color-danger-two: #f81d1d;
+//$color-border: #e8e8e8;
+//
+//$color-white: #fff;
+////$color-black: #484848;
+//$color-yellow: #ffab10;
+//$color-primary-2: #143161;
+//$table-bg-color: #fbae01;
+//$table-text-color: #6a4a02;
+//$table-sm-color: #fe7b03;
+//$box-shadow-primary: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
+//$color-blue: #0e91c4;
+//$color-blue-hover: #097fad;
+//
+///* --- USES-VARIABLE --- */
+////$color-primary: #119744;
+//$color-primary2: #02b748;
+//$color-secondary: #453226;
+//$color-primary-2: #119744;
+//$color-primary-3: #5bb8fa;
+//$color-primary-category-active: #5bb8fa49;
+//$heading-color: #484848;
+//$input-color: #484848;
+//$text-color: #555555;
+//$text-color-two: #888;
+//$text-color-three: #333;
+//$text-color-secondary: #9c9c9c;
+//$side-nav-item-color: #484848;
+//$footer-item-color: #484848;
+//$icon-default-color: #ffffff;
+//$color-white: #fff;
+//$color-white-secondary: #f2f2f2;
+//$btn-single-color: #005692;
+//$black-color: #000;
+//$border-color: #ddd;
+//$z-index: 1;
+//
+//$line-color:#777777;
+//
+///* --- FONT-SIZE --- */
+//$font-title-size: 38px;
+//$font-title--md-size: 18px;
+//$font-dis-size: 16px;

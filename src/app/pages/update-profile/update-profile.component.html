@@ -1,0 +1,62 @@
+
+<section>
+<div class="main-div">
+    <div class="user-account-main">
+
+        <h1>Update Profile</h1>
+        <div class="user-account">
+<!--            <div class="photo-select-main">-->
+<!--                <div class="photo-select">-->
+<!--                    <img [src]="imgPlaceHolder" [alt]="'Picked Image'" (click)="profileImagePicker.click()">-->
+<!--                    <input [hidden]="true" #profileImagePicker type="file" (change)="fileChangeEvent($event)" accept="image/*" />-->
+<!--                    <a class="photo-select-child" (click)="profileImagePicker.click()">-->
+<!--                        <i class="fa-solid fa-pen"></i>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <input type="text" hidden #photo_select />-->
+<!--            </div>-->
+
+            <div class="user-form">
+                <form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+                    <div class="input-area">
+                        <input type="text" placeholder="Enter your name" formControlName="name" value="Md Nomaan" />
+                    </div>
+
+                    <div class="input-area">
+                        <input type="text" placeholder="Enter number" formControlName="phoneNo" readonly />
+                        <p>Mobile number cannot be changed</p>
+                    </div>
+
+                    <div class="input-area">
+                        <input type="text" placeholder="Enter your email" formControlName="email" />
+                    </div>
+
+                    <div class="submit-btn">
+                        <button type="submit">{{isLoading ? "Please wait..." :" Update Profile"}}</button>
+                    </div>
+                </form>
+            </div>
+            <!--        <div class="cash-money">-->
+            <!--            <h2>Medicinedipo Cash (Usable)</h2>-->
+            <!--            <h2>৳{{grandTotal}}</h2>-->
+            <!--        </div>-->
+            <!--        <div class="payment-cards">-->
+            <!--            <ng-container *ngFor="let data of allOrders">-->
+            <!--                <app-payment-card [paymentData]="data"></app-payment-card>-->
+            <!--            </ng-container>-->
+            <!--        </div>-->
+            <!--        <div class="no-more-results">-->
+            <!--            <p>No more results</p>-->
+            <!--        </div>-->
+        </div>
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+
