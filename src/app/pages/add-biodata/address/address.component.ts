@@ -63,8 +63,8 @@ export class AddressComponent implements OnInit, OnDestroy {
     this.dataForm = this.fb.group({
       permanentAddress: [null, Validators.required],
       permanentAddressArea: [null, Validators.required],
-      presentAddress: [!this.permanentAddressCheck ? '' : 'Same Address', Validators.required],
-      presentAddressArea: [!this.permanentAddressCheck ? '' : 'Same Address', Validators.required],
+      presentAddress: [!this.permanentAddressCheck ? '' : 'একই ', Validators.required],
+      presentAddressArea: [!this.permanentAddressCheck ? '' : 'একই ', Validators.required],
       whereDidYouGrowUp: [null, Validators.required]
     })
 

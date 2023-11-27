@@ -221,3 +221,21 @@
 }
 
 
+@media (max-width: 606px) {
+  .select-area {
+    flex-direction: column;
+  }
+  .popup-area{
+    flex-direction: column;
+  }
+  mat-form-field{
+    width: 100%!important;
+  }
+
+  .search-select-country{
+    width: 100%;
+  }
+  .form-input-select{
+    width: 100%;
+  }
+}

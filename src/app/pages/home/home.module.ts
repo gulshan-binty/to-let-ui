@@ -7,6 +7,9 @@ import { CountyPopupModule } from 'src/app/shared/components/county-popup/county
 import { SwiperModule } from 'swiper/angular';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import {MetrimonyPopupModule} from "../../shared/components/metrimony-popup/metrimony-popup.module";
+import {ProfileCardModule} from "../../shared/components/profile-card/profile-card.module";
+import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,7 +20,10 @@ import { HomeComponent } from './home.component';
     SwiperModule,
     MaterialModule,
     CountUpModule,
-    CountyPopupModule
+    CountyPopupModule,
+    MetrimonyPopupModule,
+    ProfileCardModule,
+    SharedModule
   ]
 })
 export class HomeModule {

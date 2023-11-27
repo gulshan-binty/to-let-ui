@@ -21,6 +21,13 @@ import { ProductListProductComponent } from './product-list-product/product-list
 import { ProductListRoutingModule } from './product-list-routing.module';
 import { ProductListToLetComponent } from './product-list-to-let/product-list-to-let.component';
 import { ProductListComponent } from './product-list.component';
+import {
+  ProductCardOneLoaderModule
+} from "../../shared/card-loader/product-card-one-loader/product-card-one-loader.module";
+import {
+  MetromonialCardLoaderModule
+} from "../../shared/card-loader/metromonial-card-loader/metromonial-card-loader.module";
+import {JobCardLoaderModule} from "../../shared/card-loader/job-card-loader/job-card-loader.module";
 
 
 @NgModule({
@@ -31,24 +38,26 @@ import { ProductListComponent } from './product-list.component';
     ProductListJobComponent,
     ProductListToLetComponent
   ],
-  imports: [
-    CommonModule,
-    ProductListRoutingModule,
-    MaterialModule,
-    MatSliderModule,
-    CardOneModule,
-    ViewCardsModule,
-    CustomerReviewModule,
-    FrequintlyAskedQuestionModule,
-    RouterModule,
-    JobCardModule,
-    ToLetCardModule,
-    ProductCardOneModule,
-
-    ProductsRelatedDataModule,
-    MatrimonialRelatedDataModule,
-    JobRelatedDataModule,
-    ToLetRelatedDataModule
-  ]
+    imports: [
+        CommonModule,
+        ProductListRoutingModule,
+        MaterialModule,
+        MatSliderModule,
+        CardOneModule,
+        ViewCardsModule,
+        CustomerReviewModule,
+        FrequintlyAskedQuestionModule,
+        RouterModule,
+        JobCardModule,
+        ToLetCardModule,
+        ProductCardOneModule,
+        ProductsRelatedDataModule,
+        MatrimonialRelatedDataModule,
+        JobRelatedDataModule,
+        ToLetRelatedDataModule,
+        ProductCardOneLoaderModule,
+        MetromonialCardLoaderModule,
+        JobCardLoaderModule
+    ]
 })
 export class ProductListModule { }

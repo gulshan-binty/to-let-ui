@@ -82,7 +82,149 @@
             </p>
           </div>
 
+          <div class="input-box">
+            <p>
+              <label for="measurement">Measurement</label>
+            </p>
 
+            <div class="input-doc">
+              <input
+                type="text"
+                id="measurement"
+                placeholder="example: 16 Feet / 12 Feet"
+                formControlName="measurement"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <div class="input-box">
+            <p>
+              <label for="nearestMarketDistance">Distance to the nearest market?</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="nearestMarketDistance"
+                placeholder="Example: 1 Kilometer"
+                formControlName="nearestMarketDistance"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <div class="input-box">
+            <p>
+              <label for="nearestMosqueDistance">Distance to the nearest mosque?</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="nearestMosqueDistance"
+                placeholder="Example: 0.5 Kilometer"
+                formControlName="nearestMosqueDistance"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <div class="input-box">
+            <p>
+              <label for="floorsInHouse">How many floors is the house?</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="floorsInHouse"
+                placeholder="Example: 5 floors"
+                formControlName="floorsInHouse"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+          <div class="input-box">
+            <p>
+              <label for="whichFloorRented">Which floor will be rented?</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="whichFloorRented"
+                placeholder="Example: 5th floor"
+                formControlName="whichFloorRented"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+
+          <div class="input-box">
+            <p>
+              <label for="howManyCorridors">How many corridors? <span style="color: orangered">*(Required)</span></label>
+            </p>
+            <div class="input-doc">
+              <select name="" formControlName="howManyCorridors">
+                <option value="nothing" >Nothing</option>
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+                <option value="3" >3</option>
+                <option value="4" >4</option>
+
+              </select>
+            </div>
+
+            <p class="required" *ngIf="
+                dataForm.get('status').touched &&
+                dataForm.get('status').invalid
+              ">
+              <i>This field is required</i>
+            </p>
+          </div>
           <div class="input-box">
             <p>
               <label for="bedroom">Bedroom</label>
@@ -107,25 +249,66 @@
 
           <div class="input-box">
             <p>
-              <label for="bathroom">Bathroom</label>
+              <label for="washroom">Washroom</label>
             </p>
 
             <div class="input-doc">
               <input
                 type="text"
-                id="bathroom"
-                formControlName="bathroom"
-                placeholder="Enter Bathroom"
+                id="washroom"
+                formControlName="washroom"
+                placeholder="Enter Washroom"
               />
             </div>
 
             <p
               class="required"
-              *ngIf="dataForm.get('bathroom').touched && dataForm.get('bathroom').invalid"
+              *ngIf="dataForm.get('washroom').touched && dataForm.get('washroom').invalid"
             >
               <i>This felid is required</i>
             </p>
           </div>
+          <div class="input-box">
+            <p>
+              <label for="">Is there always water supply? <span style="color: orangered">*(Required)</span></label>
+            </p>
+            <div class="input-doc">
+              <select name="" formControlName="waterSystem">
+                <option value="yes" >Yes</option>
+                <option value="no" >No</option>
+
+              </select>
+            </div>
+
+            <p class="required" *ngIf="
+                dataForm.get('status').touched &&
+                dataForm.get('status').invalid
+              ">
+              <i>This field is required</i>
+            </p>
+          </div>
+          <div class="input-box">
+            <p>
+              <label for="meterType">Type of meter <span style="color: orangered">*(Required)</span></label>
+            </p>
+            <div class="input-doc">
+              <select name="" formControlName="meterType">
+                <option value="subMeter" >Sub-Meter</option>
+                <option value="mainMeter" >Main Meter</option>
+                <option value="connectedMeter" >Connected Meter</option>
+
+              </select>
+            </div>
+
+            <p class="required" *ngIf="
+                dataForm.get('status').touched &&
+                dataForm.get('status').invalid
+              ">
+              <i>This field is required</i>
+            </p>
+          </div>
+
+
           <!-- END! input-box -->
 
 
@@ -354,7 +537,7 @@
               class="required"
               *ngIf="dataForm.get('address').touched && dataForm.get('address').invalid"
             >
-              <i>This felid is required</i>
+              <i>This field is required</i>
             </p>
           </div>
           <!-- END! input-box -->

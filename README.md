@@ -4,9 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Powered By
 
-Softlab IT
+Queriescare
 # bikroy-ui
 # queriescare-ui
 # queriescare-ui
-# matrimonial-ui
-# to-let-ui

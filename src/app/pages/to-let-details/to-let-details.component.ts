@@ -46,7 +46,7 @@ export class ToLetDetailsComponent implements OnInit, OnDestroy {
         if (res.success) {
           this.product = res.data;
           this.setDefaultImage();
-          console.log('', this.product)
+          console.log('4444', this.product)
         }
       }, error => {
         console.log(error);

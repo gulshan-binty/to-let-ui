@@ -21,7 +21,7 @@ export class GeneralInfoComponent implements OnInit, OnDestroy {
   height: Select[] = HEIGHT;
   complexion: Select[] = COMPLEXION;
   bloodGroup: Select[] = BLOODGROUP;
-
+  selectedType:any;
   id: string;
   private product: Product;
   dataForm: FormGroup;
@@ -78,6 +78,10 @@ export class GeneralInfoComponent implements OnInit, OnDestroy {
       weight: ['', Validators.required],
       bloodGroup: ['', Validators.required],
       nationality: ['', Validators.required],
+      whichFiqhDoYouFollow: ['', Validators.required],
+      descriptionOfProfession: ['', Validators.required],
+      howManyBrides: [null],
+      specificReasonsDivorce: [null],
     })
   }
 
@@ -116,13 +120,18 @@ export class GeneralInfoComponent implements OnInit, OnDestroy {
     history.back();
   }
 
+  maritalMethodData(event: any) {
+    this.selectedType = event.target.value;
+  }
+
+
   /**
    * HTTP REQ HANDLE
    * getProductById()
    * updateProductByUser()
    */
   private getProductById() {
-    const select = 'bioDataType maritalStatus birthDay height complexion weight bloodGroup nationality'
+    const select = 'bioDataType howManyBrides specificReasonsDivorce maritalStatus birthDay height complexion weight bloodGroup nationality whichFiqhDoYouFollow descriptionOfProfession'
     this.subDataOne = this.productService.getProductById(this.id, select).subscribe({
       next: res => {
         if (res.success) {

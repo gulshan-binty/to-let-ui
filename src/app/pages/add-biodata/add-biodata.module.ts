@@ -16,6 +16,8 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { OccupationalInfoComponent } from './occupational-info/occupational-info.component';
 import { ContactComponent } from './contact/contact.component';
 import { PledgeComponent } from './pledge/pledge.component';
+import { ExpectedPartnerComponent } from './expected-partner/expected-partner.component';
+import { MarriageInfoComponent } from './marriage-info/marriage-info.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { PledgeComponent } from './pledge/pledge.component';
     PersonalInfoComponent,
     OccupationalInfoComponent,
     ContactComponent,
-    PledgeComponent
+    PledgeComponent,
+    ExpectedPartnerComponent,
+    MarriageInfoComponent,
   ],
   imports: [
     CommonModule,

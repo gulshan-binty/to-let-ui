@@ -17,7 +17,8 @@ export class OrdersComponent implements OnInit {
   selectedStatus: number = 0;
   allProducts: Product[] = [];
   filter = null;
-
+  // Loading
+  isLoading = true;
   //Subscriptions
   private subOrderData: Subscription;
   private subReload: Subscription;
@@ -81,11 +82,13 @@ export class OrdersComponent implements OnInit {
 
     this.subDataOne = this.productService.getAllProductsByUser(filterData)
       .subscribe(res => {
+          this.isLoading = false;
           this.allProducts = res.data;
           console.log('this.allProducts', this.allProducts)
         },
         (err) => {
           if (err) {
+            this.isLoading = false;
             console.log(err);
           }
         }

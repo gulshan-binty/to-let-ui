@@ -6,9 +6,9 @@
       </div>
       <div class="new-section-cards">
         <ul>
-          <ng-container *ngFor="let data of [1, 0, 0, 0, 0, 0]">
+          <ng-container *ngFor="let data of faqs">
             <li>
-              <app-frequently-qa-card></app-frequently-qa-card>
+              <app-frequently-qa-card [data]="data"></app-frequently-qa-card>
             </li>
           </ng-container>
         </ul>

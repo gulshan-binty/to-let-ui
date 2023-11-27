@@ -47,6 +47,10 @@ export class UserService {
     return this.httpClient.post<{ data: { otp: boolean }, message: string, success: boolean }>(API_URL_USER + 'check-user-for-registration', {phoneNo});
   }
 
+  userSignup(data: any) {
+    return this.httpClient.post<{ data: { success: boolean, message: string }, message: string, success: boolean }>(API_URL_USER + 'signup', data);
+  }
+
   resetUserPassword(data: string) {
     return this.httpClient.put<{ message: string, success: boolean }>(API_URL_USER + 'reset-user-password', data);
   }

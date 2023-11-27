@@ -42,7 +42,14 @@
   <!-- END! order-top -->
 
   <div class="order-cards">
-    <ul>
+    <ul *ngIf="isLoading">
+      <li *ngFor="let product of  [1,2,3,4]">
+        <app-user-product-card-loader
+          ></app-user-product-card-loader>
+      </li>
+    </ul>
+
+    <ul *ngIf="!isLoading">
       <li *ngFor="let data of allProducts">
         <app-order-card [data]="data"></app-order-card>
       </li>

@@ -487,96 +487,96 @@ ngOnDestroy() {
   allSelect: any[] = [
     {
       id: '1',
-      name: 'Child safety locks (264)'
+      name: 'Check (1)'
     },
-    {
-      id: '2',
-      name: 'Central locking (259)'
-    },
-    {
-      id: '3',
-      name: 'Power steering (251)'
-    },
-    {
-      id: '4',
-      name: 'Integrated (in-dash) music system (228)'
-    },
-    {
-      id: '5',
-      name: 'Power windows (177)'
-    },
-    {
-      id: '6',
-      name: 'Rear AC vent (121)'
-    },
-    {
-      id: '7',
-      name: 'Rear parking sensor (128)'
-    },
-    {
-      id: '8',
-      name: 'Rear camera (143)'
-    },
-    {
-      id: '9',
-      name: 'GPS navigation system (138)'
-    },
-    {
-      id: '10',
-      name: 'Airbags (201)'
-    },
-    {
-      id: '11',
-      name: 'ABS (235)'
-    },
-  ]
-
-
-  allPrice: any[] = [
-    {
-      id: '1',
-      name: '2000000 (264)'
-    },
-    {
-      id: '2',
-      name: '400000 (259)'
-    },
-    {
-      id: '3',
-      name: '5000000 (251)'
-    },
-    {
-      id: '4',
-      name: '4000000 (228)'
-    },
-    {
-      id: '5',
-      name: 'Power windows (177)'
-    },
-    {
-      id: '6',
-      name: 'Rear AC vent (121)'
-    },
-    {
-      id: '7',
-      name: 'Rear parking sensor (128)'
-    },
-    {
-      id: '8',
-      name: 'Rear camera (143)'
-    },
-    {
-      id: '9',
-      name: 'GPS navigation system (138)'
-    },
-    {
-      id: '10',
-      name: 'Airbags (201)'
-    },
-    {
-      id: '11',
-      name: 'ABS (235)'
-    },
+  //   {
+  //     id: '2',
+  //     name: 'Central locking (259)'
+  //   },
+  //   {
+  //     id: '3',
+  //     name: 'Power steering (251)'
+  //   },
+  //   {
+  //     id: '4',
+  //     name: 'Integrated (in-dash) music system (228)'
+  //   },
+  //   {
+  //     id: '5',
+  //     name: 'Power windows (177)'
+  //   },
+  //   {
+  //     id: '6',
+  //     name: 'Rear AC vent (121)'
+  //   },
+  //   {
+  //     id: '7',
+  //     name: 'Rear parking sensor (128)'
+  //   },
+  //   {
+  //     id: '8',
+  //     name: 'Rear camera (143)'
+  //   },
+  //   {
+  //     id: '9',
+  //     name: 'GPS navigation system (138)'
+  //   },
+  //   {
+  //     id: '10',
+  //     name: 'Airbags (201)'
+  //   },
+  //   {
+  //     id: '11',
+  //     name: 'ABS (235)'
+  //   },
+  // ]
+  //
+  //
+  // allPrice: any[] = [
+  //   {
+  //     id: '1',
+  //     name: '2000000 (264)'
+  //   },
+  //   {
+  //     id: '2',
+  //     name: '400000 (259)'
+  //   },
+  //   {
+  //     id: '3',
+  //     name: '5000000 (251)'
+  //   },
+  //   {
+  //     id: '4',
+  //     name: '4000000 (228)'
+  //   },
+  //   {
+  //     id: '5',
+  //     name: 'Power windows (177)'
+  //   },
+  //   {
+  //     id: '6',
+  //     name: 'Rear AC vent (121)'
+  //   },
+  //   {
+  //     id: '7',
+  //     name: 'Rear parking sensor (128)'
+  //   },
+  //   {
+  //     id: '8',
+  //     name: 'Rear camera (143)'
+  //   },
+  //   {
+  //     id: '9',
+  //     name: 'GPS navigation system (138)'
+  //   },
+  //   {
+  //     id: '10',
+  //     name: 'Airbags (201)'
+  //   },
+  //   {
+  //     id: '11',
+  //     name: 'ABS (235)'
+  //   },
   ]
 
 }

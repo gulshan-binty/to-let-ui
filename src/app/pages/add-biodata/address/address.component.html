@@ -7,34 +7,55 @@
             <div class="circle-top">
               <div class="circle-top-child active">1</div>
             </div>
-            <p class="text">General Info</p>
+            <p class="text">সাধারণ তথ্য</p>
           </li>
 
           <li routerLink="/add-biodata/address" [queryParamsHandling]="'merge'">
             <div class="circle-top">
               <div class="circle-top-child active">2</div>
             </div>
-            <p class="text">Address</p>
+            <p class="text">ঠিকানা</p>
           </li>
 
           <li routerLink="/add-biodata/educational-qualification" [queryParamsHandling]="'merge'">
             <div class="circle-top">
               <div class="circle-top-child">3</div>
             </div>
-            <p class="text">Educational Qualification</p>
+            <p class="text">শিক্ষাগত যোগ্যতা</p>
           </li>
 
-
-          <li routerLink="/add-biodata/pledge" [queryParamsHandling]="'merge'">
+          <li routerLink="/add-biodata/family-info" [queryParamsHandling]="'merge'">
             <div class="circle-top">
               <div class="circle-top-child">4</div>
             </div>
-            <p class="text">Pledge</p>
+            <p class="text">পারিবারিক তথ্য</p>
+          </li>
+
+
+          <li routerLink="/add-biodata/life-partner" [queryParamsHandling]="'merge'">
+            <div class="circle-top">
+              <div class="circle-top-child">5</div>
+            </div>
+            <p class="text">প্রত্যাশিত জীবনসঙ্গী</p>
+          </li>
+
+          <li routerLink="/add-biodata/pledge" [queryParamsHandling]="'merge'">
+            <div class="circle-top">
+              <div class="circle-top-child">6</div>
+            </div>
+            <p class="text">ব্যক্তিগত তথ্য</p>
+          </li>
+
+          <li routerLink="/add-biodata/marriage-info" [queryParamsHandling]="'merge'">
+            <div class="circle-top">
+              <div class="circle-top-child">7</div>
+            </div>
+            <p class="text">বিয়ে সম্পর্কিত</p>
           </li>
 
           <li routerLink="/add-biodata/contact" [queryParamsHandling]="'merge'">
             <div class="circle-top">
-              <div class="circle-top-child">5</div>
+              <div class="circle-top-child">8</div>
             </div>
             <p class="text">Contact</p>
           </li>
@@ -49,7 +70,7 @@
   <div class="container">
     <div class="main-bio-data-form">
       <div class="main-bio-data-top">
-        <h1>Address</h1>
+        <h1>ঠিকানা</h1>
       </div>
 
       <div class="add-new-product">
@@ -59,7 +80,7 @@
               <div class="input-box">
                 <p>
                   <label for="Permanent_Address">
-                    Permanent Address
+                    স্থায়ী ঠিকানা
                     <span>*</span>
                   </label>
                 </p>
@@ -68,7 +89,7 @@
                   <input
                     type="text"
                     id="Permanent_Address"
-                    placeholder="Address"
+                    placeholder="ঠিকানা"
                     formControlName="permanentAddress"
                   />
                 </div>
@@ -88,13 +109,12 @@
                     type="text"
                     id="please-enter"
                     formControlName="permanentAddressArea"
-                    placeholder="Please enter your area name"
+                    placeholder="আপনার এলাকার নাম লিখুন"
                   />
                 </div>
 
                 <p class="extra-text">
-                  Write the name of the village or area without entering the
-                  house number. Example- Mirpur 10, Baghmara.
+                  বাড়ির নম্বর না দিয়ে গ্রাম বা এলাকার নাম লিখুন। উদাহরণ- মিরপুর ১০, বাগমারা।
                 </p>
               </div>
               <!-- END! input-box -->
@@ -102,7 +122,7 @@
               <div class="input-checkbox">
                 <p>
                   <label for="Permanent_Address">
-                    Permanent Address
+                    বর্তমান ঠিকানা
                     <span>*</span>
                   </label>
                 </p>
@@ -115,7 +135,7 @@
                   />
 
                   <label for="remember" (click)="onPermanentAddressCheck()"
-                    >Same as permanent address</label
+                    >স্থায়ী ও বর্তমান ঠিকানা একই </label
                   >
                 </div>
 
@@ -137,7 +157,7 @@
                     <input
                       type="text"
                       id="Present_Address"
-                      placeholder="Address"
+                      placeholder="ঠিকানা"
                       formControlName="presentAddress"
                     />
                   </div>
@@ -157,7 +177,7 @@
                     <input
                       type="text"
                       id="Peresent_Address"
-                      placeholder="Address"
+                      placeholder="ঠিকানা"
                       formControlName="presentAddressArea"
                     />
                   </div>
@@ -173,8 +193,7 @@
                 </div>
 
                 <p class="extra-text">
-                  Write the name of the village or area without entering the
-                  house number. Example- Mirpur 10, Baghmara.
+                  বাড়ির নম্বর না দিয়ে গ্রাম বা এলাকার নাম লিখুন। উদাহরণ- মিরপুর ১০, বাগমারা।
                 </p>
               </div>
               <!-- END! input-checkbox -->
@@ -182,7 +201,7 @@
               <div class="input-box">
                 <p>
                   <label for="growUp">
-                    Where did you grow up?
+                    আপনি কোথায় বড় হয়েছেন?
                     <span>*</span>
                   </label>
                 </p>
@@ -191,7 +210,7 @@
                   <input
                     type="text"
                     id="growUp"
-                    placeholder="Grow up"
+                    placeholder=""
                     formControlName="whereDidYouGrowUp"
                   />
                 </div>

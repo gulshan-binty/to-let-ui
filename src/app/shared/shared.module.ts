@@ -5,21 +5,34 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { OutSideClickDirective } from './directives/out-side-click.directive';
 import { ConfirmDialogComponent } from './ui/confirm-dialog/confirm-dialog.component';
+import {ImageLoadErrorDirective} from "./directives/image-load-error.directive";
+import { CongratulationDialogComponent } from './ui/congratulation-dialog/congratulation-dialog.component';
+import { FailDialogComponent } from './ui/fail-dialog/fail-dialog.component';
+import {RouterLink} from "@angular/router";
+import {SocialShareComponent} from "./ui/social-share/social-share.component";
 
 @NgModule({
   declarations: [
     OutSideClickDirective,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ImageLoadErrorDirective,
+    ImageLoadErrorDirective,
+    CongratulationDialogComponent,
+    FailDialogComponent,
+    SocialShareComponent
   ],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatSnackBarModule,
-  ],
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        RouterLink,
+    ],
   exports: [
     OutSideClickDirective,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ImageLoadErrorDirective,
+    ImageLoadErrorDirective
   ],
   providers: []
 })

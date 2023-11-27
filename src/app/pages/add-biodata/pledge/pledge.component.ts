@@ -62,9 +62,15 @@ export class PledgeComponent implements OnInit {
 
   initialForm() {
     this.dataForm = this.fb.group({
-      submitBiodataWeb: ['', Validators.required],
-      infoTrue: ['', Validators.required],
-      agree: [null, Validators.required],
+      song: ['', Validators.required],
+      facebook: ['', Validators.required],
+      salat: [null, Validators.required],
+      physicalDiseases: [null, Validators.required],
+      // pordha: [null, Validators.required],
+      readQuranSuddho: [null, Validators.required],
+      readQuranDaily: [null, Validators.required],
+      gunaho: [null, Validators.required],
+      // motamot: [null, Validators.required],
     });
   }
 
@@ -84,20 +90,25 @@ export class PledgeComponent implements OnInit {
 
 
   onFormSubmit() {
+    console.log("dddddd",this.dataForm.value)
     if (this.dataForm.valid) {
       this.isLoader = true;
       if (this.id) {
         this.updateProductByUser();
       } else {
+
+        console.log("pledge")
         this.storageService.storeDataToSessionStorage('MATRIMONIAL_GENERAL_PLEDGE', this.dataForm.value)
         setTimeout(() => {
           this.isLoader = false;
-          this.router.navigate(['/add-biodata/contact'], {queryParamsHandling: 'merge'});
+          this.router.navigate(['/add-biodata/marriage-info'], {queryParamsHandling: 'merge'});
         }, 500);
       }
 
     } else {
       this.dataForm.markAllAsTouched();
+
+      console.log("kkkkk")
     }
   }
 
@@ -112,7 +123,7 @@ export class PledgeComponent implements OnInit {
    * updateProductByUser()
    */
   private getProductById() {
-    const select = 'submitBiodataWeb infoTrue agree'
+    const select = 'motamot gunaho readQuranDaily readQuranSuddho pordha physicalDiseases salat facebook song'
     this.subDataOne = this.productService.getProductById(this.id, select).subscribe({
       next: res => {
         if (res.success) {
@@ -132,7 +143,7 @@ export class PledgeComponent implements OnInit {
         if (res.success) {
           this.uiService.success(res.message);
           this.isLoader = false;
-          this.router.navigate(['/add-biodata/contact'], {queryParamsHandling: 'merge'});
+          this.router.navigate(['/add-biodata/marriage-info'], {queryParamsHandling: 'merge'});
         }
       },
       error: err => {

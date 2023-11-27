@@ -1,0 +1,56 @@
+@import'src/theme/variables';
+.congrs-dialog{
+    display: block;
+    padding: 30px 15px;
+    text-align: center;
+
+    span{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: red;
+        border-radius: 50%;
+        justify-content: center;
+        margin: auto;
+        border: 1px solid red;
+        margin-bottom: 15px;
+    }
+    h3{
+        color: red;
+        font-family: $font-en-primary;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 22px;
+        margin-bottom: 10px!important;
+        position: relative;
+        display: inline-block;
+
+    }
+
+    p{
+        color: #333;
+        font-family: $font-en-primary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        display: block;
+        margin-bottom: 15px!important;
+    }
+    button{
+        padding: 8px 12px;
+        background-color: red;
+        color: $color-white;
+        outline: none;
+        font-family: $font-en-primary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        border: 1px solid red;
+        display: block;
+        max-width: 150px;
+        width: 100%;
+        margin: auto;
+        border-radius: 5px;
+    }
+}

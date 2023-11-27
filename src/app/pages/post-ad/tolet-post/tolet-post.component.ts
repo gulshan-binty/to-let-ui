@@ -13,6 +13,7 @@ import {AreaService} from "../../../services/common/area.service";
 import {ZoneService} from "../../../services/common/zone.service";
 import {ActivatedRoute, Router} from '@angular/router';
 import {Product} from '../../../interfaces/common/product.interface';
+import {PRODUCT_STATUS} from "../../../core/utils/app-data";
 
 @Component({
   selector: 'app-tolet-post',
@@ -85,8 +86,10 @@ export class ToletPostComponent implements OnInit {
       name: [null, Validators.required],
       slug: [null],
       bedroom: [null, Validators.required],
-      bathroom: [null],
+      washroom: [null],
       balcony: [null],
+      measurement: [null],
+      waterSystem: [null],
       floorNo: [null],
       availableFrom: [null],
       flatCategory: [null],
@@ -98,8 +101,14 @@ export class ToletPostComponent implements OnInit {
       rentPrice: [null],
       address: [null, Validators.required],
       description: [null],
+      meterType: [null],
+      nearestMarketDistance: [null],
+      nearestMosqueDistance: [null],
+      floorsInHouse: [null],
+      whichFloorRented: [null],
+      howManyCorridors: [null],
       postType: 'to_let',
-      status: 'publish',
+      status: 'draft',
 
     });
   }
@@ -417,4 +426,5 @@ export class ToletPostComponent implements OnInit {
 
   }
 
+  protected readonly PRODUCT_STATUS = PRODUCT_STATUS;
 }

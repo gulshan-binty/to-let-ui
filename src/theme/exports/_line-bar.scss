@@ -16,6 +16,17 @@
   overflow-x: auto;
 }
 
+.line-bar-child::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+  background-color: #aaa; /* or add it to the track */
+}
+
+line-bar-child::-webkit-scrollbar-track {
+  background-color: rgba(100, 100, 100, .5);
+  width: 15px;
+}
+
 /* --- line-bar-child --- */
 .line-bar-child {
   max-width: 800px;

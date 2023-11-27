@@ -4,12 +4,18 @@
 
 export const environment = {
   production: true,
-  name: 'Softlab IT',
-  domain: 'softlabit.com',
+  name: 'queriescare',
+  domain: 'queriescare.com',
 
-  apiBaseLink: 'http://localhost:3000',
-  ftpBaseLink: 'http://localhost:3000',
+  // apiBaseLink: 'http://192.168.0.160:4001',
+  // ftpBaseLink: 'http://192.168.0.160:4001',
 
+  // apiBaseLink: 'http://localhost:4006',
+  // ftpBaseLink: 'http://localhost:4006',
+
+
+  apiBaseLink: 'https://api.queriescare.com',
+  ftpBaseLink: 'https://api.queriescare.com',
   appBaseUrl: '/',
   userBaseUrl: 'account',
   newUserBaseUrl: 'update-profile',
