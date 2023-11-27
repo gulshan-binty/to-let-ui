@@ -16,7 +16,7 @@
               <i class="fa-solid fa-bars"></i>
             </div>
             <a routerLink="/home">
-              <img src="./assets/images/logo/logo-fff.png" alt=""/>
+              <img src="./assets/images/png/logo-slogan-fff.png" alt="QC-logo"/>
             </a>
           </div>
           <div class="left-header-top-btn">
@@ -29,7 +29,7 @@
               <li class="lang">
                 <button class="lang-btn">
                   <div class="en">
-                    <span>English</span>
+                    <span>Bangla</span>
                   </div>
                 </button>
               </li>
@@ -58,19 +58,37 @@
             <!--                <span>Chat</span>-->
             <!--              </button>-->
             <!--            </li>-->
+
+            <li  class="user1">
+              <button class="special" routerLink="/pricing">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <span class="management">Pricing</span>
+              </button>
+            </li>
+
+            <li  class="management-header">
+              <button class="special" routerLink="/management-panel">
+<!--                <i class="fas fa-user-alt"></i>-->
+                <i class="fa-solid fa-people-group"></i>
+                <span class="management">Management Panel</span>
+              </button>
+            </li>
+
             <li class="user">
               <!--              <button class="special" (click)="showLogin()">-->
               <button class="special" routerLink="/login">
                 <i class="fas fa-user-alt"></i>
-                <span>{{userService.getUserStatus() ? 'Account' : 'Login'}}</span>
+                <span class="login">{{userService.getUserStatus() ? 'Account' : 'Login'}}</span>
               </button>
             </li>
+
             <li *ngIf="false" class="user">
               <button class="special" routerLink="/my">
                 <i class="fas fa-user-alt"></i>
                 <span>My Account</span>
               </button>
             </li>
+
             <li class="ad">
               <div class="add-btn" routerLink="/post-ad">
                 <div class="addd">
@@ -100,7 +118,7 @@
 
           <button (click)="openDialog()" type="button">
             <span><i class="fas fa-map-marker-alt"></i></span>
-            <span>All Location</span>
+            <span>All Locations</span>
           </button>
         </div>
         <!----search-box-->
@@ -174,7 +192,7 @@
     <div class="mb-logo">
       <a href="">
         <img
-          src="../../../assets/images/logo/primary-logo-white-wide.png"
+          src="../../../assets/images/logo/logo-slogan-fff.png"
           alt=""
         />
       </a>
@@ -187,7 +205,7 @@
   <div class="mb-bottom">
     <ul>
       <li>
-        <a href="#">
+        <a routerLink="/product-list/matrimonial-list" (click)="onShowMobileMenu()">
           <span
           ><svg viewBox="0 0 60 60" class="svg-wrapper--8ky9e">
               <path
@@ -197,6 +215,19 @@
           <small>All ads in queriescare</small>
         </a>
       </li>
+
+      <li >
+        <a routerLink="/management-panel" (click)="onShowMobileMenu()">
+          <!--                <i class="fas fa-user-alt"></i>-->
+          <span
+          ><svg viewBox="0 0 60 60" class="svg-wrapper--8ky9e">
+              <path
+                d="M36.723 34.65c1.637 1.243 6.495 2.38 10.397 4.484 1.286.694 1.396 1.724 1.492 2.345.097.622.3 7.404.3 7.404H11s.204-6.782.3-7.404c.097-.621.105-1.565 1.493-2.345 3.866-2.169 8.738-3.169 10.375-4.412.65-.494.482-1.292.627-2.058.144-.766.626-.24.626-1.052 0-.819.153-.676.063-1.763-.078-.948-1.386-1.049-1.46-2.821-.015-.374-.674-.623-1.06-1.197-.385-.574-1.01-1.579-1.01-2.727s.24-.862.24-2.297-.053-2.267.771-5.598c.308-1.243 1.354-2.7 2.402-3.359 1.413-.888.845.296 5.593-.756 3.077-.682 7.898 2.488 7.946 5.024.065 3.43.276 3.172.48 4.593.145 1.005.434.766.434 1.914 0 1.15-.626 2.584-1.011 3.158-.385.575-.742 1.496-.792 1.866-.252 1.917-1.54 1.474-1.593 2.501-.05.938-.111.818.03 1.549.118.61.476-.04.62.726.146.765.045 1.89.649 2.225"
+              ></path></svg
+          ></span>
+          <small>Management Panel</small>
+        </a>
+      </li>
     </ul>
   </div>
 
@@ -204,7 +235,7 @@
   <div class="mb-bottom">
     <ul>
       <li>
-        <a href="#">
+        <a routerLink="/login" (click)="onShowMobileMenu()">
           <span
           ><svg viewBox="0 0 60 60" class="svg-wrapper--8ky9e">
               <path

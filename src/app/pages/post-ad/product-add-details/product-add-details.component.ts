@@ -28,6 +28,7 @@ export class ProductAddDetailsComponent implements OnInit, OnDestroy {
   product: Product;
   autoSlug = true;
   isLoading: boolean = false;
+  selectedType: string;
 
   //Files
   files: File[] = [];
@@ -91,8 +92,11 @@ export class ProductAddDetailsComponent implements OnInit, OnDestroy {
       discountType: [null],
       discountAmount: [null],
       sku: [null],
-      status: ['publish', Validators.required],
+      status: ['draft', Validators.required],
       description: [null],
+      waterSystem: [null],
+      productType: [null],
+      howLongUsed: [null],
       postType: ['products'],
 
     });
@@ -116,6 +120,12 @@ export class ProductAddDetailsComponent implements OnInit, OnDestroy {
       this.oldImages = this.product.images;
     }
   }
+
+
+  productCategory(event: any) {
+    this.selectedType = event.target.value;
+  }
+
 
   onFormSubmit() {
 

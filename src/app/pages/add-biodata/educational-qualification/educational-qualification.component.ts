@@ -2,7 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Select} from "../../../interfaces/core/select";
-import {EDUCATIONMETHOD, GROUP, HEIGHT_EDUCATION, ISLAMIC_TITLE, RESULT} from "../../../core/db/all-info.db";
+import {
+  EDUCATIONMETHOD,
+  GROUP,
+  HEIGHT_EDUCATION,
+  HEIGHT_EDUCATION1,
+  ISLAMIC_TITLE, LOW_EDUCATION1, Madrasha_EDUCATION1,
+  RESULT
+} from "../../../core/db/all-info.db";
 import {StorageService} from '../../../services/core/storage.service';
 import {Product} from '../../../interfaces/common/product.interface';
 import {Subscription} from 'rxjs';
@@ -16,13 +23,16 @@ import {UiService} from '../../../services/core/ui.service';
   styleUrls: ['./educational-qualification.component.scss']
 })
 export class EducationalQualificationComponent implements OnInit {
-
-  educationMethod: Select[] = EDUCATIONMETHOD;
+  underSscEducation: Select[] = LOW_EDUCATION1;
+  educationMethod: any[] = HEIGHT_EDUCATION1;
   heightEducation: Select[] = HEIGHT_EDUCATION;
+  madrashaEducation: Select[] = Madrasha_EDUCATION1;
+  heightEducationData: any[] = [];
   groupData: Select[] = GROUP;
   resultData: Select[] = RESULT;
   islamicTitles: Select[] = ISLAMIC_TITLE;
-
+  selectedType: string;
+  selectedEducationType: string;
   id: string;
   private product: Product;
   dataForm: FormGroup;
@@ -54,6 +64,44 @@ export class EducationalQualificationComponent implements OnInit {
     })
   }
 
+  educationMethodData(event: any) {
+    this.selectedType = event.target.value;
+    this.heightEducationData = this.educationMethod.filter(item =>
+          item.name === this.selectedType,
+        );
+  }
+
+  isValue= false;
+
+  heightEducationValue(event: any) {
+    this.selectedEducationType = event.target.value;
+
+    if(this.selectedEducationType !== 'এস.এস.সি এর নিচে'){
+      this.isValue = true;
+    }
+
+    if(this.selectedEducationType !== 'এস.এস.সি এর নিচে'){
+      this.isValue = true;
+    }
+
+  }
+
+
+  // private filterCommittee(data: any) {
+  //   this.heightEducationData = this.educationMethod.filter(item =>
+  //     item.name === this.selectedType,
+  //   );
+  //   console.log('this.dddd',this.heightEducationData)
+  //   // console.log()
+  // }
+
+
+  // private filterCommittee(data: any) {
+  //   this.committee = this.allCommittee.filter(item =>
+  //     item.name === data,
+  //   );
+  // }
+
 
 
   /**
@@ -68,16 +116,51 @@ export class EducationalQualificationComponent implements OnInit {
 
   initialForm() {
     this.dataForm = this.fb.group({
-      yourEducationMethod: ['', Validators.required],
-      highestEducation: ['', Validators.required],
-      sscPassingYear: [null, Validators.required],
-      sscGroup: ['', Validators.required],
-      sscResult: ['', Validators.required],
-      diplomaSubject: [null, Validators.required],
-      diplomaInstitution: [null, Validators.required],
-      diplomaPassingYear: [null, Validators.required],
+      yourEducationMethod: [null],
+      highestEducation: [null],
+      sscPassingYear: [null],
+      sscGroup: [null],
+      sscResult: [null],
+      diplomaSubject: [null],
+      diplomaInstitution: [null],
+      diplomaPassingYear: [null],
       otherEducationalQualifications: [null],
       islamicEducationalTitles: [null],
+      underSSC: [null],
+      konYearDiploma: [null],
+      snakottoBisoi: [null],
+      snakonttoPassingYear: [null],
+      snatokPassingYear: [null],
+      snatokInstitute: [null],
+      snatokBisoi: [null],
+      doctoretPassingYear: [null],
+      doctoretInstitute: [null],
+      doctoretBisoi: [null],
+      ebadahoEducation: [null],
+      ebadahoFolafol: [null],
+      ebadahoPassingYear: [null],
+      taksuPassingYear: [null],
+      taksuEducation: [null],
+      taksuFolafol: [null],
+      taksuInstitution: [null],
+      takmilPassingYear: [null],
+      takmilFolafol: [null],
+      takmilEducation: [null],
+      fojilotPassingYear: [null],
+      fojilotFolafol: [null],
+      fojilotEducation: [null],
+      saniPassingYear: [null],
+      saniFolafol: [null],
+      saniEducation: [null],
+      muftiPassingYear: [null],
+      muftiFolafol: [null],
+      muftiEducation: [null],
+      passingYearHSC: [null],
+      groupHSC: [null],
+      resultHSC: [null],
+      snakottoBosor: [null],
+      snakottoInstiute: [null],
+
     });
   }
 
@@ -103,9 +186,10 @@ export class EducationalQualificationComponent implements OnInit {
         this.storageService.storeDataToSessionStorage('MATRIMONIAL_GENERAL_EDUCATION', this.dataForm.value)
 
         setTimeout(() => {
+          console.log(this.dataForm.value);
           this.isLoader = false;
           console.log(this.dataForm.value);
-          this.router.navigate(['/add-biodata/pledge'], {queryParamsHandling: 'merge'});
+          this.router.navigate(['/add-biodata/family-info'], {queryParamsHandling: 'merge'});
         }, 500);
       }
 
@@ -126,7 +210,7 @@ export class EducationalQualificationComponent implements OnInit {
    * updateProductByUser()
    */
   private getProductById() {
-    const select = 'yourEducationMethod highestEducation sscPassingYear sscGroup sscResult diplomaSubject diplomaInstitution diplomaPassingYear otherEducationalQualifications islamicEducationalTitles'
+    const select = 'konYearDiploma snatokBisoi snatokInstitute snatokPassingYear snakonttoPassingYear snakottoBisoi snakottoInstiute snakottoBosor underSSC passingYearHSC resultHSC groupHSC doctoretInstitute doctoretBisoi ebadahoEducation ebadahoFolafol ebadahoPassingYear muftiEducation muftiFolafol fojilotEducation takmilPassingYear taksuInstitution taksuEducation taksuFolafol taksuPassingYear doctoretPassingYear fojilotFolafol fojilotPassingYear takmilEducation takmilFolafol muftiPassingYear saniEducation saniFolafol saniPassingYear yourEducationMethod highestEducation sscPassingYear sscGroup sscResult diplomaSubject diplomaInstitution diplomaPassingYear otherEducationalQualifications islamicEducationalTitles'
     this.subDataOne = this.productService.getProductById(this.id, select).subscribe({
       next: res => {
         if (res.success) {
@@ -146,7 +230,7 @@ export class EducationalQualificationComponent implements OnInit {
         if (res.success) {
           this.uiService.success(res.message);
           this.isLoader = false;
-          this.router.navigate(['/add-biodata/pledge'], {queryParamsHandling: 'merge'});
+          this.router.navigate(['/add-biodata/family-info'], {queryParamsHandling: 'merge'});
         }
       },
       error: err => {

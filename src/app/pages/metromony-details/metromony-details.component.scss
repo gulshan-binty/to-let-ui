@@ -1,12 +1,52 @@
+@import "src/theme/_variables.scss";
+.btn-share {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0px;
+
+  button {
+    background-color: $color-primary;
+    font-family: $font-en-primary;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    color: #fff;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      color: $color-primary;
+      background-color: #fff;
+    }
+  }
+
+}
+
+
 /* --- main-content-left --- */
 .main-content-left {
   position: relative;
 }
 
+.color{
+  background: #5d5d5d;
+}
+
 .biodatadetails {
   padding-top: 42px;
   border-radius: 10px;
-  background-color: #1f74ff;
+  background-color: $color-primary;
   max-width: 400px;
   min-height: 94vh;
   width: 100%;
@@ -78,7 +118,7 @@
     p {
       font-size: 18px;
       font-weight: 600;
-      color: #1f74ff;
+      color: $color-primary;
     }
   }
 
@@ -125,7 +165,7 @@
     font-family: sans-serif;
     font-weight: 400;
     border: none;
-    background-color: #1f74ff;
+    background-color: $color-primary;
     padding: 18px 55px;
     border-radius: 8px;
     color: #ffffff;

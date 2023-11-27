@@ -97,7 +97,8 @@ const routes: Routes = [
       },
       {
         path: 'metromony-details',
-        loadChildren: () => import('./metromony-details/metromony-details.module').then(m => m.MetromonyDetailsModule)
+        loadChildren: () => import('./metromony-details/metromony-details.module').then(m => m.MetromonyDetailsModule),
+        canActivate: [UserAuthGuard],
       },
       {
         path: 'my',
@@ -112,8 +113,31 @@ const routes: Routes = [
         loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule)
       },
       {
+        path: 'management-panel',
+        loadChildren: () => import('./management-panel/management-panel.module').then(m => m.ManagementPanelModule)
+      },
+      {
+        path: 'pricing',
+        loadChildren: () => import('./pricing/pricing.module').then(m => m.PricingModule)
+      },
+      {
         path: 'login',
         loadChildren: () => import('./user/login/login.module').then(m => m.LoginModule),
+        canActivate: [UserAuthStateGuard],
+      },
+      {
+        path: 'pages',
+        loadChildren: () => import('./additional-page-view/additional-page-view.module').then(m => m.AdditionalPageViewModule),
+        data: {preload: false, delay: false}
+      },
+      {
+        path: 'complete-registration',
+        loadChildren: () => import('./user/complete-registration/complete-registration.module').then(m => m.CompleteRegistrationModule),
+        canActivate: [UserAuthStateGuard],
+      },
+      {
+        path: 'registration-success',
+        loadChildren: () => import('./user/registration-success/registration-success.module').then(m => m.RegistrationSuccessModule),
         canActivate: [UserAuthStateGuard],
       },
       {

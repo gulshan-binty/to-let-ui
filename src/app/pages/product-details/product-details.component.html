@@ -22,7 +22,14 @@
         <div class="product-details-left">
           <!-- product img -->
           <div class="main-img">
-            <img [src]="image" alt="" />
+<!--            <img [src]="image" alt="" />-->
+
+            <lib-ngx-image-zoom
+              checkImageDefault
+              [thumbImage]=image
+              [fullImage]=image
+              [zoomMode]="image"
+            ></lib-ngx-image-zoom>
           </div>
           <div class="image-select-slide">
             <swiper
@@ -118,54 +125,76 @@
                   <h2>{{product?.name}}</h2>
                   <div class="card-small-text">
                     <ul>
-                      <li>Al Aribah</li>
+                      <li>Queries-Care</li>
                     </ul>
                   </div>
 
                   <p>
-                    <span>Role:</span>
-                    <small>Product</small>
+                    <span>Category: {{product?.category.name}}</span>
                   </p>
-                  <a>
-                    <span><i class="fa-solid fa-location-dot"></i></span>
-                    <small>Feni, Bangladesh</small>
-                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                  </a>
+<!--                  <a>-->
+<!--                    <span><i class="fa-solid fa-location-dot"></i></span>-->
+<!--                    <small>Feni, Bangladesh</small>-->
+<!--                    <span><i class="fa-solid fa-chevron-right"></i></span>-->
+<!--                  </a>-->
                 </div>
                 <div class="pro-right-right">
                   <i class="fa-regular fa-heart"></i>
-                  <p>151 people</p>
-                  <p>shortlisted</p>
+<!--                  <p>151 people</p>-->
+<!--                  <p>shortlisted</p>-->
                 </div>
               </div>
 
-              <!-- price section -->
-              <div class="right-price">
-                <h2 *ngIf="product?.salePrice">
-                  <span>Tk</span> <span>100</span>
-                </h2>
-                <p>Fixed on road price</p>
+<!--              &lt;!&ndash; price section &ndash;&gt;-->
+<!--              <div class="right-price">-->
+<!--                <h2 *ngIf="product?.salePrice">-->
+<!--                  <span>Tk</span> <span>{{100}}</span>-->
+<!--                </h2>-->
+<!--                <p>Fixed on road price</p>-->
+<!--              </div>-->
+
+              <div class="product-price">
+                <span class="prevPrice">৳{{ product?.salePrice}}</span>
+                <span class="currPrice">৳{{ product | price: 'salePrice' | number : '' : 'bn' }}</span>
+              </div>
+
+              <!--    <div class="product-price">-->
+              <!--      <h3 style="margin-top: 30px">-->
+              <!--        Discount :-->
+              <!--        <span class="currPrice"> 30 % </span>-->
+              <!--      </h3>-->
+              <!--    </div>-->
+              <div class="product-price">
+                <h3 *ngIf="product?.discountAmount" style="{margin-top: 30px;}" class="discount">
+                  Discount :
+                  <span class="currPrice discount" *ngIf="product?.discountType===2">
+                     ৳{{product?.discountAmount}}
+                    </span>
+                  <span class="currPrice discount" *ngIf="product?.discountType===1">
+                     {{product?.discountAmount}} %
+                    </span>
+                </h3>
               </div>
 
               <div class="buy-now-btns">
-                <button type="button">Notify Me</button>
-                <button type="button">Promote This Ad</button>
+                <a href="tel:01700000000">Call Us</a>
+                <a href="https://www.facebook.com/">Facebook Page</a>
               </div>
             </div>
 
-            <div class="pro-details-right-bottom">
-              <div></div>
-              <div class="text-right">
-                <p>
-                  <span>Guaranteed Buyback:</span>
-                  Return this car to us within a tenure of 6, 12 or 18 months at
-                  guaranteed prices.
-                </p>
-              </div>
-              <div class="icon-right">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
+<!--            <div class="pro-details-right-bottom">-->
+<!--              <div></div>-->
+<!--              <div class="text-right">-->
+<!--                <p>-->
+<!--                  <span>Guaranteed Buyback:</span>-->
+<!--                  Return this car to us within a tenure of 6, 12 or 18 months at-->
+<!--                  guaranteed prices.-->
+<!--                </p>-->
+<!--              </div>-->
+<!--              <div class="icon-right">-->
+<!--                <i class="fa-solid fa-chevron-right"></i>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
           <!-- heigh lite product -->
           <div class="right-highLight right-highLight3">
@@ -215,7 +244,7 @@
 
 <div class="app-view-cards">
   <!-- customer review -->
-  <app-products-related-data></app-products-related-data>
+  <app-related-products></app-related-products>
   <!--  <app-view-cards></app-view-cards>-->
 
   <app-explore-more></app-explore-more>

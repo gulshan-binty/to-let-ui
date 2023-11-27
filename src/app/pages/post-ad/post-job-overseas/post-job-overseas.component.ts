@@ -78,7 +78,7 @@ export class PostJobOverseasComponent implements OnInit {
       address: [null, Validators.required],
       description: [null],
       postType: 'job_post',
-      status: 'publish',
+      status: 'draft',
 
     });
   }
@@ -101,12 +101,12 @@ export class PostJobOverseasComponent implements OnInit {
     }
 
     // Check File
-    if (!this.files.length && !this.id) {
-      this.uiService.warn('Please select product image');
-      this.fileNotPicked = true;
-      window.scrollTo({top: 0, behavior: 'smooth'});
-      return;
-    }
+    // if (!this.files.length && !this.id) {
+    //   this.uiService.warn('Please select product image');
+    //   this.fileNotPicked = true;
+    //   window.scrollTo({top: 0, behavior: 'smooth'});
+    //   return;
+    // }
 
     this.isLoading = true;
     if (this.id) {

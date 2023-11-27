@@ -34,7 +34,10 @@ import { RequestMedicineComponent } from './request-medicine/request-medicine.co
 import { SpecialsOffersComponent } from './specials-offers/specials-offers.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { MyBioDataComponent } from './my-bio-data/my-bio-data.component';
-import { ProductCardOneModule } from 'src/app/shared/components/product-card-one/product-card-one.module';
+import { ProductCardOneModule } from 'src/app/shared/components/product-card-one/product-card-one.module';;
+import {
+  UserProductCardLoaderModule
+} from "../../shared/card-loader/user-product-card-loader/user-product-card-loader.module";
 
 
 @NgModule({
@@ -77,7 +80,8 @@ import { ProductCardOneModule } from 'src/app/shared/components/product-card-one
     MatSelectModule,
     ImageCropperModule,
     OrderCardModule,
-    ProductCardOneModule
+    ProductCardOneModule,
+    UserProductCardLoaderModule
   ]
 })
 export class AccountModule { }

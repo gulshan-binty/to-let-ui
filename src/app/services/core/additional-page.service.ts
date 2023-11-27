@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {ResponsePayload} from '../../interfaces/core/response-payload.interface';
-import {AdditionalPage} from '../../interfaces/core/additional-page.interface';
-
+import {AdditionalPage} from "../../interfaces/common/additional-page.interface";
 const API_PAGE = environment.apiBaseLink + '/api/additional-page/';
 
 

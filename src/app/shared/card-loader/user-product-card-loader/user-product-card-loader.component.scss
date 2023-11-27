@@ -1,0 +1,30 @@
+.product {
+  width: 100%;
+  overflow: hidden;
+  padding: 15px 18px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #fff;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.first-section-wrapper {
+  display: inline-flex;
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+
+
+.gravatar {
+  //width: 100px;
+  //height: 90px;
+}
+.gravatar-title {
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  height: 80px;
+}

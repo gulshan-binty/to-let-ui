@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Meta, Title } from "@angular/platform-browser";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { OtpService } from "../../../services/common/otp.service";
-import { SeoPageService } from "../../../services/common/seo-page.service";
-import { UserService } from "../../../services/common/user.service";
-import { ReloadService } from "../../../services/core/reload.service";
-import { UiService } from "../../../services/core/ui.service";
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Meta, Title} from "@angular/platform-browser";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
+import {OtpService} from "../../../services/common/otp.service";
+import {SeoPageService} from "../../../services/common/seo-page.service";
+import {UserService} from "../../../services/common/user.service";
+import {ReloadService} from "../../../services/core/reload.service";
+import {UiService} from "../../../services/core/ui.service";
+import {StorageService} from '../../../services/core/storage.service';
+import {DATABASE_KEY} from '../../../core/utils/global-variable';
 
 @Component({
   selector: 'app-login',
@@ -57,7 +59,7 @@ export class LoginComponent {
     private title: Title,
     private meta: Meta,
     private seoPageService: SeoPageService,
-    // private canonicalService: CanonicalService,
+    private storageService: StorageService
   ) {
 
   }
@@ -77,7 +79,6 @@ export class LoginComponent {
   }
 
 
-
   /**
    * form initialize function
    * initialForm()
@@ -87,8 +88,7 @@ export class LoginComponent {
       phoneNo: [null, [Validators.minLength(11), Validators.maxLength(11), Validators.required]],
       code: [null],
     });
-  } 
-
+  }
 
 
   /**
@@ -155,17 +155,13 @@ export class LoginComponent {
           if (res.success) {
             this.isOtpValid = true;
             this.sendVerificationCode = false;
-            this.isLoading = false;
-            this.reloadService.needRefreshData$();
-            this.userService.userSignupAndLoginSocial(
-              {
-                phoneNo: data.phoneNo,
-                username: data.phoneNo,
-                registrationType: 'phone',
-                hasAccess: true,
-              },
-              this.navigateFrom
-            );
+            const regData = {
+              phoneNo: data.phoneNo,
+              username: data.phoneNo,
+              registrationType: 'phone',
+              hasAccess: false,
+            }
+            this.checkUserForRegistration(regData);
           } else {
             this.isOtpValid = false;
             this.isLoading = false;
@@ -180,8 +176,31 @@ export class LoginComponent {
       });
   }
 
-
-
+  private checkUserForRegistration(data: any) {
+    this.userService.checkUserForRegistration(data.phoneNo)
+      .subscribe({
+        next: res => {
+          if (res.success) {
+            this.isLoading = false;
+            this.userService.userSignupAndLoginSocial(
+              data,
+              this.navigateFrom
+            );
+          } else {
+            this.isLoading = false;
+            this.storageService.storeDataToSessionStorage(DATABASE_KEY.regSessionData, data);
+            this.router.navigate(['/complete-registration'], {
+              queryParams: {navigateFrom: this.navigateFrom},
+              queryParamsHandling: 'merge'
+            })
+          }
+        },
+        error: err => {
+          this.isLoading = false;
+          console.log(err)
+        }
+      })
+  }
 
 
   // CountDown...

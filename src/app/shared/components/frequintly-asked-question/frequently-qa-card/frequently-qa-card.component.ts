@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Faq} from "../../../../interfaces/common/faq.interface";
 
 @Component({
   selector: 'app-frequently-qa-card',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class FrequentlyQaCardComponent {
 
+  @Input() data:Faq;
   hideShowModal:boolean = false;
 
 

@@ -12,6 +12,7 @@ export class ReloadService {
   private refreshMobileSearch = new Subject<void>();
   private refreshSearch = new BehaviorSubject<boolean>(false);
   private refresPlay = new Subject<boolean>();
+  private refreshDialog = new Subject<boolean>();
   /**
    * REFRESH MOBILE SEARCH
    */
@@ -26,6 +27,18 @@ export class ReloadService {
       this.refreshSearch.next(false);
     }
   }
+
+    /**
+   * REFRESH DIALOG
+   */
+    get refreshDialog$() {
+      return this.refreshDialog;
+    }
+  
+    needRefreshDialog$(data?: boolean) {
+      this.refreshDialog.next(data);
+    }
+  
 
   /**
    * REFRESH GLOBAL DATA

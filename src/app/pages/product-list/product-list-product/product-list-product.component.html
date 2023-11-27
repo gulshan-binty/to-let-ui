@@ -184,9 +184,16 @@
         </div>
         <!-- END! top-select -->
 
+
         <div class="all-product-item-cards">
-          <ng-container *ngFor="let data of products">
-            <app-product-card-one [data] = data></app-product-card-one>
+          <ng-container *ngIf="isLoading">
+
+            <app-product-card-one-loader [type]="'grid'"
+                                        *ngFor="let product of  [1,2,3,4,5,6]"></app-product-card-one-loader>
+          </ng-container>
+
+          <ng-container *ngIf="!isLoading">
+            <app-product-card-one *ngFor="let data of products" [data] = data></app-product-card-one>
           </ng-container>
         </div>
         <!-- END! all-product-item-cards -->
@@ -201,7 +208,7 @@
   </div>
 </div>
 
-<app-products-related-data></app-products-related-data>
+<!--<app-products-related-data></app-products-related-data>-->
 
 <app-frequintly-asked-question></app-frequintly-asked-question>
 

@@ -1,8 +1,17 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from "rxjs";
-import {DashboardService} from '../../services/common/dashboard.service';
-import {PostCountDashboard} from '../../interfaces/common/dashboard.interface';
-import {HeaderService} from '../../services/common/header.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from "rxjs";
+import { DashboardService } from '../../services/common/dashboard.service';
+import { PostCountDashboard } from '../../interfaces/common/dashboard.interface';
+import { HeaderService } from '../../services/common/header.service';
+import { UpcomingDialogComponent } from "../../shared/components/upcoming-dialog/upcoming-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { MetrimonyPopupComponent } from "../../shared/components/metrimony-popup/metrimony-popup.component";
+import { CongratulationDialogComponent } from 'src/app/shared/ui/congratulation-dialog/congratulation-dialog.component';
+import { ReloadService } from 'src/app/services/core/reload.service';
+import { FailDialogComponent } from 'src/app/shared/ui/fail-dialog/fail-dialog.component';
+import {UsersService} from "../../services/common/users.service";
+import {UserService} from "../../services/common/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -20,14 +29,32 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private _headerService: HeaderService,
     private dashboardService: DashboardService,
+    private dialog: MatDialog,
+    private reloadService:ReloadService,
+    private userService:UserService,
+    private router: Router,
   ) {
 
   }
 
 
   ngOnInit(): void {
+
+    this.subDataOne = this.reloadService.refreshDialog$.subscribe((res) => {
+         if(res === true ){
+            this.openPassedDialog();
+         }else{
+          this.openFailDialog();
+         }
+    })
+
+
+
+
+
     this._headerService.bService.next(true);
     this.getPostCount();
+
   }
 
   /**
@@ -52,6 +79,42 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onShowMore() {
     this.showMoreData = !this.showMoreData;
+  }
+
+
+  /**
+   * UpcomingDialogComponent
+   * openDialog()
+   * openPassedDialog()
+   */
+  openDialog() {
+    if (this.userService.getUserId()) {
+      this.dialog.open(MetrimonyPopupComponent, {
+        maxWidth: "1000px",
+        width: "100%",
+        height: "auto"
+      })
+    } else {
+      this.router.navigate(['/login'])
+    }
+
+  }
+
+
+  openPassedDialog() {
+    this.dialog.open(CongratulationDialogComponent, {
+      maxWidth: "500px",
+      width: '100%',
+      height: 'auto'
+    })
+  }
+
+  openFailDialog() {
+    this.dialog.open(FailDialogComponent, {
+      maxWidth: "500px",
+      width: '100%',
+      height: 'auto'
+    })
   }
 
   ngOnDestroy(): void {

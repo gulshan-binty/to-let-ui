@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('countryPopup') countryPopup: CountyPopupComponent;
 
   txt = 'Search products in queriescare...';
-  selectCategoryName: string = 'All Adds';
+  selectCategoryName: string = 'All Ads';
 
   filter: any;
 
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   private subForm: Subscription;
   private subDataOne: Subscription;
 
-  selectedPostType: string = 'All Adds';
+  selectedPostType: string = 'All Ads';
 
   constructor(
     public router: Router,
@@ -189,7 +189,9 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   onSelectItem(data: Product): void {
     this.searchInput.nativeElement.value = '';
     this.handleCloseAndClear();
-    this.router.navigate(['/product-list/product-details', data?.slug]);
+    this.router.navigate(['/product-details', data?.slug]);
+    // this.router.navigate(['/product-details', data?.slug]);
+    // this.router.navigate(['/product-details', data?.slug]);
   }
 
   handleOutsideClick(): void {

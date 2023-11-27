@@ -167,11 +167,94 @@ export class ProductListMatrimonialComponent implements OnInit, OnDestroy {
       ratingTotal: 1,
       ratingCount: 1,
       postType: 1,
+      bioDataType : 1,
+      maritalStatus: 1,
       birthDay: 1,
       height: 1,
       complexion: 1,
       weight: 1,
-      bioDataType: 1,
+      bloodGroup: 1,
+      nationality: 1,
+      permanentAddress: 1,
+      permanentAddressArea: 1,
+      presentAddress: 1,
+      presentAddressArea: 1,
+      whereDidYouGrowUp: 1,
+      yourEducationMethod: 1,
+      highestEducation: 1,
+      sscPassingYear: 1,
+      sscGroup: 1,
+      sscResult: 1,
+      passingYearHSC: 1,
+      groupHSC: 1,
+      resultHSC: 1,
+      diplomaSubject: 1,
+      diplomaInstitution: 1,
+      diplomaPassingYear: 1,
+      otherEducationalQualifications: 1,
+      islamicEducationalTitles: 1,
+      fathersName: 1,
+      isYourFatherAlive: 1,
+      descriptionFathersProfession: 1,
+      mothersName: 1,
+      isYourMotherAlive: 1,
+      descriptionMothersProfession: 1,
+      howManyBrothers: 1,
+      brothersInformation: 1,
+      howManySisters: 1,
+      sistersInformation: 1,
+      professionsOfUncles: 1,
+      familyFinancialStatus: 1,
+      descriptionFinancialCondition: 1,
+      familysReligiousCondition: 1,
+      usuallyWearOutsideHouse: 1,
+      accordingToSunnahSinceWhen: 1,
+      wearClothesAboveTheAnkles: 1,
+      prayFiveTimesDaySinceWhen: 1,
+      prayersMissedQaza: 1,
+      mahram: 1,
+      quranCorrectly: 1,
+      whichFiqh: 1,
+      watchDramas: 1,
+      physicalDiseases: 1,
+      workDeen: 1,
+      shrineMazar: 1,
+      readingBooks: 1,
+      islamicScholars: 1,
+      categoryApplicable: 1,
+      conversionIslam: 1,
+      hobbies: 1,
+      mobileNumber: 1,
+      GroomPhoto: 1,
+      occupation: 1,
+      professionDescription: 1,
+      monthlyIncome: 1,
+      agreeMarriage: 1,
+      keepMarriage: 1,
+      allowStudyMarriage: 1,
+      allowJobMarriage: 1,
+      liveWifeMarriage: 1,
+      giftBrideFamily: 1,
+      gettingMarriage: 1,
+      partnerAge: 1,
+      partnerComplexion: 1,
+      partnerheight: 1,
+      partnerEduQualification: 1,
+      partnerDistrict: 1,
+      partnerMaritalStatus: 1,
+      partnerProfession: 1,
+      partnerFinancial: 1,
+      partnerQualities: 1,
+      submitBiodataWeb: 1,
+      infoTrue: 1,
+      agree: 1,
+      fullName: 1,
+      guardianNumber: 1,
+      relationshipGuardian: 1,
+      receiveBiodata: 1,
+      girlJobAfterMarriage: 1,
+      girlsStudiesAfterMarriage: 1,
+      girlContinueJobAfterMarriage: 1,
     }
 
     const mGroup: FilterGroup = {
@@ -490,48 +573,48 @@ ngOnDestroy() {
   allSelect: any[] = [
     {
       id: '1',
-      name: 'Child safety locks (264)'
+      name: 'Check'
     },
-    {
-      id: '2',
-      name: 'Central locking (259)'
-    },
-    {
-      id: '3',
-      name: 'Power steering (251)'
-    },
-    {
-      id: '4',
-      name: 'Integrated (in-dash) music system (228)'
-    },
-    {
-      id: '5',
-      name: 'Power windows (177)'
-    },
-    {
-      id: '6',
-      name: 'Rear AC vent (121)'
-    },
-    {
-      id: '7',
-      name: 'Rear parking sensor (128)'
-    },
-    {
-      id: '8',
-      name: 'Rear camera (143)'
-    },
-    {
-      id: '9',
-      name: 'GPS navigation system (138)'
-    },
-    {
-      id: '10',
-      name: 'Airbags (201)'
-    },
-    {
-      id: '11',
-      name: 'ABS (235)'
-    },
+    // {
+    //   id: '2',
+    //   name: 'Central locking (259)'
+    // },
+    // {
+    //   id: '3',
+    //   name: 'Power steering (251)'
+    // },
+    // {
+    //   id: '4',
+    //   name: 'Integrated (in-dash) music system (228)'
+    // },
+    // {
+    //   id: '5',
+    //   name: 'Power windows (177)'
+    // },
+    // {
+    //   id: '6',
+    //   name: 'Rear AC vent (121)'
+    // },
+    // {
+    //   id: '7',
+    //   name: 'Rear parking sensor (128)'
+    // },
+    // {
+    //   id: '8',
+    //   name: 'Rear camera (143)'
+    // },
+    // {
+    //   id: '9',
+    //   name: 'GPS navigation system (138)'
+    // },
+    // {
+    //   id: '10',
+    //   name: 'Airbags (201)'
+    // },
+    // {
+    //   id: '11',
+    //   name: 'ABS (235)'
+    // },
   ]
 
 }

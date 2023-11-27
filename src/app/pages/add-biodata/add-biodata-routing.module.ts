@@ -6,6 +6,9 @@ import { EducationalQualificationComponent } from './educational-qualification/e
 import { GeneralInfoComponent } from './general-info/general-info.component';
 import {ContactComponent} from "./contact/contact.component";
 import {PledgeComponent} from "./pledge/pledge.component";
+import {FamilyInfoComponent} from "./family-info/family-info.component";
+import {ExpectedPartnerComponent} from "./expected-partner/expected-partner.component";
+import {MarriageInfoComponent} from "./marriage-info/marriage-info.component";
 
 const routes: Routes = [
   {
@@ -28,6 +31,18 @@ const routes: Routes = [
       {
         path: "educational-qualification",
         component: EducationalQualificationComponent
+      },
+      {
+        path: "family-info",
+        component: FamilyInfoComponent
+      },
+      {
+        path: "life-partner",
+        component: ExpectedPartnerComponent
+      },
+      {
+        path: "marriage-info",
+        component: MarriageInfoComponent
       },
       {
         path: "contact",

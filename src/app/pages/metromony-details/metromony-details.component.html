@@ -1,115 +1,287 @@
-<!--<div class="container">-->
-<!--  <div class="main-content">-->
-<!--    <div class="main-content-left">-->
-<!--      <div class="biodatadetails">-->
-<!--        <img-->
-<!--          *ngIf="product.bioDataType == 'Male Biodata'"-->
-<!--          src="/assets/images/png/male-profile-icon.png"-->
-<!--        />-->
-<!--        <img-->
-<!--          *ngIf="product.bioDataType == 'Female Biodata'"-->
-<!--          src="/assets/images/png/female-profile-icon.png"-->
-<!--        />-->
-<!--        <div>-->
-<!--          <h3>BioData No: {{ product?._id.slice(18, 24) }}</h3>-->
-<!--        </div>-->
-<!--        <div class="details">-->
-<!--          <p>Biodata Type</p>-->
-<!--          <p class="border">"{{ product?.bioDataType }}" Biodata</p>-->
-<!--        </div>-->
-<!--        <div class="details">-->
-<!--          <p>Marital Status</p>-->
-<!--          <p class="border">{{ product?.maritalStatus }} Biodata</p>-->
-<!--        </div>-->
+<div class="container">
+  <div class="main-content">
+    <div class="main-content-left">
+      <div class="biodatadetails">
+        <img
+          *ngIf="product?.bioDataType == 'পাত্রের বায়োডাটা'"
+          src="/assets/images/png/male-icon.png"
+        />
+        <img
+          *ngIf="product?.bioDataType == 'পাত্রীর বায়োডাটা'"
+          src="/assets/images/png/female-icon.png"
+        />
+        <div>
+          <h3>বায়োডাটা আইডি: {{ product?._id.slice(18, 24) }}</h3>
+        </div>
+        <div class="details">
+          <p>বায়োডাটা টাইপ</p>
+          <p class="border">{{ product?.bioDataType }}</p>
+        </div>
+        <div class="details">
+          <p>বৈবাহিক অবস্থা</p>
+          <p class="border">{{ product?.maritalStatus }}</p>
+        </div>
 
-<!--        <div class="details">-->
-<!--          <p>Birth Year</p>-->
-<!--          <p class="border">{{ product?.birthDay | date : "mediumDate" }}</p>-->
-<!--        </div>-->
+        <div class="details">
+          <p>জন্মতারিখ</p>
+          <p class="border">{{ product?.birthDay | date : "mediumDate" }}</p>
+        </div>
 
-<!--        <div class="details">-->
-<!--          <p>Height</p>-->
-<!--          <p class="border">{{ product?.height }}</p>-->
-<!--        </div>-->
+        <div class="details">
+          <p>উচ্চতা</p>
+          <p class="border">{{ product?.height }}</p>
+        </div>
 
-<!--        <div class="details">-->
-<!--          <p>Complexion</p>-->
-<!--          <p class="border">{{ product?.complexion }}</p>-->
-<!--        </div>-->
+        <div class="details">
+          <p>গায়ের রঙ</p>
+          <p class="border">{{ product?.complexion }}</p>
+        </div>
 
-<!--        <div class="details">-->
-<!--          <p>Weight</p>-->
-<!--          <p class="border">{{ product?.weight }}</p>-->
-<!--        </div>-->
+        <div class="details">
+          <p>ওজন</p>
+          <p class="border">{{ product?.weight }}</p>
+        </div>
 
-<!--        <div class="details">-->
-<!--          <p>Blood Group</p>-->
-<!--          <p class="border">{{ product?.bloodGroup }}</p>-->
-<!--        </div>-->
+        <div class="details">
+          <p>রক্তের গ্রুপ</p>
+          <p class="border">{{ product?.bloodGroup }}</p>
+        </div>
 
-<!--        <div class="details">-->
-<!--          <p>Nationality</p>-->
-<!--          <p class="border">{{ product?.nationality }}</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+        <div class="details">
+          <p>জাতীয়তা</p>
+          <p class="border">{{ product?.nationality }}</p>
+        </div>
+        <div class="btn-share">
+        <button class="share"(click)="openDialog()"><i class="fa-solid fa-share-nodes"></i>Share Now</button>
+        </div>
+      </div>
+    </div>
 
-<!--    <div>-->
-<!--      <div class="details-info">-->
-<!--        <div class="details-info-contents">-->
-<!--          <div class="details-info-header">-->
-<!--            <p>Address</p>-->
-<!--          </div>-->
+    <div>
+      <div class="details-info">
+        <div class="details-info-contents">
+          <div class="details-info-header">
+            <p>ঠিকানা</p>
+          </div>
+          <div class="address-details">
+            <p>স্থায়ী ঠিকানা ?</p>
+            <p class="border">{{ product?.permanentAddress }}</p>
+          </div>
+
+          <div class="address-details">
+            <p>বর্তমান ঠিকানা ?</p>
+            <p class="border">{{ product?.presentAddress }}</p>
+          </div>
+
+          <div class="address-details">
+            <p>আপনি কোথায় বড় হয়েছেন ?</p>
+            <p class="border">{{ product?.whereDidYouGrowUp }}</p>
+          </div>
+        </div>
+
+        <div class="details-info-contents">
+          <div class="details-info-header">
+            <p>শিক্ষাগত যোগ্যতা</p>
+          </div>
+          <div class="address-details">
+            <p>আপনার শিক্ষার মাধ্যম ?</p>
+            <p class="border">{{ product?.yourEducationMethod }}</p>
+          </div>
+
+          <div class="address-details">
+            <p>সর্বোচ্চ শিক্ষাগত যোগ্যতা ?</p>
+            <p class="border">{{ product?.highestEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.sscPassingYear">
+            <p>এসএসসি/দাখিল/সমমান পাসের বছর ?</p>
+            <p class="border">{{ product?.sscPassingYear }}</p>
+          </div>
+          <div class="address-details" *ngIf="product?.sscGroup">
+            <p>বিভাগ ?</p>
+            <p class="border">{{ product?.sscGroup }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.sscResult">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.sscResult }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.passingYearHSC">
+            <p>এইস.এস.সি/আলিম/সমমান পাসের বছর ?</p>
+            <p class="border">{{ product?.passingYearHSC }}</p>
+          </div>
+          <div class="address-details" *ngIf="product?.groupHSC">
+            <p>বিভাগ ?</p>
+            <p class="border">{{ product?.groupHSC }}</p>
+          </div>
+          <div class="address-details" *ngIf="product?.resultHSC">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.resultHSC }}</p>
+          </div>
+          <div class="address-details" *ngIf="product?.diplomaSubject">
+            <p>আপনার ডিপ্লোমার বিষয় কি?</p>
+            <p class="border">{{ product?.diplomaSubject }}</p>
+          </div>
+          <div class="address-details" *ngIf="product?.diplomaInstitution">
+            <p>শিক্ষা প্রতিষ্ঠানের নাম ?</p>
+            <p class="border">{{ product?.diplomaInstitution }}</p>
+          </div>
+          <div class="address-details" *ngIf="product?.diplomaPassingYear">
+            <p>পাসের বছর ?</p>
+            <p class="border">{{ product?.diplomaPassingYear }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.konYearDiploma">
+            <p>এখন কোন বর্ষে পড়ছেন ?</p>
+            <p class="border">{{ product?.konYearDiploma }}</p>
+          </div>
+
+
+          <div class="address-details" *ngIf="product?.snakottoBisoi">
+            <p> স্নাতক/ স্নাতক (সম্মান)/ ফাজিল পড়াশোনার বিষয় ?</p>
+            <p class="border">{{ product?.snakottoBisoi }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.snakottoInstiute">
+            <p>শিক্ষা প্রতিষ্ঠানের নাম ?</p>
+            <p class="border">{{ product?.snakottoInstiute }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.snakottoBosor">
+            <p> কোন বর্ষে পড়ছেন ?</p>
+            <p class="border">{{ product?.snakottoBosor }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.snakonttoPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.snakonttoPassingYear }}</p>
+          </div>
+
+
+          <div class="address-details" *ngIf="product?.snatokBisoi">
+            <p>  স্নাতকোত্তর/ কামিল পড়াশোনার বিষয় ?</p>
+            <p class="border">{{ product?.snatokBisoi }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.snatokInstitute">
+            <p>শিক্ষা প্রতিষ্ঠানের নাম ?</p>
+            <p class="border">{{ product?.snatokInstitute }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.snatokPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.snatokPassingYear }}</p>
+          </div>
+
+
+          <div class="address-details" *ngIf="product?.ebadahoEducation">
+            <p>ইবতিদাইয়াহ কোন মাদ্রাসা থেকে পড়েছেন ?</p>
+            <p class="border">{{ product?.ebadahoEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.ebadahoFolafol">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.ebadahoFolafol }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.ebadahoPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.ebadahoPassingYear }}</p>
+          </div>
+
+
+          <div class="address-details" *ngIf="product?.muftiEducation">
+            <p>মুতাওয়াসসিতাহ কোন মাদ্রাসা থেকে পড়েছেন ?</p>
+            <p class="border">{{ product?.muftiEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.muftiFolafol">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.muftiFolafol }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.muftiPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.muftiPassingYear }}</p>
+          </div>
+
+
+
+          <div class="address-details" *ngIf="product?.saniEducation">
+            <p>মসানাবিয়া উলইয়া কোন মাদ্রাসা থেকে পড়েছেন ?</p>
+            <p class="border">{{ product?.saniEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.saniFolafol">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.saniFolafol }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.saniPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.saniPassingYear }}</p>
+          </div>
+
+
+          <div class="address-details" *ngIf="product?.fojilotEducation">
+            <p>ফজিলত কোন মাদ্রাসা থেকে পড়েছেন ?</p>
+            <p class="border">{{ product?.fojilotEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.fojilotFolafol">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.fojilotFolafol }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.fojilotPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.fojilotPassingYear }}</p>
+          </div>
+
+
+          <div class="address-details" *ngIf="product?.takmilEducation">
+            <p>তাকমীল কোন মাদ্রাসা থেকে পড়েছেন ?</p>
+            <p class="border">{{ product?.takmilEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.takmilFolafol">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.takmilFolafol }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.takmilPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.takmilPassingYear }}</p>
+          </div>
+
+
+
+          <div class="address-details" *ngIf="product?.taksuEducation">
+            <p>তাখাসসুস কোন মাদ্রাসা থেকে পড়েছেন ?</p>
+            <p class="border">{{ product?.taksuEducation }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.taksuFolafol">
+            <p>ফলাফল ?</p>
+            <p class="border">{{ product?.taksuFolafol }}</p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.taksuPassingYear">
+            <p> পাসের সন ?</p>
+            <p class="border">{{ product?.taksuPassingYear }}</p>
+          </div>
+
+
+
+          <div class="address-details"  *ngIf="product?.otherEducationalQualifications">
+            <p> অন্যান্য শিক্ষাগত যোগ্যতা ?</p>
+            <p class="border">{{ product?.otherEducationalQualifications }}</p>
+          </div>
+
 <!--          <div class="address-details">-->
-<!--            <p>Permanent Address</p>-->
-<!--            <p class="border">{{ product?.permanentAddress }}</p>-->
-<!--          </div>-->
-
-<!--          <div class="address-details">-->
-<!--            <p>Present Address</p>-->
-<!--            <p class="border">{{ product?.presentAddress }}</p>-->
-<!--          </div>-->
-
-<!--          <div class="address-details">-->
-<!--            <p>Where did you grow up?</p>-->
-<!--            <p class="border">{{ product?.whereDidYouGrowUp }}</p>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="details-info-contents">-->
-<!--          <div class="details-info-header">-->
-<!--            <p>Educational Qualifications</p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Your Education Method</p>-->
-<!--            <p class="border">{{ product?.yourEducationMethod }}</p>-->
-<!--          </div>-->
-
-<!--          <div class="address-details">-->
-<!--            <p>SSC/Dakhil/Equivalent Passing Year</p>-->
-<!--            <p class="border">{{ 'product?.passingYear' }}</p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Group</p>-->
-<!--            <p class="border">{{ 'product?.group' }}</p>-->
-<!--          </div>-->
-
-<!--          <div class="address-details">-->
-<!--            <p>Result</p>-->
-<!--            <p class="border">{{ 'product?.result '}}</p>-->
-<!--          </div>-->
-
-<!--          <div class="address-details">-->
-<!--            <p>HSC/Alim/Equivalent Passing Year</p>-->
-<!--            <p class="border">{{ product?.passingYearHSC }}</p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Group</p>-->
-<!--            <p class="border">{{ product?.groupHSC }}</p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Result</p>-->
-<!--            <p class="border">{{ product?.resultHSC }}</p>-->
+<!--            <p>Write the details including the name of the educational institution, subject, passing year. If there is nothing, leave it empty.</p>-->
+<!--            <p class="border">{{ product?.islamicEducationalTitles}}</p>-->
 <!--          </div>-->
 <!--          <div class="address-details">-->
 <!--            <p>Graduation study subject</p>-->
@@ -142,176 +314,199 @@
 <!--            <p>Passing Year</p>-->
 <!--            <p class="border">{{ product?.passingYearPost }}</p>-->
 <!--          </div>-->
-<!--        </div>-->
+        </div>
 
-<!--        <div class="details-info-contents">-->
-<!--          <div class="details-info-header">-->
-<!--            <p>Familly Information</p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Is Your Father Alive?</p>-->
-<!--            <p class="border">{{ product?.isYourFatherAlive }}</p>-->
-<!--          </div>-->
+        <div class="details-info-contents">
+          <div class="details-info-header">
+            <p>পারিবারিক তথ্য</p>
+          </div>
+          <div class="address-details" *ngIf="product?.descriptionOfFathersProfession">
+            <p>বাবার পেশা ?</p>
+            <p class="border">{{ product?.descriptionOfFathersProfession }}</p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Description Of Fathers Profession</p>-->
-<!--            <p class="border">{{ product?.descriptionOfFathersProfession }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.descriptionOfMothersProfession">
+            <p>মায়ের পেশা ?</p>
+            <p class="border">{{ product?.descriptionOfMothersProfession }}</p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Is Your Mother Alive?</p>-->
-<!--            <p class="border">{{ product?.isYourMotherAlive }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.howManyBrothersDoYouHave">
+            <p>ভাই-বোনের সংখ্যা ?</p>
+            <p class="border">{{ product?.howManyBrothersDoYouHave }}</p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Description Of Mother's Profession</p>-->
-<!--            <p class="border">{{ product?.descriptionOfMothersProfession }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.descriptionOfFinancialCondition">
+            <p>অর্থনৈতিক অবস্থা ?</p>
+            <p class="border">{{ product?.descriptionOfFinancialCondition }}</p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>How Many Brother's Do You Have?</p>-->
-<!--            <p class="border">{{ product?.howManyBrothersDoYouHave }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.howIsYourFamilysReligiousCondition">
+            <p>পারিবারিক দ্বীনী পরিবেশ কেমন ?</p>
+            <p class="border">{{ product?.howIsYourFamilysReligiousCondition }}</p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Brothers Information</p>-->
-<!--            <p class="border">{{ product?.brothersInformation }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.writeTheNamesOfAtLeast3IslamicScholarsOfYourChoice">
+            <p>প্রিয় কয়েকজন আলেম যাদের বক্তব্য শোনা হয় ?</p>
+            <p class="border">{{ product?.writeTheNamesOfAtLeast3IslamicScholarsOfYourChoice }}</p>
+          </div>
+        </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>How Many Sister's Do You Have?</p>-->
-<!--            <p class="border">{{ 'product?.howManySistersDoYouHave' }}</p>-->
-<!--          </div>-->
+        <div class="details-info-contents">
+          <div class="details-info-header" >
+            <p>ব্যক্তিগত তথ্য</p>
+          </div>
+          <div class="address-details" *ngIf="product?.song">
+            <p>গান শোনা ও টিভি দেখার অভ্যাস আছে ?</p>
+            <p class="border">
+              {{ product?.song }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Sister's Information</p>-->
-<!--            <p class="border">{{ product?.sistersInformation }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.facebook">
+            <p> ফেসবুকে ইউটিউবে স্ক্রল করতে যেয়ে আশা ছোটখাটো মুভি গান নাটক ভিডিও ক্লিপ চলে এলে দেখা হয় বা এড়িয়ে যাওয়া হয়?</p>
+            <p class="border">
+              {{ product?.facebook }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Professions Of Uncles</p>-->
-<!--            <p class="border">{{ product?.professionsOfUncles }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.salat">
+            <p> অসুস্থতা জনিত বা শরিয়া সম্মত গুজব ব্যতীত প্রতিমাসে কয় ওয়াক্ত সালাত কাজা হয় প্রতিদিন কয় ওয়াক্ত সালাত জামাতে আদায় হয় ?</p>
+            <p class="border">
+              {{ product?.salat }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Family Financial Status</p>-->
-<!--            <p class="border">{{ product?.familyFinancialStatus }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.physicalDiseases">
+            <p> জানা মতে মানসিক/ শারীরিক কোন অসুস্থতা আছে ?</p>
+            <p class="border">
+              {{ product?.physicalDiseases }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Description Of Financial Condition</p>-->
-<!--            <p class="border">{{ 'product?.descriptionOfFinancialCondition' }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.readQuranSuddho">
+            <p>শুদ্ধভারব কুরআন নতিাওয়াত কররত পাররন? অথ্বা নতিাওয়ারতর অবস্থা কী। </p>
+            <p class="border">
+              {{ product?.readQuranSuddho }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>How Is Your Family's Religious Condition?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.howIsYourFamilysReligiousCondition' }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
+          <div class="address-details" *ngIf="product?.readQuranDaily">
+            <p>নিয়মিত কোরআন তেলাওয়াত করা হয় কিনা? </p>
+            <p class="border">
+              {{ product?.readQuranDaily }}
+            </p>
+          </div>
 
-<!--        <div class="details-info-contents">-->
-<!--          <div class="details-info-header">-->
-<!--            <p>Personal Information</p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>What Kind Of Clothes Do You Usually Wear Outside The House?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.whatKindOfClothesDoYouUsuallyWearOutsideTheHouse' }}-->
-<!--            </p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.gunaho">
+            <p>গোপন গুনাহের ব্যাপারে আল্লাহকে ভয় করেন ? </p>
+            <p class="border">
+              {{ product?.gunaho }}
+            </p>
+          </div>
+        </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Do You Have Beard According To Sunnah Since When?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.doYouHaveBeardAccordingToSunnahSinceWhen' }}-->
-<!--            </p>-->
-<!--          </div>-->
 
-<!--          <div class="address-details">-->
-<!--            <p>Do You Wear Clothes Above The Ankles?</p>-->
-<!--            <p class="border">{{ 'product?.doYouWearClothesAboveTheAnkles' }}</p>-->
-<!--          </div>-->
 
-<!--          <div class="address-details">-->
-<!--            <p>Do You Pray Five Times A Day Since When?</p>-->
-<!--            <p class="border">{{ 'product?.doYouPrayFiveTimesADaySinceWhen' }}</p>-->
-<!--          </div>-->
+        <div class="details-info-contents">
+          <div class="details-info-header">
+            <p>প্রত্যাশিত জীবনসঙ্গী</p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Do You Comply With Mahram Non Mahram?</p>-->
-<!--            <p class="border">{{ 'product?.doYouComplyWithMahramNonMahram' }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerMaritalStatus">
+            <p>বৈবাহিক অবস্থা ?</p>
+            <p class="border">
+              {{ product?.partnerMaritalStatus }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Are You Able To Recite The Quran Correctly?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.areYouAbleToReciteTheQuranCorrectly' }}-->
-<!--            </p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerAge">
+            <p>বয়স ?</p>
+            <p class="border">
+              {{ product?.partnerAge }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Which Fiqh Do You Follow?</p>-->
-<!--            <p class="border">{{' product?.whichFiqhDoYouFollow' }}</p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerHeight">
+            <p> উচ্চতা ?</p>
+            <p class="border">
+              {{ product?.partnerHeight }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Do You Watch Or Listen To Dramas Movies Serials Songs?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.doYouWatchOrListenToDramasMoviesSerialsSongs' }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Do You Have Any Mental Or Physical Diseases?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.doYouHaveAnyMentalOrPhysicalDiseases' }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--          <div class="address-details">-->
-<!--            <p>Are You Involved In Any Special Work Of Deen?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.areYouInvolvedInAnySpecialWorkOfDeen' }}-->
-<!--            </p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerComplexion">
+            <p> গায়ের রঙ ?</p>
+            <p class="border">
+              {{ product?.partnerComplexion }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>What Are Your Ideas Or Beliefs About The Shrine Mazar?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.whatAreYourIdeasOrBeliefsAboutTheShrineMazar' }}-->
-<!--            </p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerOccupation">
+            <p>পেশা ?</p>
+            <p class="border">
+              {{ product?.partnerOccupation }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Write The Names Of At Listen Islamic Books You Have Read?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.writeTheNamesOfAtLeast3IslamicBooksYouHaveRead' }}-->
-<!--            </p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerMajhab">
+            <p>মাযহাব/মানহায ? </p>
+            <p class="border">
+              {{ product?.partnerMajhab }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>Write The Names Of At Least3 Islamic Scholars Of Your Choice?</p>-->
-<!--            <p class="border">-->
-<!--              {{ 'product?.writeTheNamesOfAtLeast3IslamicScholarsOfYourChoice' }}-->
-<!--            </p>-->
-<!--          </div>-->
+          <div class="address-details" *ngIf="product?.partnerArea">
+            <p>ঠিকানা ? </p>
+            <p class="border">
+              {{ product?.partnerArea }}
+            </p>
+          </div>
 
-<!--          <div class="address-details">-->
-<!--            <p>-->
-<!--              Write About Your Hobbies Likes And Dislikes Tastes Dreams And So-->
-<!--              On?-->
-<!--            </p>-->
-<!--            <p class="border">-->
-<!--              {{-->
-<!--                'product?.writeAboutYourHobbiesLikesAndDislikesTastesDreamsAndSoOn'-->
-<!--              }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div routerLink="/" class="contact-button">-->
-<!--          <button>Contacts</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+          <div class="address-details" *ngIf="product?.partnerFinancial">
+            <p>অর্থনৈতিক অবস্থা ? </p>
+            <p class="border">
+              {{ product?.partnerFinancial }}
+            </p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.partnerDin">
+            <p>দীনদারিত্ব ? </p>
+            <p class="border">
+              {{ product?.partnerDin }}
+            </p>
+          </div>
+
+          <div class="address-details" *ngIf="product?.partnerGun">
+            <p>বিশেষ গুন্/বৈশিষ্ট ? </p>
+            <p class="border">
+              {{ product?.partnerGun }}
+            </p>
+          </div>
+
+
+        </div>
+
+
+        <div class="details-info-contents" *ngIf=" userId === requestData?.user?._id  &&  requestData?.status === true">
+          <div class="details-info-header">
+            <p>Contact Info</p>
+          </div>
+          <div class="address-details">
+            <p>Relation</p>
+            <p class="border">{{ requestData?.guardianName }}</p>
+          </div>
+
+          <div class="address-details">
+            <p>Phone Number</p>
+            <p class="border">{{ requestData?.guardianPhoneNo }}</p>
+          </div>
+
+        </div>
+
+
+        <div class="contact-button">
+          <button (click)="contactRequest()">Contacts</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

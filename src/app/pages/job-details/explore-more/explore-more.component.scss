@@ -1,6 +1,76 @@
 @import "src/theme/_variables.scss";
 @import "src/theme/_swipper-two.scss";
 
+.browse-item{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 19px;
+  background: white;
+  padding: 10px;
+}
+
+
+.browse-item a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  .browse-item-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    img {
+      width: 50px;
+    }
+  }
+
+  .browse-item-right {
+    h1 {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: $font-en-primary;
+      color: $text-home-first-sec-color;
+      margin-bottom: 8px !important;
+      cursor: pointer;
+    }
+    p {
+      font-size: 13px;
+      font-weight: 200;
+      font-family: $font-en-primary;
+      color: $text-home-first-sec-color-2;
+    }
+  }
+}
+
+@media (max-width: 1046px) {
+
+
+  .browse-item {
+    padding: 16px;
+    width: 100%;
+    a {
+      //flex-direction: column;
+      //justify-content: center;
+      //align-items: center;
+
+      .browse-item-right {
+        text-align: center;
+
+        h1 {
+          font-size: 16px;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+
+        p {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
 .new-card-section {
   padding-top: 50px;
 

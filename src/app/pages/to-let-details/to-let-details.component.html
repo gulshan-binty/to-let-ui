@@ -116,54 +116,54 @@
                   <h2>{{product?.name}}</h2>
                   <div class="card-small-text">
                     <ul>
-                      <li>Al Aribah</li>
+                      <li>Queries-care</li>
                     </ul>
                   </div>
 
                   <p>
-                    <span>Role:</span>
-                    <small>To Let</small>
+                    <span>Category:</span>
+                    <small>{{product?.flatCategory}}</small>
                   </p>
                   <a>
                     <span><i class="fa-solid fa-location-dot"></i></span>
-                    <small>Feni, Bangladesh</small>
+                    <small>{{product?.area?.name}}</small>
                     <span><i class="fa-solid fa-chevron-right"></i></span>
                   </a>
                 </div>
                 <div class="pro-right-right">
                   <i class="fa-regular fa-heart"></i>
-                  <p>151 people</p>
-                  <p>shortlisted</p>
+<!--                  <p>151 people</p>-->
+<!--                  <p>shortlisted</p>-->
                 </div>
               </div>
 
               <!-- price section -->
               <div class="right-price">
-                <h2 *ngIf="product?.salePrice">
-                  <span>Tk</span> <span>100</span>
+                <h2 *ngIf="product?.rentPrice">
+                  <span>Tk</span> <span>{{product.rentPrice}}</span>
                 </h2>
                 <p>Fixed on road price</p>
               </div>
 
               <div class="buy-now-btns">
-                <button type="button">Notify Me</button>
-                <button type="button">Promote This Ad</button>
+                <a href="tel:01700000000">Contact Us</a>
+                <a href ="mailto: abc@example.com">Email</a>
               </div>
             </div>
 
-            <div class="pro-details-right-bottom">
-              <div></div>
-              <div class="text-right">
-                <p>
-                  <span>Guaranteed Buyback:</span>
-                  Return this car to us within a tenure of 6, 12 or 18 months at
-                  guaranteed prices.
-                </p>
-              </div>
-              <div class="icon-right">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
+<!--            <div class="pro-details-right-bottom">-->
+<!--              <div></div>-->
+<!--              <div class="text-right">-->
+<!--                <p>-->
+<!--                  <span>Guaranteed Buyback:</span>-->
+<!--                  Return this car to us within a tenure of 6, 12 or 18 months at-->
+<!--                  guaranteed prices.-->
+<!--                </p>-->
+<!--              </div>-->
+<!--              <div class="icon-right">-->
+<!--                <i class="fa-solid fa-chevron-right"></i>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
           <!-- heigh lite product -->
           <div class="right-highLight right-highLight3">

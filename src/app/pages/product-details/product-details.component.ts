@@ -33,6 +33,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.getProductById();
       }
     });
+
   }
 
 

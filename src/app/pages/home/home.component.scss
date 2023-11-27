@@ -12,6 +12,13 @@
   margin: 0px auto;
 }
 
+.metrimony-pop{
+  height: auto;
+  //max-width: 1330px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .browse-item{
   display: flex;
   justify-content: center;
@@ -150,7 +157,7 @@
     min-width: 200px;
     width: auto;
     padding: 10px 16px;
-    background-color: #4b98ff;
+    background-color: #001959;
     border: 0px;
     gap: 10px;
 
@@ -176,7 +183,7 @@
 
   .right-data {
     button {
-      background-color: #0074ba;
+      background-color: #001959;
       span {
         color: #fff;
 
@@ -242,6 +249,12 @@
 .ab-sec-data {
   max-width: 90%;
   margin: auto;
+  i{
+    align-items: center;
+    text-align: center;
+    margin-right: 3px;
+    font-size: 8px;
+  }
 
   p {
     font-family: $font-en-primary;

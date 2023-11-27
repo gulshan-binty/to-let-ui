@@ -1,7 +1,7 @@
 <div class="add-new-product">
   <div class="container">
     <div class="main-new-data-top">
-      <h1>Job Post</h1>
+      <h1>Career Corner</h1>
     </div>
 
     <form (ngSubmit)="onFormSubmit()" [formGroup]="dataForm" #formElement="ngForm">
@@ -136,9 +136,8 @@
 
             <div class="input-doc">
               <input
-                type="text"
+                type="number"
                 id="salaryTo"
-
                 digitOnly
                 formControlName="salaryTo"
                 placeholder="Salary Range Start"
@@ -161,7 +160,7 @@
 
             <div class="input-doc">
               <input
-                type="text"
+                type="number"
                 id="salaryFrom"
                 digitOnly
                 formControlName="salaryFrom"
@@ -210,7 +209,7 @@
 
             <div class="input-doc">
               <input
-                type="text"
+                type="number"
                 id="experience"
                 digitOnly
                 formControlName="experience"
@@ -255,7 +254,7 @@
 
           <div class="input-box">
             <p>
-              <label for="jobPostBy">Job Post By</label>
+              <label for="jobPostBy">Career Corner By</label>
             </p>
 
             <div class="input-doc">
@@ -263,7 +262,7 @@
                 type="text"
                 id="jobPostBy"
                 formControlName="jobPostBy"
-                placeholder="Job Post By(HR/Manager)"
+                placeholder="Career Corner By(HR/Manager)"
               />
             </div>
 
@@ -326,7 +325,7 @@
               class="required"
               *ngIf="dataForm.get('vacancy').touched && dataForm.get('vacancy').invalid"
             >
-              <i>This felid is required</i>
+              <i>This field is required</i>
             </p>
           </div>
           <!-- END! input-box -->

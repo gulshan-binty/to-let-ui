@@ -1,0 +1,210 @@
+@import "src/theme/variables";
+@import "src/theme/exports/form-felid-style-second";
+.title-sec{
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  h1{
+    font-size: 40px;
+    color: #272727;
+    font-family: $font-en-roboto-bold;
+    margin: 0 auto;
+    padding: 50px;
+  }
+}
+.main-control-container{
+  width: 100%;
+  padding-bottom: 50px;
+}
+.male-management {
+  margin: 0 auto;
+  height: auto;
+  max-width: 1300px;
+  width: 100%;
+  padding-bottom: 50px;
+  .section-title{
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    background-color: #e8e8e8;
+    h1{
+      font-family: 'Montserrat', sans-serif;
+      color: #2c3c56;
+      font-size: 28px;
+    }
+  }
+}
+.female-management {
+  margin: 0 auto;
+  height: auto;
+  max-width: 1300px;
+  width: 100%;
+  padding-bottom: 50px;
+  .section-title{
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    background-color: #e8e8e8;
+    h1{
+      font-family: 'Montserrat', sans-serif;
+      color: #2c3c56;
+      font-size: 28px;
+    }
+  }
+}
+.mufty-mawlana-management {
+  margin: 0 auto;
+  height: auto;
+  max-width: 1300px;
+  width: 100%;
+  padding-bottom: 50px;
+  .section-title{
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    background-color: #e8e8e8;
+    h1{
+      font-family: 'Montserrat', sans-serif;
+      color: #2c3c56;
+      font-size: 28px;
+    }
+  }
+}
+
+
+
+.card-control{
+  display: grid;
+  //grid-template-columns: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) ;
+  grid-template-columns: repeat(4,1fr);
+  align-items: center;
+  align-content: center;
+  //height: auto;
+  margin-top: 20px;
+  grid-gap: 42px;
+  max-width: 1300px;
+  width: 100%;
+  height: 100%;
+  padding: 0 25px;
+  //padding: 30px 20px 40px 20px;
+}
+
+h3 {
+  padding-top: 15px;
+  margin: 10px 0;
+  word-wrap: break-word;
+}
+
+h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: 14px;
+  line-height: 21px;
+  word-wrap: break-word;
+}
+
+.card-container {
+  height: 100%;
+  width: 100%;
+  background-color: #231E39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+  color: #B3B8CD;
+  padding: 30px 15px;
+  position: relative;
+  //width: 250px;
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  transform: scale(1) ;
+  transition-duration: .3s;
+  &:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(42, 42, 42, 0.91);
+  }
+}
+
+.card-container .pro {
+  color: #231E39;
+  background-color: #FEBB0B;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+}
+
+.card-container .round {
+  border: 1px solid $round-border-color;
+  border-radius: 50%;
+  height: 210px;
+  width: 210px;
+  padding: 7px;
+}
+
+
+@media (max-width: 1036px) {
+  .card-control{
+    //grid-template-columns: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) ;
+    grid-template-columns: repeat(3,1fr);
+
+  }
+}
+@media (max-width: 790px) {
+  .card-control{
+    //grid-template-columns: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) ;
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width: 516px) {
+  .card-control{
+    //grid-template-columns: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) ;
+    //grid-template-columns: repeat(2,1fr);
+    grid-gap: 35px;
+  }
+
+  .male-management .section-title h1 {
+    color: #2c3c56;
+    font-size: 28px;
+  }
+
+  .female-management .section-title h1 {
+    color: #2c3c56;
+    font-size: 20px;
+  }
+
+.mufty-mawlana-management .section-title h1 {
+
+    color: #2c3c56;
+    font-size: 20px;
+  }
+
+  .card-container .round {
+    height: 180px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 462px) {
+  .card-control{
+    //grid-template-columns: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) ;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 25px;
+  }
+
+  .card-container .round {
+    height: 210px;
+    width: 210px;
+  }
+}

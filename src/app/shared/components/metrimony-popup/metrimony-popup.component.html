@@ -1,0 +1,228 @@
+<div class="metri-pop-container" #el>
+  <div class="top-section">
+    <div class="top-title">
+
+      <label for="bio-category">বায়োডাটার ধরনঃ </label>
+      <select class="bio-category" name="bio-category" id="bio-category" (change)="onCategory($event)">
+        <option value="">বাছাই করুন...</option>
+        <option value="male-bio">পাত্রের বায়োডাটা</option>
+        <option value="female-bio">পাত্রীর বায়োডাটা</option>
+      </select>
+      <br><br>
+
+    </div>
+    <div class="desc">
+      <p>
+        এই সাইটে বায়োডাটা জমা দেবার জন্য নিম্নোক্ত প্রশ্নগুলোর উত্তর দেওয়া আবশ্যক। আবার প্রত্যেক প্রশ্নের পাশে একটা
+        স্কোর হিডেন আছে, এটা কোন নম্বর নয় এই স্কোরকে পরিসংখ্যানের ভাষায় Weighting বলে। Survey Data Weighting হলো একটি
+        পরিসংখ্যানগত কৌশল যা গবেষণায় সমীক্ষার ফলাফল গুলিকে সঠিকভাবে বাছাই করতে ব্যবহৃত হয় ইসলামী লাইফ স্টাইলে সালাতের
+        গুরুত্ব শতভাগ। সালাতের পাশাপাশি অন্যান্য কিছু প্রশ্নের নির্দিষ্ট উত্তরের উপর ভিত্তি করে বিভিন্ন প্রতিক্রিয়ার
+        জন্য বিভিন্ন স্কোর করা হয়েছে উক্ত সার্ভেগুলোর ৭৫ শতাংশ স্কোর অর্জনের মাধ্যমে কেউ এই সাইডে বায়োডাটা জমা দিতে
+        পারবেন ইনশা-আল্লাহ্‌।
+        <br><br>
+        আপনার অন্তরের খবর আমরা জানি না তবে অন্তরের মালিক যিনি তিনি জানেন তাই তথ্য প্রদানের ক্ষেত্রে আল্লাহ তায়ালাকে ভয়
+        করুন যদি কোন মিথ্যে তথ্য প্রদান করেন তবে শাস্তি গ্রহণে আল্লাহ তাআলাই যথেষ্ট।
+      </p>
+      <br>
+      <p>আপনি সাক্ষ্য দিন যে,</p>
+
+      <br>
+
+      <mat-checkbox [(ngModel)]="acceptTermsCondition" [ngClass]="{'isInvalid': acceptTermsCondition === false}"
+        class="example-margin">
+        <p>আমি আল্লাহ তালাকে সাক্ষী রেখে নিচের প্রশ্নগুলোর উত্তর দিতে যাচ্ছি,
+          মিথ্যা
+          বললে প্রতিদান
+          দাতা হিসেবে আল্লাহই যথেষ্ট হবেন।</p>
+      </mat-checkbox>
+      <br><br>
+      <hr>
+    </div>
+
+  </div>
+
+  <div class="question-section">
+    <div class="bottom-title">
+      <h1>আপনার জন্য বাধ্যতামূলক প্রশ্ন উত্তর পর্বঃ</h1>
+    </div>
+    <br>
+
+    <div class="male-data" [ngClass]="{'active': selectedCategory ===  'male-bio'}">
+      <form [formGroup]="maleDataForm" #formElement="ngForm" (ngSubmit)="onSubmitMaleForm()">
+        <div>
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>১।</span> পাঁচ ওয়াক্ত সালাত আদায় করেন ?</h2>
+            </div>
+            <div class="options">
+              <mat-radio-group
+                formControlName="namaz">
+                <mat-radio-button value="40">হ্যাঁ</mat-radio-button>
+                <mat-radio-button value="0">না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <br>
+
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>২।</span> রাস্তাঘাটে চলাফেরা বা সোশ্যাল মিডিয়াতে বিচরণের সময় চোখের যথাসাধ্য হেফাজাত করেন ?</h2>
+            </div>
+            <div class="options">
+              <mat-radio-group
+                formControlName="movementOrSocial">
+                <mat-radio-button value="10">হ্যাঁ</mat-radio-button>
+                <mat-radio-button value="0">না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>৩।</span> আপনার উপার্জনে শতভাগ তাকওয়া অবলম্বন করা হয় ?</h2>
+            </div>
+            <div class="options">
+              <mat-radio-group
+                formControlName="halalIncome">
+                <mat-radio-button value="10">হ্যাঁ</mat-radio-button>
+                <mat-radio-button value="0">না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <br>
+
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>৪।</span> বিয়ের পরে স্ত্রীকে পূর্ণ পর্দায় ও গাইরে মাহরাম থেকে হেফাজাতে রাখতে পারবেন কিনা ?</h2>
+            </div>
+            <div class="options">
+              <mat-radio-group
+                formControlName="wifeCustody">
+                <mat-radio-button value="10">হ্যাঁ</mat-radio-button>
+                <mat-radio-button value="0">না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <br>
+
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>৫।</span> সিগারেট বা অন্যান্য নেশার অভ্যাস রয়েছে ? </h2>
+            </div>
+            <div class="options">
+              <mat-radio-group
+                formControlName="badHavvit">
+                <mat-radio-button value="0">হ্যাঁ</mat-radio-button>
+                <mat-radio-button value="5">না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <br>
+
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>৬।</span> সুন্নাহ দাড়ি আছে ? </h2>
+            </div>
+            <div class="options">
+              <mat-radio-group
+                formControlName="sunnahBeard">
+                <mat-radio-button value="10">হ্যাঁ</mat-radio-button>
+                <mat-radio-button value="0">না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <br>
+
+          <div class="questions">
+            <div class="ques-title">
+              <h2><span>৭।</span> অনলাইন, অফলাইন, পরিবার ও শিক্ষা/কর্ম প্রতিষ্ঠানে আপনি কী মাহরাম মেইনটেইন করেন ?</h2>
+            </div>
+            <div class="options">
+              <mat-radio-group formControlName="mahramMaintain">
+                <mat-radio-button value="15">শতভাগ</mat-radio-button>
+                <mat-radio-button value="5">যথাসাধ্য</mat-radio-button>
+                <mat-radio-button value="0">পারি না</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+          </div>
+          <br>
+
+        </div>
+        <div class="ans-submit">
+          <!-- mat-dialog-close -->
+          <button class="submit-button" type="submit" mat-button>Submit</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="female-data" [ngClass]="{'active': selectedCategory ===  'female-bio'}">
+      <form [formGroup]="femaleDataForm" #formElement1="ngForm" (ngSubmit)="onSubmitFemaleForm()">
+        <div class="fff">
+          <div>
+            <div class="questions">
+              <div class="ques-title">
+                <h2><span>১।</span> পাঁচ ওয়াক্ত সালাত আদায় করেন ?</h2>
+              </div>
+              <div class="options">
+                <mat-radio-group
+                  formControlName="namaz">
+                  <mat-radio-button value="50">হ্যাঁ</mat-radio-button>
+                  <mat-radio-button value="0">না</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <br>
+
+            <div class="questions">
+              <div class="ques-title">
+                <h2><span>২।</span> পর্দার পোশাকের ধরণ ? (এক বা একাধিক অপশন নির্বাচন করা যাবে)</h2>
+              </div>
+              <div class="options">
+                <mat-checkbox (change)="onFemaleShariGroupValuePatch($event,'typeOfClothing',5)">শুধু বোরকা
+                </mat-checkbox>
+                <mat-checkbox
+                  (change)="onFemaleShariGroupValuePatch($event,'zilbarKhimaNiqab',5)">জিলবার,খিমা,নিকাব</mat-checkbox>
+                <mat-checkbox (change)="onFemaleShariGroupValuePatch($event,'faceCovered',5)">মুখমন্ডল আবৃত
+                  থাকে</mat-checkbox>
+                <mat-checkbox (change)="onFemaleShariGroupValuePatch($event,'handOrFootCover',5)">হাতমোজা,পা-মোজা
+                  ব্যবহার হয়
+                </mat-checkbox>
+                <mat-checkbox (change)="onFemaleShariGroupValuePatch($event,'eyesCovered',5)">চোখ আবৃত
+                  থাকে</mat-checkbox>
+                <mat-checkbox (change)="onFemaleShariGroupValuePatch($event,'blackColorDress',5)">পর্দার পোশাকের রং কালো
+                  ও সমজাতীয়</mat-checkbox>
+                <mat-checkbox (change)="onFemaleShariGroupValuePatch($event,'otherColorDress',5)">পর্দার পোশাকের রং কালো
+                  ছাড়াও অন্যান্য</mat-checkbox>
+              </div>
+            </div>
+            <br>
+
+            <div class="questions">
+              <div class="ques-title">
+                <h2><span>৩।</span> অনলাইন, অফলাইন, পরিবার ও শিক্ষা/কর্ম প্রতিষ্ঠানে আপনি কী মাহরাম মেইনটেইন করেন ?</h2>
+              </div>
+              <div class="options">
+                <mat-radio-group formControlName="mahramMaintain">
+                  <mat-radio-button value="15">শতভাগ</mat-radio-button>
+                  <mat-radio-button value="5">সর্বোচ্চ চেষ্টা করা হয়</mat-radio-button>
+                  <mat-radio-button value="0">না</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="ans-submit">
+          <button class="submit-button" type="submit" mat-button>Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

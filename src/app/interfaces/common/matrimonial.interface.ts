@@ -142,6 +142,9 @@ export interface Product {
   writeTheNamesOfAtLeast3IslamicBooksYouHaveRead?: string;
   writeTheNamesOfAtLeast3IslamicScholarsOfYourChoice?: string;
   writeAboutYourHobbiesLikesAndDislikesTastesDreamsAndSoOn?: string;
+  howManyGrooms?: string;
+  howManyBrides?: string;
+  specificReasonsDivorce?: string;
   occupation?: string;
   descriptionOfProfession?: string;
   monthlyIncome?: string;

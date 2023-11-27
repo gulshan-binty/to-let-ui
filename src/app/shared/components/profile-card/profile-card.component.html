@@ -1,0 +1,70 @@
+<div class="title-sec">
+  <h1>Management Panel</h1>
+</div>
+
+<div class="main-control-container">
+
+  <div class="male-management">
+    <div class="section-title">
+      <h1>Male Management</h1>
+    </div>
+    <div class="card-control">
+      <div class="card-container" *ngFor="let data of maleData">
+        <!--      <span class="pro">PRO</span>-->
+        <div class="image">
+          <img class="round" [src]="data?.image??''" alt="user"/>
+        </div>
+<!--        <h3 class="name" *ngIf="!data?.name"></h3>-->
+
+        <h3>{{data?.name}}</h3>
+
+<!--        <h6 class="" *ngIf="!data?.designation"></h6>-->
+        <h6>{{data?.designation}}</h6>
+        <p>{{data?.phone}}</p>
+        <p>{{data?.email}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="female-management">
+    <div class="section-title">
+      <h1>Female Management</h1>
+    </div>
+    <div class="card-control">
+
+      <div class="card-container" *ngFor="let data of femaleData">
+        <!--      <span class="pro">PRO</span>-->
+        <div class="image">
+          <img class="round" [src]="data?.image??''" alt="user"/>
+        </div>
+        <h3>{{data?.name}}</h3>
+        <h6>{{data?.designation}}r</h6>
+        <p>{{data?.phone}}</p>
+        <p>{{data?.email}}</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="mufty-mawlana-management">
+    <div class="section-title">
+      <h1>Mufty/ Mawlana Management</h1>
+    </div>
+    <div class="card-control">
+
+      <div class="card-container" *ngFor="let data of muftyData">
+        <!--      <span class="pro">PRO</span>-->
+        <div class="image">
+          <img class="round" [src]="data?.image??''" alt="user"/>
+        </div>
+        <h3>{{data?.name}}</h3>
+        <h6>{{data?.designation}}r</h6>
+        <p>{{data?.phone}}</p>
+        <p>{{data?.email}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

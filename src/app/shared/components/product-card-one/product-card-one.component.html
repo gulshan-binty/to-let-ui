@@ -11,7 +11,7 @@
     </div>
 
     <!---wish-->
-    <span matTooltip="Wishlist" [class.active-wish-list]="false" class="wish"
+    <span matTooltip="Wishlist" (click)="onAddToWishList($event)" [class.active-wish-list]="wishlist" class="wish"
       ><i class="fa fa-heart"></i
     ></span>
   </div>

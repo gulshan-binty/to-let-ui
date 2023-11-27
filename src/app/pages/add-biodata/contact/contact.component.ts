@@ -101,14 +101,21 @@ export class ContactComponent implements OnInit, OnDestroy {
         const general = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_INPUT');
         const address = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_ADDRESS');
         const education = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_EDUCATION');
+        const family = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_FAMILY');
+        const partner = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_PARTNER');
         const pledge = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_PLEDGE');
+        const marriage = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_MARRIAGE');
         const contact = this.storageService.getDataFromSessionStorage('MATRIMONIAL_GENERAL_CONTACT');
+
 
         const finalData = {
           ...general,
           ...address,
           ...education,
+          ...family,
+          ...partner,
           ...pledge,
+          ...marriage,
           ...contact,
           ...{
             postType: 'matrimonial',

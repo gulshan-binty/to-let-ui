@@ -186,15 +186,15 @@
             </p>
           </div>
 
-
-
           <div class="input-box">
             <p>
-              <label for="Name">Product Status <span style="color: orangered">*(Required)</span></label>
+              <label for="productType">Type of Product <span style="color: orangered">*(Required)</span></label>
             </p>
             <div class="input-doc">
-              <select name="" formControlName="status">
-                <option [value]="data?.value" *ngFor="let data of productStatus">{{data?.viewValue}}</option>
+              <select name="" formControlName="productType" (change)="productCategory($event)">
+                <option value="" >Select Option</option>
+                <option value="new" >New</option>
+                <option value="used" >Used</option>
 
               </select>
             </div>
@@ -206,6 +206,52 @@
               <i>This field is required</i>
             </p>
           </div>
+
+          <div class="input-box" *ngIf="selectedType === 'used'">
+            <p>
+              <label for="howLongUsed">How long used</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="howLongUsed"
+                placeholder="example: 40 days"
+                formControlName="howLongUsed"
+              />
+            </div>
+
+            <p
+              class="required"
+              *ngIf="
+                dataForm.get('name').touched &&
+                dataForm.get('name').invalid
+              "
+            >
+              <i>This felid is required</i>
+            </p>
+          </div>
+
+<!--          <div class="input-box">-->
+<!--            <p>-->
+<!--              <label for="Name">Product Status <span style="color: orangered">*(Required)</span></label>-->
+<!--            </p>-->
+<!--            <div class="input-doc">-->
+<!--              <select name="" formControlName="status">-->
+<!--                <option [value]="data?.value" *ngFor="let data of productStatus">{{data?.viewValue}}</option>-->
+
+<!--              </select>-->
+<!--            </div>-->
+
+<!--            <p class="required" *ngIf="-->
+<!--                dataForm.get('status').touched &&-->
+<!--                dataForm.get('status').invalid-->
+<!--              ">-->
+<!--              <i>This field is required</i>-->
+<!--            </p>-->
+<!--          </div>-->
+
+
 
         </div>
 
