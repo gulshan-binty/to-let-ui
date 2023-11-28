@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { FavoriteComponent } from './favorite/favorite.component';
-import { MyBioDataComponent } from './my-bio-data/my-bio-data.component';
+
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrdersComponent } from './orders/orders.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
@@ -39,10 +39,7 @@ const routes: Routes = [
         path: 'my-account',
         component: UserAccountComponent
       },
-      {
-        path: 'my-bio-data',
-        component: MyBioDataComponent
-      },
+ 
       {
         path: 'prescriptions',
         component: PrescriptionsComponent
