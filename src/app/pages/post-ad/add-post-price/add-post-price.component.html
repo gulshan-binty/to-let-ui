@@ -1,0 +1,62 @@
+
+<form class="input-area" (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+    <div class="login-main">
+      <div class="log-main">
+        <div class="login">
+          <div class="top-key">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+  
+          <div class="log-form">
+            <!-- <h2 class="title-sm">নতুন একাউন্ট খোলার জন্য নিচের ধাপগুলো অনুসরণ করুন</h2> -->
+            <p class="ex-url">আমাদের সকল Pricing গুলো দেখতে <span><a routerLink="/pricing">এখানে ক্লিক করুন</a></span> </p>
+  
+            <div class="qr-code">
+              <img src="assets/images/png/qr1.png">
+              <b>স্ক্যান করে পেমেন্ট করুন </b>
+            </div>
+            <ul>
+              <li>বাসাভাড়া/ মেস বিজ্ঞাপন দিতেঃ <b>৫০ টাকা</b></li>
+              <li>৫০ টাকা আমাদের বিকাশ নম্বর 01851519188 নম্বরে পেমেন্ট করুন।</li>
+              <li>টাকা পাঠানোর পর ট্রানজেকশন আইডি কপি করে নিচের  ইনপুট বক্সে পেস্ট করুন।</li>
+              <li>সঠিক ট্রানজেকশন আইডি দেওয়ার পর নিচের Complete Transaction বাটনে ক্লিক করুন।</li>
+            </ul>
+  
+            <div (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+              <mat-form-field class="example-full-width search-input">
+                <mat-label>Post Add Fee (৳)</mat-label>
+                <input
+                  readonly
+                  matInput
+                  digitOnly
+                  placeholder="Enter amount"
+                  type="text"
+                  [autocomplete]="false"
+                  formControlName="amount"
+                />
+              </mat-form-field>
+  
+              <mat-form-field class="example-full-width search-input">
+                <mat-label>Transaction Id</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter Transaction Id"
+                  type="text"
+                  [autocomplete]="false"
+                  formControlName="transactionId"
+                />
+              </mat-form-field>
+            </div>
+  
+            <div class="submit-btn" >
+              <button mat-raised-button [disabled]="isLoading">
+                {{ isLoading ? "Please Wait.." : "Complete Transaction" }}
+              </button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </form>
+  

@@ -107,6 +107,8 @@ export class ToletPostComponent implements OnInit {
       floorsInHouse: [null],
       whichFloorRented: [null],
       howManyCorridors: [null],
+      email:[null],
+      phone:[null],
       postType: 'to_let',
       status: 'draft',
 

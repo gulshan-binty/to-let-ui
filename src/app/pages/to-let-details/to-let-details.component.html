@@ -24,63 +24,6 @@
           <div class="main-img">
             <img [src]="image ?? '/assets/images/png/cropped.webp'" alt="" />
           </div>
-          <div class="image-select-slide">
-            <swiper
-              [slidesPerView]="3"
-              [spaceBetween]="13"
-              [autoplay]="false"
-              [loop]="false"
-              [grabCursor]="true"
-              [navigation]="true"
-              [breakpoints]="{
-                '300': {
-                  slidesPerView: 2
-                },
-                '433': {
-                  slidesPerView: 2.5
-                },
-                '537': {
-                  slidesPerView: 3
-                },
-                '800': {
-                  slidesPerView: 3
-                },
-
-                '900': {
-                  slidesPerView: 3.5
-                },
-                '1000': {
-                  slidesPerView: 4.5
-                }
-              }"
-              class="mySwiper"
-            >
-              <ng-template swiperSlide *ngFor="let data of product?.images">
-                <div class="slide-img">
-                  <img (click)="selectImage(data)" [src]=" data ?? '/assets/images/png/cropped.webp'" alt="" />
-                </div>
-              </ng-template>
-            </swiper>
-          </div>
-
-          <!-- heigh lite product -->
-          <!--          <div class="right-highLight right-highLight2">-->
-          <!--            <h2>Highlights</h2>-->
-          <!--            <ul>-->
-          <!--              <li>-->
-          <!--                <i class="fas fa-chair"></i>-->
-          <!--              </li>-->
-          <!--              <li>-->
-          <!--                <div class="highlight-data">-->
-          <!--                  <h3>New seat covers</h3>-->
-          <!--                  <p>-->
-          <!--                    Newly installed seat covers to keep things looking fresh and-->
-          <!--                    clean-->
-          <!--                  </p>-->
-          <!--                </div>-->
-          <!--              </li>-->
-          <!--            </ul>-->
-          <!--          </div>-->
 
           <!-- product description -->
           <div class="right-highLight right-highLight2">
@@ -93,12 +36,6 @@
                 <div class="description-data">
                   <ul>
                     <li [innerHtml]="product?.description"></li>
-                    <!--                    <li>গাড়ির কোনোপ্রকার সমস্যা নাই।</li>-->
-                    <!--                    <li>টাকার খুব প্রয়োজন তাই বিক্রি করবো।</li>-->
-                    <!--                    <li>গাড়ি অনেক ফ্রাস্ট চলে।</li>-->
-                    <!--                    <li>দাম 403.00 ডলার।</li>-->
-                    <!--                    <li>ঠিকানা গাজীপুর চৌরাস্তা টেকনগপাড়া তেলিপাড়া।</li>-->
-                    <!--                    <li>বি দ্রব ঃকেউ অজথা ফোন দিবেন না।</li>-->
                   </ul>
                 </div>
               </li>
@@ -113,76 +50,130 @@
               <!-- pro-right-data -->
               <div class="pro-right-data">
                 <div class="pro-right-left">
-                  <h2>{{product?.name}}</h2>
-                  <div class="card-small-text">
-                    <ul>
-                      <li>Queries-care</li>
-                    </ul>
-                  </div>
+                  <h2>{{ product?.name }}</h2>
+                  <div class="card-small-text"></div>
 
                   <p>
                     <span>Category:</span>
-                    <small>{{product?.flatCategory}}</small>
+                    <small>{{ product?.flatCategory }}</small>
                   </p>
                   <a>
                     <span><i class="fa-solid fa-location-dot"></i></span>
-                    <small>{{product?.area?.name}}</small>
+                    <small>{{ product?.area?.name }}</small>
                     <span><i class="fa-solid fa-chevron-right"></i></span>
                   </a>
-                </div>
-                <div class="pro-right-right">
-                  <i class="fa-regular fa-heart"></i>
-<!--                  <p>151 people</p>-->
-<!--                  <p>shortlisted</p>-->
                 </div>
               </div>
 
               <!-- price section -->
               <div class="right-price">
                 <h2 *ngIf="product?.rentPrice">
-                  <span>Tk</span> <span>{{product.rentPrice}}</span>
+                  <span>Tk</span> <span>{{ product?.rentPrice }}</span>
                 </h2>
                 <p>Fixed on road price</p>
               </div>
-
+              <br />
+              <p>
+                For More Information Add Your Information and Request for
+                Appointment
+              </p>
               <div class="buy-now-btns">
-                <a href="tel:01700000000">Contact Us</a>
-                <a href ="mailto: abc@example.com">Email</a>
+                <div class="input-box">
+                  <p>
+                    <label for="email">Name</label>
+                  </p>
+
+                  <div class="input-doc">
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Name"
+                      formControlName="name"
+                    />
+                  </div>
+
+                  <!-- <p
+                    class="required"
+                    *ngIf="
+                      dataForm.get('name').touched &&
+                      dataForm.get('name').invalid
+                    "
+                  >
+                    <i>This felid is required</i>
+                  </p> -->
+                </div>
+                <div class="input-box">
+                  <p>
+                    <label for="email">Email</label>
+                  </p>
+
+                  <div class="input-doc">
+                    <input
+                      type="text"
+                      id="email"
+                      placeholder="Email"
+                      formControlName="email"
+                      [value]="product?.email"
+                    />
+                  </div>
+
+                  <!-- <p
+                    class="required"
+                    *ngIf="
+                      dataForm.get('name').touched &&
+                      dataForm.get('name').invalid
+                    "
+                  >
+                    <i>This felid is required</i>
+                  </p> -->
+                </div>
+                <div class="input-box">
+                  <p>
+                    <label for="measurement">Phone Number</label>
+                  </p>
+
+                  <div class="input-doc">
+                    <input
+                      type="text"
+                      id="pname"
+                      placeholder=""
+                      formControlName="pname"
+                      [value]="product?.phone"
+                    />
+                  </div>
+
+                  <!-- <p
+                    class="required"
+                    *ngIf="
+                      dataForm.get('name').touched &&
+                      dataForm.get('name').invalid
+                    "
+                  >
+                    <i>This felid is required</i>
+                  </p> -->
+                </div>
+                <!-- <a href="tel:{{product?.phone}}">Call us </a> -->
+                <br />
+                <mat-form-field>
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    placeholder="Choose a date"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <button (click)="onRequestAppointment()"
+                  >Request Appointment {{ product?.email }}
+                </button>
               </div>
             </div>
-
-<!--            <div class="pro-details-right-bottom">-->
-<!--              <div></div>-->
-<!--              <div class="text-right">-->
-<!--                <p>-->
-<!--                  <span>Guaranteed Buyback:</span>-->
-<!--                  Return this car to us within a tenure of 6, 12 or 18 months at-->
-<!--                  guaranteed prices.-->
-<!--                </p>-->
-<!--              </div>-->
-<!--              <div class="icon-right">-->
-<!--                <i class="fa-solid fa-chevron-right"></i>-->
-<!--              </div>-->
-<!--            </div>-->
           </div>
           <!-- heigh lite product -->
-          <div class="right-highLight right-highLight3">
-            <h2>Highlights</h2>
-            <ul>
-              <li>
-                <i class="fas fa-chair"></i>
-              </li>
-              <li>
-                <div class="highlight-data">
-                  <h3>New seat covers</h3>
-                  <p>
-                    Newly installed seat covers to keep things looking fresh and
-                    clean
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
 
           <!-- product description -->
           <div class="right-highLight right-highLight3">
@@ -195,11 +186,6 @@
                 <div class="description-data">
                   <ul>
                     <li [innerHtml]="product?.description"></li>
-                    <!--                    <li>টাকার খুব প্রয়োজন তাই বিক্রি করবো।</li>-->
-                    <!--                    <li>গাড়ি অনেক ফ্রাস্ট চলে।</li>-->
-                    <!--                    <li>দাম 403.00 ডলার।</li>-->
-                    <!--                    <li>ঠিকানা গাজীপুর চৌরাস্তা টেকনগপাড়া তেলিপাড়া।</li>-->
-                    <!--                    <li>বি দ্রব ঃকেউ অজথা ফোন দিবেন না।</li>-->
                   </ul>
                 </div>
               </li>
@@ -209,12 +195,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="app-view-cards">
-  <app-to-let-related-data></app-to-let-related-data>
-
-  <app-explore-more></app-explore-more>
-
-  <app-frequintly-asked-question></app-frequintly-asked-question>
 </div>

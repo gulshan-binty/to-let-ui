@@ -5,8 +5,7 @@ import { Router } from "@angular/router";
 import { EMPTY, Subscription, debounceTime, distinctUntilChanged, pluck, switchMap } from "rxjs";
 import { CountryService } from 'src/app/services/common/country.service';
 import { HeaderService } from 'src/app/services/common/header.service';
-import { CountyPopupComponent } from 'src/app/shared/components/county-popup/county-popup.component';
-import { UpcomingDialogComponent } from 'src/app/shared/components/upcoming-dialog/upcoming-dialog.component';
+
 import { Product } from "../../interfaces/common/product.interface";
 import { FilterData } from "../../interfaces/core/filter-data";
 import { Pagination } from "../../interfaces/core/pagination";
@@ -22,10 +21,7 @@ import {UserService} from '../../services/common/user.service';
 })
 export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  // @ViewChild('login') login: LoginComponent;  // countryPopup
-  @ViewChild('countryPopup') countryPopup: CountyPopupComponent;
-
-  txt = 'Search products in queriescare...';
+  txt = 'Are you looking for a safe apartment to rent or a good tenant?';
   selectCategoryName: string = 'All Ads';
 
   filter: any;
@@ -114,17 +110,17 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
           };
           // Select
           const mSelect = {
-            postType: 1,
-            name: 1,
-            images: 1,
-            salePrice: 1,
-            discountType: 1,
-            discountAmount: 1,
-            salaryTo: 1,
-            salaryFrom: 1,
-            bioDataType: 1,
-            createdAt: 1,
-            updatedAt: 1,
+         name: 1,
+      slug: 1,
+      images: 1,
+      description: 1,
+      rentPrice: 1,
+      address: 1,
+      area: 1,
+      status: 1,
+      postType: 1,
+      createdAt: 1,
+      updatedAt: 1,
           };
 
           const filterData: FilterData = {
@@ -188,12 +184,10 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onSelectItem(data: Product): void {
     this.searchInput.nativeElement.value = '';
+    this.router.navigate(['/to-let-details', data?.slug]);
     this.handleCloseAndClear();
-    this.router.navigate(['/product-details', data?.slug]);
-    // this.router.navigate(['/product-details', data?.slug]);
-    // this.router.navigate(['/product-details', data?.slug]);
-  }
 
+  }
   handleOutsideClick(): void {
     this.searchInput.nativeElement.value = '';
     if (!this.isOpen) {
@@ -234,20 +228,20 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
    * ON SEARCH CHANGE
    * onChangeInput()
   */
-  onChangeInput(event: string) {
-    const data = event ? event.trim() : null;
-    if (data) {
-      this.router.navigate(['/product-list'], {
-        queryParams: { search: data },
-        queryParamsHandling: 'merge',
-      });
-    } else {
-      this.router.navigate(['/product-list'], {
-        queryParams: { search: null },
-        queryParamsHandling: 'merge',
-      });
-    }
-  }
+  // onChangeInput(event: string) {
+  //   const data = event ? event.trim() : null;
+  //   if (data) {
+  //     this.router.navigate(['/product-list'], {
+  //       queryParams: { search: data },
+  //       queryParamsHandling: 'merge',
+  //     });
+  //   } else {
+  //     this.router.navigate(['/product-list'], {
+  //       queryParams: { search: null },
+  //       queryParamsHandling: 'merge',
+  //     });
+  //   }
+  // }
 
   onSearchNavigate() {
     let inputVal = (this.searchInput.nativeElement as HTMLInputElement).value;
@@ -311,40 +305,12 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this.showMobileMenu = !this.showMobileMenu;
   }
 
-
-  showCountryPopup() {
-    this.router.navigate([], { queryParams: { dialogOpen: true }, queryParamsHandling: 'merge' });
-    this.countryPopup.onHideShowPopup();
-  }
-
-
-
-  /**
-   * UpcomingDialogComponent
-   * openDialog()
-  */
-  openDialog() {
-    this.dialog.open(UpcomingDialogComponent, {
-      maxWidth: "700px",
-      width: "100%",
-      height: "auto"
-    })
-  }
-
-  getImagePlaceholder(type: 'matrimonial' | 'job_post' | 'products' | 'to_let') {
+  getImagePlaceholder(type:'to_let') {
     switch(type) {
-      case 'products': {
-        return '/assets/images/placeholder/products.png';
-      }
-      case 'job_post': {
-        return '/assets/images/placeholder/job.png';
-      }
       case 'to_let': {
         return '/assets/images/placeholder/to-let.png';
       }
-      case 'matrimonial': {
-        return '/assets/images/placeholder/marriage.png';
-      }
+   
       default: {
         return '/assets/images/placeholder/products.png';
       }

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { OrderCardComponent } from './order-card.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../../shared.module';
+// import { SharedModule } from '../../shared.module';
 import {PipesModule} from '../../pipes/pipes.module';
 
 
@@ -14,7 +14,7 @@ import {PipesModule} from '../../pipes/pipes.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule,
+    // SharedModule,
     PipesModule
   ],
   exports: [

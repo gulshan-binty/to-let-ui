@@ -10,12 +10,12 @@ export const environment = {
   // apiBaseLink: 'http://192.168.0.160:4001',
   // ftpBaseLink: 'http://192.168.0.160:4001',
 
-  // apiBaseLink: 'http://localhost:4006',
-  // ftpBaseLink: 'http://localhost:4006',
+  apiBaseLink: 'http://localhost:3000',
+  ftpBaseLink: 'http://localhost:3000',
 
 
-  apiBaseLink: 'https://api.queriescare.com',
-  ftpBaseLink: 'https://api.queriescare.com',
+  // apiBaseLink: 'https://api.queriescare.com',
+  // ftpBaseLink: 'https://api.queriescare.com',
   appBaseUrl: '/',
   userBaseUrl: 'account',
   newUserBaseUrl: 'update-profile',

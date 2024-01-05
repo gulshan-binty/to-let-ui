@@ -2,35 +2,7 @@
   <div class="login-main">
     <div class="log-main">
       <div class="login">
-        <div class="top-key">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30px"
-            height="50px"
-            viewBox="0 0 38.622 64.345"
-          >
-            <g transform="translate(-86.987)">
-              <g transform="translate(86.987)">
-                <path
-                  fill="#149777"
-                  d="M179.555,67.918h-8.5a3.09,3.09,0,0,0,0,6.18h8.5a3.09,3.09,0,1,0,0-6.18Z"
-                  transform="translate(-155.995 -57.876)"
-                ></path>
-                <path
-                  fill="#149777"
-                  d="M175.8,226.493l6.025,7.029,5.253-4.48-3.244-3.631a1.546,1.546,0,0,1-.464-1.159,1.622,1.622,0,0,1,.541-1.081l3.476-2.626V216.3l-3.013-3.553a1.931,1.931,0,0,1-.232-1.159,1.622,1.622,0,0,1,.541-1.081l2.7-2.24V198.53H175.8v27.963Z"
-                  transform="translate(-162.672 -169.177)"
-                ></path>
-                <path
-                  fill="#149777"
-                  d="M117.576,0H95.021c-4.249,0-8.034,3.321-8.034,7.57V18.616a7.956,7.956,0,0,0,7.956,7.725h24.332a6.334,6.334,0,0,0,6.334-6.257V7.57C125.61,3.321,121.825,0,117.576,0Zm-7.029,19.311h-8.5a6.18,6.18,0,0,1,0-12.359h8.5a6.18,6.18,0,1,1,0,12.359Z"
-                  transform="translate(-86.987)"
-                ></path>
-              </g>
-            </g>
-          </svg>
-        </div>
-
+    
         <div class="log-form">
           <h1>Login / Signup</h1>
 
@@ -47,8 +19,7 @@
                 formControlName="phoneNo"
                 [maxlength]="11"
               />
-              <!--            <input [readOnly]="isOtpSent" matInput digitOnly id="mobile" type="tel" [autocomplete]="true"-->
-              <!--                   formControlName="phoneNo" placeholder="Enter mobile number" [maxlength]="11" />-->
+
             </mat-form-field>
 
             <div class="resent-view" *ngIf="sendVerificationCode">
@@ -81,12 +52,6 @@
             </div>
           </div>
 
-          <!--        <div class="checkAll22">-->
-          <!--          <mat-checkbox class="example-margin" [checked]="true"-->
-          <!--            >Send updates on Whatsapp</mat-checkbox-->
-          <!--          >-->
-          <!--        </div>-->
-
           <div class="trams-and-condition">
             <p>
               By logging in, I agree to <a>terms</a> and <a>privacy policy</a>
@@ -94,27 +59,13 @@
           </div>
 
           <div class="submit-btn">
-            <!--          <button type="button">-->
-            <!--            {{ "Proceed" | uppercase }}-->
-            <!--          </button>-->
+    
             <button mat-raised-button [disabled]="isLoading">
               {{ isLoading ? "Please Wait.." : "Proceed" }}
             </button>
           </div>
         </div>
 
-        <!--      <div class="or-type-fb-google">-->
-        <!--        <h2>OR</h2>-->
-
-        <!--        <div class="google-fb">-->
-        <!--          <a title="google" href="">-->
-        <!--            <i class="fa-brands fa-google"></i>-->
-        <!--          </a>-->
-        <!--          <a title="facebook" href="">-->
-        <!--            <i class="fa-brands fa-square-facebook"></i>-->
-        <!--          </a>-->
-        <!--        </div>-->
-        <!--      </div>-->
       </div>
     </div>
   </div>

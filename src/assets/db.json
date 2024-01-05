@@ -1,0 +1,12 @@
+{
+  "requestAppointments": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "phone": "555-555-5555",
+      "userId": 1,
+      "ownerId": 2
+    }
+  ]
+}

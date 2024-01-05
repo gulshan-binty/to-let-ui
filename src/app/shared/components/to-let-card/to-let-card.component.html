@@ -36,10 +36,6 @@
         <img src="/assets/images/svg/verified-icon.svg" alt="">
       </div>
     </div>
-
-    <p  *ngIf="data?.postType === 'products'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Price: {{data | price: 'salePrice'}}</p>
-    <p  *ngIf="data?.postType === 'matrimonial'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Bio Type: {{data?.bioDataType}}</p>
-    <p   *ngIf="data?.postType === 'job_post'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Salary: {{data?.salaryFrom}} - {{data?.salaryTo}}</p>
     <p   *ngIf="data?.postType === 'to_let'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Rent: {{data?.rentPrice ?? 0}}</p>
 
     <p class="cr-r-p">{{data?.address ?? '-'}}</p>
@@ -47,17 +43,7 @@
 
     <div class="days-cr">
       <ul>
-<!--        <li>-->
-<!--          <button type="button">-->
-<!--            <i class="fa-regular fa-pen-to-square"></i>-->
-<!--          </button>-->
-<!--        </li>-->
 
-<!--        <li>-->
-<!--          <button type="button">-->
-<!--            <i class="fa-solid fa-trash"></i>-->
-<!--          </button>-->
-<!--        </li>-->
 
         <li>
           <button type="button">

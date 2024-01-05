@@ -4,25 +4,7 @@
   margin: 30px 0px;
 }
 
-.browse-items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 48px 40px;
-  max-width: 90%;
-  margin: 0px auto;
-}
 
-.metrimony-pop{
-  height: auto;
-  //max-width: 1330px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.browse-item{
-  display: flex;
-  justify-content: center;
-}
 
 .title{
   text-align: center;
@@ -31,13 +13,13 @@
 .browse-item a {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 16px;
 
   .browse-item-left {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     img {
       width: 50px;
     }
@@ -107,9 +89,7 @@
 }
 
 .sec2-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 90%;
+
   margin: auto;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -157,7 +137,7 @@
     min-width: 200px;
     width: auto;
     padding: 10px 16px;
-    background-color: #001959;
+    background-color: #172D13;
     border: 0px;
     gap: 10px;
 
@@ -183,7 +163,7 @@
 
   .right-data {
     button {
-      background-color: #001959;
+      background-color: #9A0002;
       span {
         color: #fff;
 

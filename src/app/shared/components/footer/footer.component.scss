@@ -1,7 +1,7 @@
 @import "src/theme/_variables.scss";
 
 footer {
-  border-top: 2px solid #149777;
+  border-top: 2px solid #951A1B;
   margin-top: 0px;
   padding: 20px 0px 32px;
 }
@@ -89,7 +89,7 @@ footer {
     font-family: $font-en-primary;
     font-size: 14px;
     font-weight: 400;
-    color: #0074ba;
+    color: #951A1B;
 
     &:hover {
       color: #00547e;
@@ -120,7 +120,7 @@ footer {
         font-family: $font-en-primary;
         font-size: 14px;
         font-weight: 400;
-        color: $footer-text-color;
+        color:#951A1B;
 
         &:hover {
           color: $footer-text-hover-color;
@@ -225,7 +225,7 @@ footer {
           font-family: $font-en-primary;
           font-size: 14px;
           font-weight: 400;
-          color: $footer-text-color;
+          color:#951A1B;
           margin-right: 12px;
 
           &:hover {

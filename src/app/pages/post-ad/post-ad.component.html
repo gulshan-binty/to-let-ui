@@ -2,74 +2,11 @@
   <div class="container">
     <!-- main-data-container -->
     <div class="main-data-container">
-      <!-- top-data -->
-      <div class="top-data">
-        <h4>Welcome to Queries Care, Let's post an ad.</h4>
-      </div>
 
       <div class="sec2-post-ad">
         <div class="sec2-post-ad-main">
+    
           <div class="sec2-post-ad-cards">
-            <!-- card 1 -->
-            <div class="sec2-post-ad-card">
-              <div class="left-img">
-                <img src="./assets/images/png/2.jpg" alt="" />
-              </div>
-              <div class="right-data">
-                <h1>Matrimonial</h1>
-                <p>
-                  Are you looking for a practicing Muslim/ Muslimah as life partner?
-                </p>
-<!--                <button type="button" routerLink="/add-biodata/general-info" >-->
-                <button type="button" (click)="openDialog()" >
-                  <span><i class="fas fa-plus-circle"></i></span>
-                  <span>Submit Biodata Here</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- card 2 -->
-            <div class="sec2-post-ad-card sec2-post-ad-card2">
-              <div class="left-img">
-                <img src="./assets/images/png/3.jpg" alt="" />
-              </div>
-              <div class="right-data">
-                <h1>Products</h1>
-                <p>
-                  Are you looking for buying used products in good conditions?
-                </p>
-                <button type="button" routerLink="/post-ad/product-add">
-                  <span><i class="fas fa-plus-circle"></i></span>
-                  <span>Find your perfect purchase here</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="sec2-post-ad-cards">
-            <!-- card 1 -->
-            <div class="sec2-post-ad-card">
-              <div class="left-img">
-                <img src="./assets/images/png/1.jpg" alt="" />
-              </div>
-
-              <div class="right-data">
-                <h1>Career Corner</h1>
-
-                <p>
-                  Are you looking for a job or want to recruit the best one?
-                </p>
-
-                <button type="button" routerLink="/post-ad/post-job">
-                  <span>
-                    <i class="fas fa-plus-circle"></i>
-                  </span>
-
-                  <span>Post Job Here</span>
-                </button>
-              </div>
-            </div>
-
             <!-- card 2 -->
             <div class="sec2-post-ad-card sec2-post-ad-card2">
               <div class="left-img">
@@ -80,7 +17,7 @@
                 <p>
                   Are you looking for a safe apartment to rent or a good tenant?
                 </p>
-                <button type="button" routerLink="/post-ad/tolet-add">
+                <button type="button" routerLink="/post-ad/add-post-price">
                   <span><i class="fas fa-plus-circle"></i></span>
                   <span>Post TO-LET Here</span>
                 </button>
@@ -90,16 +27,8 @@
         </div>
       </div>
 
-      <div class="help-link">
-        <a routerLink="/privacy-policy">Know your posting allowance</a>
-        <a routerLink="/faq">See our posting rules</a>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- category-popup -->
-<app-category-popup #category_popup></app-category-popup>
 
-<!-- app-job-posts -->
-<app-job-posts #job_posts></app-job-posts>

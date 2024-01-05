@@ -1,4 +1,3 @@
-import { Product } from '../../interfaces/common/product';
 
 export const ALL_PRODUCTS: any[] = [
     {

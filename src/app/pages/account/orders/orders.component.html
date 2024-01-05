@@ -1,39 +1,10 @@
 <div class="order-main">
   <div class="order-top">
     <ul>
-      <li>
-        <a
-          [class.active]="selectedStatus == 0"
-          (click)="filterOrderList(0, null)"
-          >{{ "All" | uppercase }}</a
-        >
-      </li>
-      <li>
-        <a
-          [class.active]="selectedStatus == 1"
-          (click)="filterOrderList(1, { postType: 'matrimonial' })"
-        >{{ "Matrimonial" | uppercase }}</a
-        >
-      </li>
-      <li>
-        <a
-          [class.active]="selectedStatus == 2"
-          (click)="filterOrderList(2, { postType: 'products' })"
-          >{{ "Product" | uppercase }}</a
-        >
-      </li>
 
       <li>
         <a
-          [class.active]="selectedStatus == 6"
-          (click)="filterOrderList(6, { postType: 'job_post' })"
-          >{{ "Job Post" | uppercase }}</a
-        >
-      </li>
-      <li>
-        <a
-          [class.active]="selectedStatus == 5"
-          (click)="filterOrderList(5, { postType: 'to_let' })"
+     
           >{{ "To Let" | uppercase }}</a
         >
       </li>
@@ -43,19 +14,20 @@
 
   <div class="order-cards">
     <ul *ngIf="isLoading">
-      <li *ngFor="let product of  [1,2,3,4]">
+      <!-- <li *ngFor="let product of  [1,2,3,4]">
         <app-user-product-card-loader
           ></app-user-product-card-loader>
-      </li>
+      </li> -->
     </ul>
 
     <ul *ngIf="!isLoading">
-      <li *ngFor="let data of allProducts">
+      <li *ngFor="let data of products">
         <app-order-card [data]="data"></app-order-card>
+        
       </li>
     </ul>
   </div>
-
+<!-- 
   <div class="order-list-bottom" *ngIf="!allOrders && allOrders?.length == 0">
     <svg
       class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
@@ -69,5 +41,5 @@
     </svg>
 
     <p>No Orders Yet</p>
-  </div>
+  </div> -->
 </div>

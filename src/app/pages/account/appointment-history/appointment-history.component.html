@@ -1,0 +1,99 @@
+<!-- <div class="table-container">
+<table>
+    <tr>
+      <th class="t-checkbox">
+        <mat-checkbox #matCheckbox (change)="onAllSelectChange($event)"></mat-checkbox>
+      </th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+
+      <th>Bathroom</th>
+      <th>Balcony</th>
+              <th>Flat Category</th>
+              <th>Flat Rent </th>
+              <th>Available From</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>Phone</td>
+      <td>Email</td>
+      <td>{{data.balcony ?? 0}}</td>
+      <td>{{data.flatCategory ?? 0}}</td>
+      <td>{{data.rentPrice ?? 0}} Tk</td>
+      <td>{{data.availableFrom ?? 0}}</td>
+
+
+
+      <td [style.color]="data.status === 'publish' ? 'green' : 'red'">{{data.status | titlecase}}</td>
+      <td class="td-action">
+        <button [disabled]="data._id === adminId || !checkEditPermission"
+                [routerLink]="['../', 'edit-to-let', data._id]" mat-mini-fab matTooltip="Edit">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button style="margin-left: 5px;" mat-mini-fab matTooltip="Clone" color="primary"
+                (click)="openConfirmDialog('clone', data._id)">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+
+      </td>
+    </tr>
+  </table>
+</div> -->
+
+<div class="example-container mat-elevation-z8 table-responsive">
+  <mat-table #table [dataSource]="requestAppointments">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.email }} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.phone }} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="submissionDate">
+      <mat-header-cell *matHeaderCellDef> SubmissionDate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.submissionDate }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.status ? element.status : "Not checked yet" }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-raised-button color="warn">Decline</button>
+        <button mat-raised-button color="primary">Approve</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
