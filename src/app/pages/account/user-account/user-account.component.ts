@@ -198,9 +198,7 @@ export class UserAccountComponent implements OnInit, OnDestroy {
       }
     )
   }
-  get grandTotal(){
-   return this.allOrders?.map((v) => v.grandTotal)?.reduce((acc,v) => acc + v,0)
-  }
+
 
 
   /**

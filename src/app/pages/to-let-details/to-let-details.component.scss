@@ -1,6 +1,6 @@
 @import "src/theme/_variables.scss";
 @import "src/theme/_swipper.scss";
-
+@import "src/theme/exports/form-felid-style-second";
 .product-details-main {
   padding-top: 24px;
   max-width: 1240px;
@@ -76,7 +76,7 @@
   h2 {
     font-size: 20px;
     font-weight: 600;
-    color: $product-details-title;
+    color: #9A0002;
     font-family: $font-en-primary;
     letter-spacing: 0.5px;
   }
@@ -96,7 +96,7 @@
 
       i {
         font-size: 26px;
-        color: $primary-color;
+        color: #9A0002;
         padding-top: 0px;
       }
 
@@ -104,7 +104,7 @@
         h3 {
           font-size: 16px;
           font-weight: 600;
-          color: $product-details-title;
+          color: #9A0002;
           font-family: $font-en-primary;
           margin-bottom: 4px !important;
         }
@@ -146,7 +146,7 @@
 .product-details-right-data {
   background-color: #fff;
   border-radius: 12px;
-  color: #2e054e;
+  color: #9A0002;
   margin-bottom: 20px;
   overflow: hidden;
   border: 1px solid #e8e8e8;
@@ -188,7 +188,7 @@
     font-family: $font-en-primary;
     font-size: 18px;
     font-weight: 500;
-    color: $product-details-title;
+    color:#9A0002;
     margin-bottom: 4px !important;
   }
 
@@ -257,7 +257,7 @@
       font-family: $font-en-primary;
       font-size: 14px;
       font-weight: 400;
-      color: $product-details-title;
+      color: #9A0002;
       position: relative;
       padding: 4px 0px;
 
@@ -265,7 +265,7 @@
         content: "";
         width: 4px;
         height: 4px;
-        background-color: #2e054e;
+        background-color: #9A0002;
         border-radius: 50%;
         position: absolute;
         top: 56%;
@@ -290,7 +290,7 @@
     line-height: 28px;
     font-family: $font-en-primary;
     font-weight: 500;
-    color: $product-details-title;
+    color: #9A0002;
     padding: 16px 0px 4px 0px;
     display: flex;
     align-items: center;
@@ -320,22 +320,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     border-radius: 6px;
     border: 0;
     transition: all 0.12s linear;
-    font-size: 16px;
+    font-size: 14px;
     font-family: $font-en-primary;
     font-weight: 500;
 
     &:hover {
-      background-color: #10795f;
+      background-color: #B84D4E;
     }
 
     &:first-child {
-      background-color: #1f74ff;
+      background-color: #B84D4E;
 
       &:hover {
-        background-color: #0461f8;
+        background-color:  $primary-color;
       }
     }
   }

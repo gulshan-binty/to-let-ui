@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JobSelectComponent } from './job-select/job-select.component';
+
 import { PostAdComponent } from './post-ad.component';
-import { PostJobOverseasComponent } from './post-job-overseas/post-job-overseas.component';
-import { ProductAddDetailsComponent } from './product-add-details/product-add-details.component';
+
 import { ToletPostComponent } from './tolet-post/tolet-post.component';
+import { AddPostPriceComponent } from './add-post-price/add-post-price.component';
 
 const routes: Routes = [
   {
@@ -15,23 +15,24 @@ const routes: Routes = [
         component: PostAdComponent,
         pathMatch: 'full'
       },
-      {
-        path: 'post-job',
-        component: PostJobOverseasComponent
-      },
-      {
-        path: 'edit-job/:id',
-        component: PostJobOverseasComponent
-      },
-      {
-        path: 'product-add',
-        component: ProductAddDetailsComponent
-      },
+    
+      // {
+      //   path: 'post-job',
+      //   component: PostJobOverseasComponent
+      // },
+      // {
+      //   path: 'edit-job/:id',
+      //   component: PostJobOverseasComponent
+      // },
+      // {
+      //   path: 'product-add',
+      //   component: ProductAddDetailsComponent
+      // },
 
-      {
-        path: 'edit-product/:id',
-        component: ProductAddDetailsComponent
-      },
+      // {
+      //   path: 'edit-product/:id',
+      //   component: ProductAddDetailsComponent
+      // },
       {
         path: 'tolet-add',
         component: ToletPostComponent
@@ -41,9 +42,13 @@ const routes: Routes = [
         component: ToletPostComponent
       },
       {
-        path: 'select-job',
-        component: JobSelectComponent
-      }
+        path: 'add-post-price',
+        component: AddPostPriceComponent
+      },
+      // {
+      //   path: 'select-job',
+      //   component: JobSelectComponent
+      // }
     ]
   }
 ];

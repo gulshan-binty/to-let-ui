@@ -103,7 +103,7 @@
 .header-top-area {
   display: block;
   width: 100%;
-  background: #001959;
+  background: #9a0002;
   padding: 12px 0px;
   box-sizing: border-box;
 }
@@ -131,6 +131,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
+    font-size: 17px;
+    font-family: $font-en-primary;
   }
   img {
     width: 150px;
@@ -258,7 +261,7 @@
   box-sizing: border-box;
   transition: all 0.3s linear;
   border-radius: 50%;
-  background-color: #001959;
+  background-color: #9A0002;
   i {
     font-size: 20px;
     padding-left: 2px;
@@ -348,11 +351,7 @@
   transition: all 0.3s linear;
 }
 
-.lang-btn span {
-}
-.lang-btn span:hover {
-  color: #f06425;
-}
+
 
 .ad {
   max-width: 170px;
@@ -367,7 +366,7 @@
   justify-content: center;
   text-align: center;
   border-radius: 4px;
-  background: #f1faff;
+  background: #F5E6E6;
   padding: 0px 25px;
   box-sizing: border-box;
   line-height: 44px;
@@ -380,7 +379,7 @@
 }
 
 .ad .add-btn span {
-  color: #2c3c56;
+  color: #9A0002;
   font-weight: bold;
 }
 
@@ -499,9 +498,7 @@
   }
 
   .header-icon-menu ul li button {
-    span {
-      //display: none;
-    }
+
     .login{
       display: none;
     }
@@ -514,15 +511,6 @@
       width: 41px !important;
     }
   }
-
-  //.header-icon-menu ul li:hover button span {
-  //  text-decoration: underline;
-  //
-  ////.header-icon-menu ul li button span:hover{
-  ////
-  ////    text-decoration: underline;
-  //
-  //}
 
   .header-top-bottom-main {
     height: 140px;

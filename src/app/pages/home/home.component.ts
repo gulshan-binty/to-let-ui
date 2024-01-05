@@ -3,9 +3,7 @@ import { Subscription } from "rxjs";
 import { DashboardService } from '../../services/common/dashboard.service';
 import { PostCountDashboard } from '../../interfaces/common/dashboard.interface';
 import { HeaderService } from '../../services/common/header.service';
-import { UpcomingDialogComponent } from "../../shared/components/upcoming-dialog/upcoming-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
-import { MetrimonyPopupComponent } from "../../shared/components/metrimony-popup/metrimony-popup.component";
 import { CongratulationDialogComponent } from 'src/app/shared/ui/congratulation-dialog/congratulation-dialog.component';
 import { ReloadService } from 'src/app/services/core/reload.service';
 import { FailDialogComponent } from 'src/app/shared/ui/fail-dialog/fail-dialog.component';
@@ -87,18 +85,7 @@ export class HomeComponent implements OnInit, OnDestroy {
    * openDialog()
    * openPassedDialog()
    */
-  openDialog() {
-    if (this.userService.getUserId()) {
-      this.dialog.open(MetrimonyPopupComponent, {
-        maxWidth: "1000px",
-        width: "100%",
-        height: "auto"
-      })
-    } else {
-      this.router.navigate(['/login'])
-    }
 
-  }
 
 
   openPassedDialog() {

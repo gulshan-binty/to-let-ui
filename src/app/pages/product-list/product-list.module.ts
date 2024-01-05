@@ -4,38 +4,29 @@ import { NgModule } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material/material.module';
-import { CardOneModule } from 'src/app/shared/components/card-one/card-one.module';
-import { CustomerReviewModule } from 'src/app/shared/components/customer-review/customer-review.module';
-import { FrequintlyAskedQuestionModule } from 'src/app/shared/components/frequintly-asked-question/frequintly-asked-question.module';
-import { JobCardModule } from 'src/app/shared/components/job-card/job-card.module';
-import { JobRelatedDataModule } from 'src/app/shared/components/job-related-data/job-related-data.module';
-import { MatrimonialRelatedDataModule } from 'src/app/shared/components/matrimonial-related-data/matrimonial-related-data.module';
-import { ProductCardOneModule } from 'src/app/shared/components/product-card-one/product-card-one.module';
-import { ProductsRelatedDataModule } from 'src/app/shared/components/products-related-data/products-related-data.module';
+
+
+// import { FrequintlyAskedQuestionModule } from 'src/app/shared/components/frequintly-asked-question/frequintly-asked-question.module';
+// import { JobCardModule } from 'src/app/shared/components/job-card/job-card.module';
+// import { JobRelatedDataModule } from 'src/app/shared/components/job-related-data/job-related-data.module';
+
+// import { ProductCardOneModule } from 'src/app/shared/components/product-card-one/product-card-one.module';
+// import { ProductsRelatedDataModule } from 'src/app/shared/components/products-related-data/products-related-data.module';
 import { ToLetCardModule } from 'src/app/shared/components/to-let-card/to-let-card.module';
-import { ToLetRelatedDataModule } from 'src/app/shared/components/to-let-related-data/to-let-related-data.module';
-import { ViewCardsModule } from 'src/app/shared/components/view-cards/view-cards.module';
-import { ProductListJobComponent } from './product-list-job/product-list-job.component';
-import { ProductListMatrimonialComponent } from './product-list-matrimonial/product-list-matrimonial.component';
-import { ProductListProductComponent } from './product-list-product/product-list-product.component';
+
+
+
 import { ProductListRoutingModule } from './product-list-routing.module';
 import { ProductListToLetComponent } from './product-list-to-let/product-list-to-let.component';
 import { ProductListComponent } from './product-list.component';
-import {
-  ProductCardOneLoaderModule
-} from "../../shared/card-loader/product-card-one-loader/product-card-one-loader.module";
-import {
-  MetromonialCardLoaderModule
-} from "../../shared/card-loader/metromonial-card-loader/metromonial-card-loader.module";
-import {JobCardLoaderModule} from "../../shared/card-loader/job-card-loader/job-card-loader.module";
+
+
 
 
 @NgModule({
   declarations: [
     ProductListComponent,
-    ProductListMatrimonialComponent,
-    ProductListProductComponent,
-    ProductListJobComponent,
+ 
     ProductListToLetComponent
   ],
     imports: [
@@ -43,21 +34,19 @@ import {JobCardLoaderModule} from "../../shared/card-loader/job-card-loader/job-
         ProductListRoutingModule,
         MaterialModule,
         MatSliderModule,
-        CardOneModule,
-        ViewCardsModule,
-        CustomerReviewModule,
-        FrequintlyAskedQuestionModule,
+    
+    
+
+        // FrequintlyAskedQuestionModule,
         RouterModule,
-        JobCardModule,
+        // JobCardModule,
         ToLetCardModule,
-        ProductCardOneModule,
-        ProductsRelatedDataModule,
-        MatrimonialRelatedDataModule,
-        JobRelatedDataModule,
-        ToLetRelatedDataModule,
-        ProductCardOneLoaderModule,
-        MetromonialCardLoaderModule,
-        JobCardLoaderModule
+        // ProductCardOneModule,
+        // ProductsRelatedDataModule,
+ 
+        // JobRelatedDataModule,
+  
+     
     ]
 })
 export class ProductListModule { }

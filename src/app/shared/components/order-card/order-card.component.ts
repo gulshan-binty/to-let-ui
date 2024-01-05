@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Product } from 'src/app/interfaces/common/product.interface';
+import {Product} from "../../../interfaces/common/product.interface";
 import { ProductService } from 'src/app/services/common/product.service';
 import { ReloadService } from 'src/app/services/core/reload.service';
 import { ConfirmDialogComponent } from '../../ui/confirm-dialog/confirm-dialog.component';
@@ -13,7 +13,7 @@ import { UiService } from 'src/app/services/core/ui.service';
   styleUrls: ['./order-card.component.scss']
 })
 export class OrderCardComponent {
-  @Input() data: Product;
+  @Input() data?: Product;
 
 
   //Subscription
@@ -25,6 +25,9 @@ export class OrderCardComponent {
     private dialog: MatDialog,
     private uiServices: UiService
   ) {
+
+  }
+  ngOnInit(): void {
 
   }
 
@@ -76,40 +79,26 @@ export class OrderCardComponent {
 
   }
 
-  getImagePlaceholder(type: 'matrimonial' | 'job_post' | 'products' | 'to_let') {
+  getImagePlaceholder(type: 'to_let') {
     switch(type) {
-      case 'products': {
-        return '/assets/images/placeholder/products.png';
-      }
-      case 'job_post': {
-        return '/assets/images/placeholder/job.png';
-      }
+     
       case 'to_let': {
         return '/assets/images/placeholder/to-let.png';
       }
-      case 'matrimonial': {
-        return '/assets/images/placeholder/marriage.png';
-      }
+      
       default: {
         return '/assets/images/placeholder/products.png';
       }
     }
   }
 
-  getJobType(type: 'matrimonial' | 'job_post' | 'products' | 'to_let') {
+  getJobType(type:  'to_let') {
     switch(type) {
-      case 'products': {
-        return 'Products';
-      }
-      case 'job_post': {
-        return 'Job';
-      }
+   
       case 'to_let': {
         return 'To Let';
       }
-      case 'matrimonial': {
-        return 'Matrimonial';
-      }
+    
       default: {
         return 'Products';
       }

@@ -70,7 +70,7 @@ a.dashboard-item {
   padding: 14px 16px;
 
   &:hover {
-    background-color: $color-primary !important;
+    background-color:#9A0002 !important;
 
     .dashboard-icon {
       svg {
@@ -86,7 +86,7 @@ a.dashboard-item {
   }
 
   &.active {
-    background-color: $color-primary !important;
+    background-color:#9A0002 !important;
 
     .dashboard-icon {
       svg {
@@ -110,7 +110,7 @@ a.dashboard-item {
   justify-content: flex-start;
 
   svg {
-    fill: $heading-color;
+    fill: #AE3335;
   }
 }
 

@@ -1,7 +1,68 @@
+
+
+.search-input {
+  margin-bottom: 10px;
+}
+
+.qr-code{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
+  flex-direction: column;
+  img{
+    width: 130px;
+  }
+  b{
+    padding: 10px 0;
+  }
+}
+
+.top-key {
+  i {
+    font-size: 46px;
+    color: #149777;
+  }
+}
+
+.title-sm {
+  font-size: 20px;
+  color: #2e054e;
+  text-align: center;
+}
+
+.ex-url {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 14px;
+  a {
+    margin-left: 5px;
+    color: #007cff;
+    margin-left: 5px;
+    font-weight: 600;
+  }
+}
+
+ul {
+  padding: 0 12px;
+  margin-bottom: 10px;
+  margin-top: 16px;
+
+  li {
+    &:first-child {
+      color: #ed264f;
+      font-weight: 700;
+    }
+  }
+}
+
 @import "src/theme/_variables.scss";
 
 .log-main {
-  max-height: 90vh;
+  max-height: 105vh;
   max-width: 640px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -9,7 +70,7 @@
   z-index: 34;
   cursor: auto;
   box-shadow: 0px 11.028756141662598px 73.5250473022461px 0px #0000000d;
-  margin: 30px auto;
+  margin: 20px auto;
   border-radius: 5px;
 
   &::-webkit-scrollbar {

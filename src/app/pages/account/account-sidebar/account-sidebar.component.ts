@@ -6,7 +6,7 @@ import { AccountService } from 'src/app/services/common/account.service';
 import { UserDataService } from 'src/app/services/common/user-data.service';
 import { UserService } from 'src/app/services/common/user.service';
 import { ReloadService } from 'src/app/services/core/reload.service';
-import { ManageAddressComponent } from '../manage-address/manage-address.component';
+
 import { ShopInformation } from 'src/app/interfaces/common/shop-information.interface';
 import { ShopInformationService } from 'src/app/services/common/shop-information.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,10 +19,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AccountSidebarComponent implements OnInit, OnDestroy {
 
   //Store Data
-  @ViewChild('manageAddress') manageAddress: ManageAddressComponent
+
   user: User;
   imagePlaceholder: string = '/assets/images/jpg/dummy-image.jpg';
-  shopInfo: ShopInformation | any;
+  // shopInfo: ShopInformation | any;
   isOpen = false;
 
   //Subscriptions
@@ -46,7 +46,7 @@ export class AccountSidebarComponent implements OnInit, OnDestroy {
     })
     this.getLoggedInUserInfo();
 
-    this.getShopInformation();
+    // this.getShopInformation();
 
     this.activatedRoute.queryParamMap.subscribe((res) => {
       if (res.get('dialogOpen') !== null) {
@@ -82,30 +82,23 @@ export class AccountSidebarComponent implements OnInit, OnDestroy {
       });
   }
 
-  private getShopInformation() {
-    this.subUserData = this.shopService.getShopInformation().subscribe((res) => {
-      if (res.success) {
-        this.shopInfo = res.data;
-      }
-    },
-      (err) => {
-        console.log(err);
-      }
-    )
-  }
+  // private getShopInformation() {
+  //   this.subUserData = this.shopService.getShopInformation().subscribe((res) => {
+  //     if (res.success) {
+  //       this.shopInfo = res.data;
+  //     }
+  //   },
+  //     (err) => {
+  //       console.log(err);
+  //     }
+  //   )
+  // }
 
   /**
    * Dialog View
    * openDialog()
    */
-  openDialog() {
-    this.router.navigate([], { queryParams: { dialogOpen: true }, queryParamsHandling: 'merge' });
-    this.dialog.open(ManageAddressComponent, {
-      maxWidth: "450px",
-      width: "100%",
-      height: "auto",
-    });
-  }
+
 
   //Log Out
   userLogOut() {

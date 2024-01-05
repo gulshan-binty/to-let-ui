@@ -542,7 +542,49 @@
           </div>
           <!-- END! input-box -->
 
+          <div class="input-box">
+            <p>
+              <label for="email">Email</label>
+            </p>
 
+            <div class="input-doc">
+              <input
+                type="text"
+                id="email"
+                placeholder="email"
+                formControlName="email"
+              />
+            </div>
+
+            <p
+            class="required"
+            *ngIf="dataForm.get('email').touched && dataForm.get('email').invalid"
+          >
+            <i>This felid is required</i>
+          </p>
+          </div>
+          
+          <div class="input-box">
+            <p>
+              <label for="phone">Phone</label>
+            </p>
+
+            <div class="input-doc">
+              <input
+                type="text"
+                id="phone"
+                placeholder="phone"
+                formControlName="phone"
+              />
+            </div>
+
+            <p
+            class="required"
+            *ngIf="dataForm.get('phone').touched && dataForm.get('phone').invalid"
+          >
+            <i>This felid is required</i>
+          </p>
+          </div>
         </div>
         <!-- END! form-four-grid -->
 
@@ -568,7 +610,7 @@
           <button class="back-btn" [routerLink]="['/account/orders']" type="button">
             Back
           </button>
-          <button class="sub-btn" type="submit">
+          <button class="sub-btn" type="submit" style="background-color: #9A0002;" >
             <div class="loader" *ngIf="isLoading"></div>
 
             <span *ngIf="!isLoading">{{id ? 'Update To-let' : 'Add To-let'}}</span>

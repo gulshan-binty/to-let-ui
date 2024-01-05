@@ -1,4 +1,4 @@
-<div class="carrier-card-main" [id]="data?._id">
+<div class="carrier-card-main">
   <div class="cr-left">
     <img [src]="data?.images && data?.images.length ? data?.images[0] : getImagePlaceholder(data?.postType)" alt="" />
   </div>
@@ -6,7 +6,7 @@
   <div class="cr-right">
     <h3 class="title-top2">{{data?.name}}</h3>
     <a class="product-type" style="color: #1f74ff; font-weight: 500; font-size: 12px">
-      {{getJobType(data.postType)}}
+      {{getJobType(data?.postType)}}
     </a>
 
     <div class="icon-badge">
@@ -35,32 +35,17 @@
       </div>
     </div>
 
-    <p  *ngIf="data?.postType === 'products'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Price: {{data | price: 'salePrice'}}</p>
-    <p  *ngIf="data?.postType === 'matrimonial'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Bio Type: {{data?.bioDataType}}</p>
-    <p   *ngIf="data?.postType === 'job_post'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Salary: {{data?.salaryFrom}} - {{data?.salaryTo}}</p>
-    <p   *ngIf="data?.postType === 'to_let'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Rent: {{data?.rentPrice}}</p>
+    <p   *ngIf="data?.postType === 'to_let'" class="cr-r-p" style="font-size: 14px; font-weight: 500;">Rent: {{data?.rentPrice ?? 0}}</p>
 
     <div class="days-cr">
       <ul>
         <li>
-          <button *ngIf="data?.postType === 'products'" type="button"
-                  [routerLink]="['/post-ad/edit-product', data?._id]">
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
-          <button *ngIf="data?.postType === 'matrimonial'" type="button"
-                  [routerLink]="['/add-biodata/general-info']"
-                  [queryParams]="data?.postType === 'matrimonial' ? {id: data?._id}: null"
-          >
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
+
           <button *ngIf="data?.postType === 'to_let'" type="button"
                   [routerLink]="['/post-ad/edit-tolet', data?._id]">
             <i class="fa-regular fa-pen-to-square"></i>
           </button>
-          <button *ngIf="data?.postType === 'job_post'" type="button"
-                  [routerLink]="['/post-ad/edit-job', data?._id]">
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
+
         </li>
 
         <li>
@@ -70,7 +55,8 @@
         </li>
 
         <li>
-          <button type="button">
+          <button type="button"  [routerLink]="['/to-let-details',data?.slug]"
+          >
             <i class="fa-solid fa-eye"></i>
           </button>
         </li>

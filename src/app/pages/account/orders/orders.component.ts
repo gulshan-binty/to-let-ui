@@ -13,9 +13,9 @@ import {ProductService} from 'src/app/services/common/product.service';
 })
 export class OrdersComponent implements OnInit {
   //Store Data
-  allOrders: Order[];
+  // allOrders: Order[];
   selectedStatus: number = 0;
-  allProducts: Product[] = [];
+  products: Product[] = [];
   filter = null;
   // Loading
   isLoading = true;
@@ -51,7 +51,7 @@ export class OrdersComponent implements OnInit {
    */
 
 
-  filterOrderList(selectedStatus: number, data?: { postType: 'matrimonial' | 'job_post' | 'products' | 'to_let' }) {
+  filterOrderList(selectedStatus: number, data?: { postType: 'to_let' }) {
     if (selectedStatus >= 0) {
       this.selectedStatus = selectedStatus;
       this.filter = data;
@@ -61,15 +61,15 @@ export class OrdersComponent implements OnInit {
 
   private getAllProductsByUser() {
     const mSelect = {
-      postType: 1,
       name: 1,
+      slug: 1,
       images: 1,
-      salePrice: 1,
-      discountType: 1,
-      discountAmount: 1,
-      salaryTo: 1,
-      salaryFrom: 1,
-      bioDataType: 1,
+      description: 1,
+      rentPrice: 1,
+      address: 1,
+      area: 1,
+      status: 1,
+      postType: 1,
       createdAt: 1,
       updatedAt: 1,
     }
@@ -83,8 +83,8 @@ export class OrdersComponent implements OnInit {
     this.subDataOne = this.productService.getAllProductsByUser(filterData)
       .subscribe(res => {
           this.isLoading = false;
-          this.allProducts = res.data;
-          console.log('this.allProducts', this.allProducts)
+          this. products = res.data;
+          console.log('this.Products', this. products)
         },
         (err) => {
           if (err) {
